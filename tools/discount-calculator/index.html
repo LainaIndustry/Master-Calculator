@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Discount Calculator — Sale Price &amp; Savings</title>
+<meta name="description" content="Free discount calculator: find the sale price and savings from any percentage discount." />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://calcverse.example.com/tools/discount-calculator/" />
+<link rel="stylesheet" href="/assets/css/style.css" />
+<link rel="stylesheet" href="/assets/css/ads.css" />
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header"><div class="container header-inner">
+  <a class="logo" href="/"><span class="logo-mark">CV</span><span data-site-name>CalcVerse</span></a>
+  <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false"><span></span><span></span><span></span></button>
+  <nav class="nav" aria-label="Primary">
+    <a href="/">Home</a><a href="/tools/">Tools</a>
+    <a href="/categories/financial/">Financial</a><a href="/categories/math/">Math</a>
+    <a href="/categories/health/">Health</a><a href="/categories/date-time/">Date &amp; Time</a>
+    <a href="/categories/conversion/">Converters</a><a href="/categories/engineering/">Engineering</a>
+    <a href="/blog/">Blog</a><a href="/about.html">About</a><a href="/contact.html">Contact</a>
+  </nav>
+</div></header>
+
+<main id="main"><div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <ol><li><a href="/">Home</a></li><li><a href="/categories/financial/">Financial Calculators</a></li><li><span aria-current="page">Discount Calculator</span></li></ol>
+  </nav>
+
+  <h1>Discount Calculator</h1>
+  <p style="max-width:720px;">Find the sale price and savings from any percentage discount. Instant results as you type.</p>
+
+  <div class="ad-placeholder ad-top" role="complementary" aria-label="Advertisement"><span>Advertisement</span></div>
+
+  <section class="calc-card">
+    <h2 class="mt-0">Calculate a Discount</h2>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="di-price">Original price</label>
+        <div class="input-group"><input class="form-control" id="di-price" type="number" min="0" step="0.01" placeholder="e.g. 99.99" /><span class="unit">$</span></div>
+      </div>
+      <div class="form-group">
+        <label for="di-discount">Discount</label>
+        <div class="input-group"><input class="form-control" id="di-discount" type="number" min="0" step="0.01" placeholder="e.g. 25" /><span class="unit">%</span></div>
+      </div>
+    </div>
+    <div class="form-actions">
+      <button class="btn" id="di-calc" type="button">Calculate</button>
+      <button class="btn btn-secondary" id="di-reset" type="button">Reset</button>
+    </div>
+    <div class="result-box" id="di-result" role="status" aria-live="polite">
+      <div class="result-label">Sale price</div>
+      <div class="result-main" id="di-main">—</div>
+      <div class="result-detail" id="di-detail"></div>
+    </div>
+  </section>
+
+  <div class="ad-placeholder ad-middle" role="complementary" aria-label="Advertisement"><span>Advertisement</span></div>
+
+  <article class="prose">
+    <h2>What Is a Discount Calculator?</h2>
+    <p>It computes the final price after a percentage discount and shows how much you save.</p>
+
+    <h2>How to Use It</h2>
+    <ol>
+      <li>Enter the <strong>original price</strong>.</li>
+      <li>Enter the <strong>discount percentage</strong>.</li>
+      <li>Results appear instantly.</li>
+    </ol>
+
+    <h2>Formula</h2>
+    <pre><code>Savings = Price × (Discount ÷ 100)
+Final price = Price − Savings</code></pre>
+
+    <h2>Worked Example</h2>
+    <p>A $99.99 item at 25% off:</p>
+    <ul>
+      <li>Savings: 99.99 × 0.25 = $25.00</li>
+      <li>Final: <strong>$74.99</strong></li>
+    </ul>
+
+    <h2>Understanding Your Result</h2>
+    <p>The main result is the price you'll pay after the discount. The detail box shows the original price, discount percent, and dollar savings.</p>
+
+    <h2>Common Mistakes</h2>
+    <ul>
+      <li>Adding stacked percentages. "20% + 10%" is 28% off, not 30%.</li>
+      <li>Confusing "20% off" with "20% of." 20% off $100 = $80; 20% of $100 = $20.</li>
+      <li>Forgetting that sales tax is applied after the discount (see our Percent Off Calculator).</li>
+    </ul>
+
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false">How do I stack multiple discounts?</button>
+      <div class="faq-a"><p>Multiply the remaining fractions. Two 20% discounts → 0.8 × 0.8 = 0.64, so 36% off total.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false">Does the discount apply before or after tax?</button>
+      <div class="faq-a"><p>Almost always before tax. Use our Percent Off Calculator to include tax.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false">What about "buy one get one" deals?</button>
+      <div class="faq-a"><p>BOGO effectively gives you 50% off if both items cost the same. On differing prices, it's the cheaper item free.</p></div>
+    </div>
+
+    <h2>Related Calculators</h2>
+    <div class="grid grid-3" data-related-tools="discount-calculator"></div>
+  </article>
+
+  <div class="ad-placeholder ad-bottom" role="complementary" aria-label="Advertisement"><span>Advertisement</span></div>
+</div></main>
+
+<footer class="site-footer"><div class="container">
+  <div class="footer-grid">
+    <div class="footer-brand"><a class="logo" href="/" style="color:#fff;margin-bottom:12px;"><span class="logo-mark">CV</span><span data-site-name style="color:#fff">CalcVerse</span></a><p data-site-desc></p></div>
+    <div><h4>Company</h4><a href="/about.html">About Us</a><a href="/contact.html">Contact Us</a><a href="/blog/">Blog</a><a href="/sitemap.html">Sitemap</a></div>
+    <div><h4>Categories</h4><a href="/categories/financial/">Financial</a><a href="/categories/math/">Math</a><a href="/categories/health/">Health</a><a href="/categories/date-time/">Date &amp; Time</a><a href="/categories/conversion/">Converters</a><a href="/categories/engineering/">Engineering</a></div>
+    <div><h4>Legal</h4><a href="/privacy-policy.html">Privacy Policy</a><a href="/terms-of-service.html">Terms of Service</a><a href="/disclaimer.html">Disclaimer</a><a href="/cookie-policy.html">Cookie Policy</a></div>
+  </div>
+  <div class="footer-bottom"><span>&copy; <span data-year></span> <span data-site-name>CalcVerse</span>. All rights reserved.</span></div>
+</div></footer>
+
+<script src="/assets/js/config.js"></script>
+<script src="/assets/js/tools-data.js"></script>
+<script src="/assets/js/main.js"></script>
+<script src="/assets/js/calculators/discount.js"></script>
+</body>
+</html>
