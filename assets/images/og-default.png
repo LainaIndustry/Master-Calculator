@@ -1,0 +1,5 @@
+# Using ImageMagick (install from imagemagick.org)
+convert -background none -density 150 assets/images/og-default.svg -resize 1200x630 assets/images/og-default.png
+
+# Or using rsvg-convert
+rsvg-convert -w 1200 -h 630 assets/images/og-default.svg -o assets/images/og-default.png
