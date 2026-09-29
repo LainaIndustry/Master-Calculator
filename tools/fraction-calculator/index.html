@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Fraction Calculator — Add, Subtract, Multiply, Divide</title>
+<meta name="description" content="Free fraction calculator: add, subtract, multiply, and divide fractions with step-by-step simplification." />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://calcverse.example.com/tools/fraction-calculator/" />
+<link rel="stylesheet" href="/assets/css/style.css" />
+<link rel="stylesheet" href="/assets/css/ads.css" />
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header"><div class="container header-inner">
+  <a class="logo" href="/"><span class="logo-mark">CV</span><span data-site-name>CalcVerse</span></a>
+  <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false"><span></span><span></span><span></span></button>
+  <nav class="nav" aria-label="Primary">
+    <a href="/">Home</a><a href="/tools/">Tools</a>
+    <a href="/categories/financial/">Financial</a><a href="/categories/math/">Math</a>
+    <a href="/categories/health/">Health</a><a href="/categories/date-time/">Date &amp; Time</a>
+    <a href="/categories/conversion/">Converters</a><a href="/categories/engineering/">Engineering</a>
+    <a href="/blog/">Blog</a><a href="/about.html">About</a><a href="/contact.html">Contact</a>
+  </nav>
+</div></header>
+
+<main id="main"><div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <ol><li><a href="/">Home</a></li><li><a href="/categories/math/">Math Calculators</a></li><li><span aria-current="page">Fraction Calculator</span></li></ol>
+  </nav>
+
+  <h1>Fraction Calculator</h1>
+  <p style="max-width:720px;">Add, subtract, multiply, or divide two fractions. Results are simplified automatically and shown as both a fraction and a decimal.</p>
+
+  <div class="ad-placeholder ad-top" role="complementary" aria-label="Advertisement"><span>Advertisement</span></div>
+
+  <section class="calc-card">
+    <h2 class="mt-0">Calculate with Fractions</h2>
+    <div class="form-row">
+      <div class="form-group">
+        <label>Fraction 1</label>
+        <div style="display:flex;gap:6px;align-items:center;">
+          <input class="form-control" id="fr-n1" type="number" step="any" placeholder="Numerator" />
+          <span>/</span>
+          <input class="form-control" id="fr-d1" type="number" step="any" placeholder="Denominator" />
+        </div>
+      </div>
+      <div class="form-group" style="max-width:120px;">
+        <label for="fr-op">Operation</label>
+        <select class="form-control" id="fr-op">
+          <option value="+">+ (add)</option>
+          <option value="-">− (subtract)</option>
+          <option value="×">× (multiply)</option>
+          <option value="÷">÷ (divide)</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Fraction 2</label>
+        <div style="display:flex;gap:6px;align-items:center;">
+          <input class="form-control" id="fr-n2" type="number" step="any" placeholder="Numerator" />
+          <span>/</span>
+          <input class="form-control" id="fr-d2" type="number" step="any" placeholder="Denominator" />
+        </div>
+      </div>
+    </div>
+    <div class="form-actions">
+      <button class="btn" id="fr-calc" type="button">Calculate</button>
+      <button class="btn btn-secondary" id="fr-reset" type="button">Reset</button>
+    </div>
+    <div class="result-box" id="fr-result" role="status" aria-live="polite">
+      <div class="result-label">Result</div>
+      <div class="result-main" id="fr-main">—</div>
+      <div class="result-detail" id="fr-detail"></div>
+    </div>
+  </section>
+
+  <div class="ad-placeholder ad-middle" role="complementary" aria-label="Advertisement"><span>Advertisement</span></div>
+
+  <article class="prose">
+    <h2>What Is a Fraction Calculator?</h2>
+    <p>A fraction calculator performs arithmetic on fractions while keeping them in exact fraction form. Unlike a decimal calculator, it avoids rounding errors — 1/3 stays 1/3 instead of becoming 0.333333...</p>
+
+    <h2>How to Use It</h2>
+    <ol>
+      <li>Enter the numerator and denominator of the first fraction.</li>
+      <li>Choose the operation (+, −, ×, ÷).</li>
+      <li>Enter the second fraction.</li>
+      <li>Results update live.</li>
+    </ol>
+
+    <h2>Formulas</h2>
+    <pre><code>Addition:       a/b + c/d = (ad + bc) / bd
+Subtraction:    a/b − c/d = (ad − bc) / bd
+Multiplication: a/b × c/d = ac / bd
+Division:       a/b ÷ c/d = ad / bc</code></pre>
+    <p>After computing, we simplify by dividing numerator and denominator by their greatest common divisor (GCD).</p>
+
+    <h2>Worked Example</h2>
+    <p>2/3 + 1/4:</p>
+    <ul>
+      <li>Common denominator: 12</li>
+      <li>2/3 = 8/12; 1/4 = 3/12</li>
+      <li>8/12 + 3/12 = <strong>11/12</strong> (already simplified)</li>
+    </ul>
+
+    <h2>Understanding Your Result</h2>
+    <p>The main result is the simplified fraction. The detail box shows the unsimplified form and the decimal equivalent for convenience.</p>
+
+    <h2>Common Mistakes</h2>
+    <ul>
+      <li>Adding numerators and denominators directly (2/3 + 1/4 ≠ 3/7).</li>
+      <li>Forgetting to simplify — the unsimplified form is correct but less useful.</li>
+      <li>Dividing by zero — the calculator will show "Undefined".</li>
+      <li>Mixing up reciprocals for division: a/b ÷ c/d = a/b × d/c.</li>
+    </ul>
+
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false">Can I use mixed numbers like 2 ½?</button>
+      <div class="faq-a"><p>Convert them to improper fractions first: 2 ½ = 5/2.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false">What if the denominators are different?</button>
+      <div class="faq-a"><p>The formula handles it automatically — we cross-multiply.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false">Can fractions be negative?</button>
+      <div class="faq-a"><p>Yes. Enter a negative numerator (or denominator) and the calculator handles it correctly.</p></div>
+    </div>
+
+    <h2>Related Calculators</h2>
+    <div class="grid grid-3" data-related-tools="fraction-calculator"></div>
+  </article>
+
+  <div class="ad-placeholder ad-bottom" role="complementary" aria-label="Advertisement"><span>Advertisement</span></div>
+</div></main>
+
+<footer class="site-footer"><div class="container">
+  <div class="footer-grid">
+    <div class="footer-brand"><a class="logo" href="/" style="color:#fff;margin-bottom:12px;"><span class="logo-mark">CV</span><span data-site-name style="color:#fff">CalcVerse</span></a><p data-site-desc></p></div>
+    <div><h4>Company</h4><a href="/about.html">About Us</a><a href="/contact.html">Contact Us</a><a href="/blog/">Blog</a><a href="/sitemap.html">Sitemap</a></div>
+    <div><h4>Categories</h4><a href="/categories/financial/">Financial</a><a href="/categories/math/">Math</a><a href="/categories/health/">Health</a><a href="/categories/date-time/">Date &amp; Time</a><a href="/categories/conversion/">Converters</a><a href="/categories/engineering/">Engineering</a></div>
+    <div><h4>Legal</h4><a href="/privacy-policy.html">Privacy Policy</a><a href="/terms-of-service.html">Terms of Service</a><a href="/disclaimer.html">Disclaimer</a><a href="/cookie-policy.html">Cookie Policy</a></div>
+  </div>
+  <div class="footer-bottom"><span>&copy; <span data-year></span> <span data-site-name>CalcVerse</span>. All rights reserved.</span></div>
+</div></footer>
+
+<script src="/assets/js/config.js"></script>
+<script src="/assets/js/tools-data.js"></script>
+<script src="/assets/js/main.js"></script>
+<script src="/assets/js/calculators/fraction.js"></script>
+</body>
+</html>
