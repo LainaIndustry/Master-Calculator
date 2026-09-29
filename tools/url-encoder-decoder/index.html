@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>URL Encoder / Decoder — Percent Encoding Tool</title>
+<meta name="description" content="Free URL encoder and decoder: percent-encode or decode URLs and query strings safely." />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://calcverse.example.com/tools/url-encoder-decoder/" />
+<link rel="stylesheet" href="/assets/css/style.css" />
+<link rel="stylesheet" href="/assets/css/ads.css" />
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header"><div class="container header-inner">
+  <a class="logo" href="/"><span class="logo-mark">CV</span><span data-site-name>CalcVerse</span></a>
+  <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false"><span></span><span></span><span></span></button>
+  <nav class="nav" aria-label="Primary">
+    <a href="/">Home</a><a href="/tools/">Tools</a>
+    <a href="/categories/financial/">Financial</a><a href="/categories/math/">Math</a>
+    <a href="/categories/health/">Health</a><a href="/categories/date-time/">Date &amp; Time</a>
+    <a href="/categories/conversion/">Converters</a><a href="/categories/engineering/">Engineering</a>
+    <a href="/blog/">Blog</a><a href="/about.html">About</a><a href="/contact.html">Contact</a>
+  </nav>
+</div></header>
+
+<main id="main"><div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <ol><li><a href="/">Home</a></li><li><a href="/categories/developer/">Developer Tools</a></li><li><span aria-current="page">URL Encoder/Decoder</span></li></ol>
+  </nav>
+
+  <h1>URL Encoder / Decoder</h1>
+  <p style="max-width:720px;">Percent-encode text for safe use in URLs, or decode percent-encoded strings back to readable text. Runs entirely in your browser.</p>
+
+  <div class="ad-placeholder ad-top" role="complementary" aria-label="Advertisement"><span>Advertisement</span></div>
+
+  <section class="calc-card">
+    <h2 class="mt-0">Encode or Decode URL</h2>
+    <div class="form-group">
+      <label for="ue-input">Input</label>
+      <textarea class="form-control" id="ue-input" rows="5" placeholder="e.g. hello world &amp; special=chars"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="ue-output">Output</label>
+      <textarea class="form-control" id="ue-output" rows="5" readonly></textarea>
+    </div>
+    <p id="ue-status" style="font-size:0.9rem;min-height:1.2em;"></p>
+    <div class="form-actions">
+      <button class="btn" id="ue-encode" type="button">Encode</button>
+      <button class="btn" id="ue-decode" type="button">Decode</button>
+      <button class="btn btn-secondary" id="ue-copy" type="button">Copy</button>
+      <button class="btn btn-secondary" id="ue-reset" type="button">Reset</button>
+    </div>
+  </section>
+
+  <div class="ad-placeholder ad-middle" role="complementary" aria-label="Advertisement"><span>Advertisement</span></div>
+
+  <article class="prose">
+    <h2>Why URL Encode?</h2>
+    <p>URLs can only contain a limited set of characters. Characters like spaces, <code>&</code>, <code>?</code>, <code>#</code>, <code>=</code>, and non-ASCII letters must be percent-encoded (e.g. space becomes <code>%20</code>) so they aren't misinterpreted as part of the URL structure.</p>
+
+    <h2>How to Use It</h2>
+    <ol>
+      <li>Paste your text into the input.</li>
+      <li>Click <strong>Encode</strong> to percent-encode, or <strong>Decode</strong> to reverse it.</li>
+      <li>Copy the result.</li>
+    </ol>
+
+    <h2>Common Character Encodings</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Character</th><th>Encoded</th></tr></thead>
+        <tbody>
+          <tr><td>Space</td><td>%20</td></tr>
+          <tr><td>!</td><td>%21</td></tr>
+          <tr><td>#</td><td>%23</td></tr>
+          <tr><td>$</td><td>%24</td></tr>
+          <tr><td>&amp;</td><td>%26</td></tr>
+          <tr><td>+</td><td>%2B</td></tr>
+          <tr><td>=</td><td>%3D</td></tr>
+          <tr><td>?</td><td>%3F</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>Worked Example</h2>
+    <p>Text: <code>Hello World &amp; Friends</code></p>
+    <p>Encoded: <code>Hello%20World%20%26%20Friends</code></p>
+
+    <h2>encodeURIComponent vs encodeURI</h2>
+    <p>This tool uses <code>encodeURIComponent</code>, which encodes everything except unreserved characters. It's the right choice for encoding query string values or path components. <code>encodeURI</code> leaves URL structure characters (<code>:</code>, <code>/</code>, <code>?</code>, <code>#</code>, etc.) intact — useful for encoding a complete URL while keeping its structure.</p>
+
+    <h2>Common Mistakes</h2>
+    <ul>
+      <li>Encoding a full URL with encodeURIComponent — this breaks the URL by encoding its <code>/</code> and <code>?</code>.</li>
+      <li>Double-encoding (encoding an already-encoded string).</li>
+      <li>Forgetting that "+" in a query string often means a space in form data, but not in path segments.</li>
+    </ul>
+
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false">When should I use + instead of %20 for spaces?</button>
+      <div class="faq-a"><p>Only in <code>application/x-www-form-urlencoded</code> form submissions. In URLs and modern query strings, use %20.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false">Are non-ASCII characters encoded?</button>
+      <div class="faq-a"><p>Yes — UTF-8 bytes are percent-encoded. For example, é becomes %C3%A9.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false">Is my data uploaded?</button>
+      <div class="faq-a"><p>No. All encoding and decoding happens locally in your browser.</p></div>
+    </div>
+
+    <h2>Related Tools</h2>
+    <div class="grid grid-3" data-related-tools="url-encoder-decoder"></div>
+  </article>
+
+  <div class="ad-placeholder ad-bottom" role="complementary" aria-label="Advertisement"><span>Advertisement</span></div>
+</div></main>
+
+<footer class="site-footer"><div class="container">
+  <div class="footer-grid">
+    <div class="footer-brand"><a class="logo" href="/" style="color:#fff;margin-bottom:12px;"><span class="logo-mark">CV</span><span data-site-name style="color:#fff">CalcVerse</span></a><p data-site-desc></p></div>
+    <div><h4>Company</h4><a href="/about.html">About Us</a><a href="/contact.html">Contact Us</a><a href="/blog/">Blog</a><a href="/sitemap.html">Sitemap</a></div>
+    <div><h4>Categories</h4><a href="/categories/financial/">Financial</a><a href="/categories/math/">Math</a><a href="/categories/health/">Health</a><a href="/categories/date-time/">Date &amp; Time</a><a href="/categories/conversion/">Converters</a><a href="/categories/engineering/">Engineering</a></div>
+    <div><h4>Legal</h4><a href="/privacy-policy.html">Privacy Policy</a><a href="/terms-of-service.html">Terms of Service</a><a href="/disclaimer.html">Disclaimer</a><a href="/cookie-policy.html">Cookie Policy</a></div>
+  </div>
+  <div class="footer-bottom"><span>&copy; <span data-year></span> <span data-site-name>CalcVerse</span>. All rights reserved.</span></div>
+</div></footer>
+
+<script src="/assets/js/config.js"></script>
+<script src="/assets/js/tools-data.js"></script>
+<script src="/assets/js/main.js"></script>
+<script src="/assets/js/calculators/url-encoder.js"></script>
+</body>
+</html>
