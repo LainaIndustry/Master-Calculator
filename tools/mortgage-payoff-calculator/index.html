@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Mortgage Payoff Calculator — Save Years with Extra Payments</title>
+<meta name="description" content="Free mortgage payoff calculator: see how extra monthly payments shorten your mortgage and how much interest you save." />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://calcverse.example.com/tools/mortgage-payoff-calculator/" />
+<link rel="stylesheet" href="/assets/css/style.css" />
+<link rel="stylesheet" href="/assets/css/ads.css" />
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header"><div class="container header-inner">
+  <a class="logo" href="/"><span class="logo-mark">CV</span><span data-site-name>CalcVerse</span></a>
+  <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false"><span></span><span></span><span></span></button>
+  <nav class="nav" aria-label="Primary">
+    <a href="/">Home</a><a href="/tools/">Tools</a>
+    <a href="/categories/financial/">Financial</a><a href="/categories/math/">Math</a>
+    <a href="/categories/health/">Health</a><a href="/categories/date-time/">Date &amp; Time</a>
+    <a href="/categories/conversion/">Converters</a><a href="/categories/engineering/">Engineering</a>
+    <a href="/blog/">Blog</a><a href="/about.html">About</a><a href="/contact.html">Contact</a>
+  </nav>
+</div></header>
+
+<main id="main"><div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <ol><li><a href="/">Home</a></li><li><a href="/categories/financial/">Financial Calculators</a></li><li><span aria-current="page">Mortgage Payoff Calculator</span></li></ol>
+  </nav>
+
+  <h1>Mortgage Payoff Calculator</h1>
+  <p style="max-width:720px;">See how adding extra to your monthly payment shortens your loan term and reduces total interest. Small extra payments early on save the most.</p>
+
+  <div class="ad-placeholder ad-top" role="complementary" aria-label="Advertisement"><span>Advertisement</span></div>
+
+  <section class="calc-card">
+    <h2 class="mt-0">Calculate Your Payoff</h2>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="lp-amount">Loan balance</label>
+        <div class="input-group"><input class="form-control" id="lp-amount" type="number" min="0" step="1000" placeholder="e.g. 250000" /><span class="unit">$</span></div>
+      </div>
+      <div class="form-group">
+        <label for="lp-rate">Interest rate (APR)</label>
+        <div class="input-group"><input class="form-control" id="lp-rate" type="number" min="0" step="0.01" placeholder="e.g. 6.5" /><span class="unit">%</span></div>
+      </div>
+      <div class="form-group">
+        <label for="lp-years">Remaining term</label>
+        <div class="input-group"><input class="form-control" id="lp-years" type="number" min="1" step="1" placeholder="e.g. 30" /><span class="unit">yrs</span></div>
+      </div>
+      <div class="form-group">
+        <label for="lp-extra">Extra per month</label>
+        <div class="input-group"><input class="form-control" id="lp-extra" type="number" min="0" step="10" placeholder="e.g. 200" /><span class="unit">$</span></div>
+      </div>
+    </div>
+    <div class="form-actions">
+      <button class="btn" id="lp-calc" type="button">Calculate</button>
+      <button class="btn btn-secondary" id="lp-reset" type="button">Reset</button>
+    </div>
+    <div class="result-box" id="lp-result" role="status" aria-live="polite">
+      <div class="result-label">New monthly payment</div>
+      <div class="result-main" id="lp-main">—</div>
+      <div class="result-detail" id="lp-detail"></div>
+    </div>
+  </section>
+
+  <div class="ad-placeholder ad-middle" role="complementary" aria-label="Advertisement"><span>Advertisement</span></div>
+
+  <article class="prose">
+    <h2>How Extra Payments Help</h2>
+    <p>Every extra dollar you pay goes straight to principal. Reducing the balance means less interest accrues next month, which means more of your next payment goes to principal, and so on. This compounding effect is why even small extra payments save thousands over a mortgage's life.</p>
+
+    <h2>How to Use This Calculator</h2>
+    <ol>
+      <li>Enter your current <strong>loan balance</strong>.</li>
+      <li>Enter your <strong>interest rate</strong>.</li>
+      <li>Enter the <strong>remaining term</strong> in years.</li>
+      <li>Enter any <strong>extra monthly payment</strong> you plan to make.</li>
+      <li>Click Calculate.</li>
+    </ol>
+
+    <h2>Formula</h2>
+    <p>Base monthly payment: <code>M = P × [r(1+r)ⁿ] ÷ [(1+r)ⁿ − 1]</code></p>
+    <p>With extra: simulate the loan month by month applying <code>M + extra</code> to the balance until it hits zero.</p>
+
+    <h2>Worked Example</h2>
+    <p>$250,000 mortgage at 6.5% for 30 years:</p>
+    <ul>
+      <li>Base payment: $1,580.17/month</li>
+      <li>Extra: $200/month</li>
+      <li>New payoff time: ~24 years, 2 months (vs 30 years)</li>
+      <li>Interest saved: ~$130,000</li>
+    </ul>
+
+    <h2>Understanding Your Result</h2>
+    <p>The result shows your new monthly payment and how much faster the loan will be repaid. The detail box shows the exact interest savings and time saved — the two numbers that matter most.</p>
+
+    <h2>Common Mistakes</h2>
+    <ul>
+      <li>Forgetting to earmark extra payments as principal-only. Without this, some lenders apply them to future scheduled payments, delaying rather than reducing interest.</li>
+      <li>Prioritizing mortgage prepayment over higher-interest debt — credit cards at 20% should come first.</li>
+      <li>Depleting emergency savings to make extra payments.</li>
+      <li>Ignoring prepayment penalties (rare but real).</li>
+    </ul>
+
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false">Should I pay extra on my mortgage or invest?</button>
+      <div class="faq-a"><p>If your mortgage rate is below expected market returns (say, 4% vs 7%), investing often wins mathematically. But paying off debt is a guaranteed return and can be psychologically valuable. Consider both.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false">Does the extra payment need to be monthly?</button>
+      <div class="faq-a"><p>No. A single lump sum annually, or biweekly payments, achieve similar savings. What matters is total extra principal per year.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false">Will my lender charge a penalty?</button>
+      <div class="faq-a"><p>Most US mortgages don't, but check your loan docs. Some older or specialized loans do.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false">Should I make biweekly payments instead?</button>
+      <div class="faq-a"><p>Biweekly = 26 half-payments = 13 full payments per year = one extra monthly payment annually. Similar effect to extra monthly payments.</p></div>
+    </div>
+
+    <h2>Related Calculators</h2>
+    <div class="grid grid-3" data-related-tools="mortgage-payoff-calculator"></div>
+  </article>
+
+  <div class="ad-placeholder ad-bottom" role="complementary" aria-label="Advertisement"><span>Advertisement</span></div>
+</div></main>
+
+<footer class="site-footer"><div class="container">
+  <div class="footer-grid">
+    <div class="footer-brand"><a class="logo" href="/" style="color:#fff;margin-bottom:12px;"><span class="logo-mark">CV</span><span data-site-name style="color:#fff">CalcVerse</span></a><p data-site-desc></p></div>
+    <div><h4>Company</h4><a href="/about.html">About Us</a><a href="/contact.html">Contact Us</a><a href="/blog/">Blog</a><a href="/sitemap.html">Sitemap</a></div>
+    <div><h4>Categories</h4><a href="/categories/financial/">Financial</a><a href="/categories/math/">Math</a><a href="/categories/health/">Health</a><a href="/categories/date-time/">Date &amp; Time</a><a href="/categories/conversion/">Converters</a><a href="/categories/engineering/">Engineering</a></div>
+    <div><h4>Legal</h4><a href="/privacy-policy.html">Privacy Policy</a><a href="/terms-of-service.html">Terms of Service</a><a href="/disclaimer.html">Disclaimer</a><a href="/cookie-policy.html">Cookie Policy</a></div>
+  </div>
+  <div class="footer-bottom"><span>&copy; <span data-year></span> <span data-site-name>CalcVerse</span>. All rights reserved.</span></div>
+</div></footer>
+
+<script src="/assets/js/config.js"></script>
+<script src="/assets/js/tools-data.js"></script>
+<script src="/assets/js/main.js"></script>
+<script src="/assets/js/calculators/loan-payoff.js"></script>
+</body>
+</html>
