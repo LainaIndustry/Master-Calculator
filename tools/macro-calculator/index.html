@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Macro Calculator — Protein, Carbs &amp; Fat</title>
+<meta name="description" content="Free macro calculator: get daily protein, carbohydrate, and fat targets based on your calorie needs and goal." />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://calcverse.example.com/tools/macro-calculator/" />
+<link rel="stylesheet" href="/assets/css/style.css" />
+<link rel="stylesheet" href="/assets/css/ads.css" />
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header"><div class="container header-inner">
+  <a class="logo" href="/"><span class="logo-mark">CV</span><span data-site-name>CalcVerse</span></a>
+  <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false"><span></span><span></span><span></span></button>
+  <nav class="nav" aria-label="Primary">
+    <a href="/">Home</a><a href="/tools/">Tools</a>
+    <a href="/categories/financial/">Financial</a><a href="/categories/math/">Math</a>
+    <a href="/categories/health/">Health</a><a href="/categories/date-time/">Date &amp; Time</a>
+    <a href="/categories/conversion/">Converters</a><a href="/categories/engineering/">Engineering</a>
+    <a href="/blog/">Blog</a><a href="/about.html">About</a><a href="/contact.html">Contact</a>
+  </nav>
+</div></header>
+
+<main id="main"><div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <ol><li><a href="/">Home</a></li><li><a href="/categories/health/">Health Calculators</a></li><li><span aria-current="page">Macro Calculator</span></li></ol>
+  </nav>
+
+  <h1>Macro Calculator</h1>
+  <p style="max-width:720px;">Get daily protein, carbohydrate, and fat targets based on your calorie goal and dietary approach.</p>
+
+  <div class="ad-placeholder ad-top" role="complementary" aria-label="Advertisement"><span>Advertisement</span></div>
+
+  <section class="calc-card">
+    <h2 class="mt-0">Calculate Your Macros</h2>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="mc-cal">Daily calorie target</label>
+        <div class="input-group"><input class="form-control" id="mc-cal" type="number" min="0" step="50" placeholder="e.g. 2000" /><span class="unit">cal</span></div>
+      </div>
+      <div class="form-group">
+        <label for="mc-goal">Goal</label>
+        <select class="form-control" id="mc-goal">
+          <option value="balanced" selected>Balanced (30/40/30)</option>
+          <option value="lowcarb">Low carb (35/25/40)</option>
+          <option value="highcarb">High carb (25/55/20)</option>
+          <option value="muscle">Muscle gain (35/45/20)</option>
+          <option value="fatloss">Fat loss (40/30/30)</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="mc-weight">Body weight (optional)</label>
+        <div class="input-group"><input class="form-control" id="mc-weight" type="number" min="0" step="0.1" placeholder="e.g. 70" /><span class="unit">kg</span></div>
+      </div>
+    </div>
+    <div class="form-actions">
+      <button class="btn" id="mc-calc" type="button">Calculate</button>
+      <button class="btn btn-secondary" id="mc-reset" type="button">Reset</button>
+    </div>
+    <div class="result-box" id="mc-result"><div class="result-label">Daily macros</div><div class="result-main" id="mc-main">—</div><div class="result-detail" id="mc-detail"></div></div>
+  </section>
+
+  <div class="ad-placeholder ad-middle" role="complementary" aria-label="Advertisement"><span>Advertisement</span></div>
+
+  <article class="prose">
+    <h2>What Are Macros?</h2>
+    <p>"Macros" (macronutrients) are the three main categories of nutrients that provide calories:</p>
+    <ul>
+      <li><strong>Protein</strong> — 4 cal/g. Builds and preserves muscle, keeps you full.</li>
+      <li><strong>Carbohydrates</strong> — 4 cal/g. Main fuel for exercise.</li>
+      <li><strong>Fat</strong> — 9 cal/g. Hormones, cell membranes, absorption of vitamins.</li>
+    </ul>
+
+    <h2>How to Use This Calculator</h2>
+    <ol>
+      <li>Enter your daily calorie target (from our TDEE Calculator, adjusted for goal).</li>
+      <li>Pick a diet style (balanced, low-carb, etc.).</li>
+      <li>Optionally enter body weight to see protein per kg.</li>
+    </ol>
+
+    <h2>Formula</h2>
+    <pre><code>Protein (g) = (calories × protein%) ÷ 4
+Carbs (g)   = (calories × carb%) ÷ 4
+Fat (g)     = (calories × fat%) ÷ 9</code></pre>
+
+    <h2>Worked Example</h2>
+    <p>2000 calories, balanced (30/40/30):</p>
+    <ul>
+      <li>Protein = 2000 × 0.30 ÷ 4 = 150 g</li>
+      <li>Carbs = 2000 × 0.40 ÷ 4 = 200 g</li>
+      <li>Fat = 2000 × 0.30 ÷ 9 = 67 g</li>
+    </ul>
+
+    <h2>Recommended Protein Intake</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Goal</th><th>Protein per kg body weight</th></tr></thead>
+        <tbody>
+          <tr><td>Sedentary</td><td>0.8–1.0 g/kg</td></tr>
+          <tr><td>Recreational exerciser</td><td>1.4–1.7 g/kg</td></tr>
+          <tr><td>Strength athlete</td><td>1.6–2.2 g/kg</td></tr>
+          <tr><td>Cutting (preserve muscle)</td><td>2.0–2.4 g/kg</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>Common Mistakes</h2>
+    <ul>
+      <li>Not hitting protein minimums — the most important macro for body composition.</li>
+      <li>Cutting fat too low (&lt; 0.5 g/kg) — can impair hormones.</li>
+      <li>Chasing "perfect" ratios when total calories matter more.</li>
+      <li>Ignoring food quality — 200 g carbs from soda ≠ 200 g from oats.</li>
+    </ul>
+
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false">Which macro split is best?</button>
+      <div class="faq-a"><p>Whatever you can sustain. Protein is the most important — hit 1.6–2.2 g/kg. Fat should stay above ~0.5 g/kg. Fill the rest with carbs based on activity.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false">Do macros matter more than calories?</button>
+      <div class="faq-a"><p>For weight change, calories are king. For body composition (muscle vs fat), protein and training matter a lot.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false">Can I eat the same macros every day?</button>
+      <div class="faq-a"><p>You can, but variety helps with micronutrients. Aim for weekly averages more than daily perfection.</p></div>
+    </div>
+
+    <h2>Related Calculators</h2>
+    <div class="grid grid-3" data-related-tools="macro-calculator"></div>
+  </article>
+
+  <div class="ad-placeholder ad-bottom" role="complementary" aria-label="Advertisement"><span>Advertisement</span></div>
+</div></main>
+
+<footer class="site-footer"><div class="container">
+  <div class="footer-grid">
+    <div class="footer-brand"><a class="logo" href="/" style="color:#fff;margin-bottom:12px;"><span class="logo-mark">CV</span><span data-site-name style="color:#fff">CalcVerse</span></a><p data-site-desc></p></div>
+    <div><h4>Company</h4><a href="/about.html">About Us</a><a href="/contact.html">Contact Us</a><a href="/blog/">Blog</a><a href="/sitemap.html">Sitemap</a></div>
+    <div><h4>Categories</h4><a href="/categories/financial/">Financial</a><a href="/categories/math/">Math</a><a href="/categories/health/">Health</a><a href="/categories/date-time/">Date &amp; Time</a><a href="/categories/conversion/">Converters</a><a href="/categories/engineering/">Engineering</a></div>
+    <div><h4>Legal</h4><a href="/privacy-policy.html">Privacy Policy</a><a href="/terms-of-service.html">Terms of Service</a><a href="/disclaimer.html">Disclaimer</a><a href="/cookie-policy.html">Cookie Policy</a></div>
+  </div>
+  <div class="footer-bottom"><span>&copy; <span data-year></span> <span data-site-name>CalcVerse</span>. All rights reserved.</span></div>
+</div></footer>
+
+<script src="/assets/js/config.js"></script>
+<script src="/assets/js/tools-data.js"></script>
+<script src="/assets/js/main.js"></script>
+<script src="/assets/js/calculators/macro.js"></script>
+</body>
+</html>
