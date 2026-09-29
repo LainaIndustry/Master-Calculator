@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Length Converter — Meters, Feet, Inches, Miles, km</title>
+<meta name="description" content="Free length converter: instantly convert between meters, centimeters, kilometers, inches, feet, yards, miles, and nautical miles." />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://calcverse.example.com/tools/length-converter/" />
+<link rel="stylesheet" href="/assets/css/style.css" />
+<link rel="stylesheet" href="/assets/css/ads.css" />
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="logo" href="/"><span class="logo-mark">CV</span><span data-site-name>CalcVerse</span></a>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="nav" aria-label="Primary">
+      <a href="/">Home</a><a href="/tools/">Tools</a>
+      <a href="/categories/financial/">Financial</a><a href="/categories/math/">Math</a>
+      <a href="/categories/health/">Health</a><a href="/categories/date-time/">Date &amp; Time</a>
+      <a href="/categories/conversion/">Converters</a><a href="/categories/engineering/">Engineering</a>
+      <a href="/blog/">Blog</a><a href="/about.html">About</a><a href="/contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main"><div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <ol><li><a href="/">Home</a></li><li><a href="/categories/conversion/">Converters</a></li><li><span aria-current="page">Length Converter</span></li></ol>
+  </nav>
+
+  <h1>Length Converter</h1>
+  <p style="max-width:720px;">Convert between metric and imperial length units — millimeters, centimeters, meters, kilometers, inches, feet, yards, miles, and nautical miles. Uses exact conversion factors.</p>
+
+  <div class="ad-placeholder ad-top" role="complementary" aria-label="Advertisement"><span>Advertisement</span></div>
+
+  <section class="calc-card">
+    <h2 class="mt-0">Convert Length</h2>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="lc-input">Value</label>
+        <input class="form-control" id="lc-input" type="number" step="any" placeholder="e.g. 100" />
+      </div>
+      <div class="form-group">
+        <label for="lc-from">From</label>
+        <select class="form-control" id="lc-from">
+          <option value="mm">Millimeters (mm)</option>
+          <option value="cm">Centimeters (cm)</option>
+          <option value="m" selected>Meters (m)</option>
+          <option value="km">Kilometers (km)</option>
+          <option value="in">Inches (in)</option>
+          <option value="ft">Feet (ft)</option>
+          <option value="yd">Yards (yd)</option>
+          <option value="mi">Miles (mi)</option>
+          <option value="nmi">Nautical miles (nmi)</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="lc-to">To</label>
+        <select class="form-control" id="lc-to">
+          <option value="mm">Millimeters (mm)</option>
+          <option value="cm">Centimeters (cm)</option>
+          <option value="m">Meters (m)</option>
+          <option value="km">Kilometers (km)</option>
+          <option value="in">Inches (in)</option>
+          <option value="ft" selected>Feet (ft)</option>
+          <option value="yd">Yards (yd)</option>
+          <option value="mi">Miles (mi)</option>
+          <option value="nmi">Nautical miles (nmi)</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-actions">
+      <button class="btn" id="lc-calc" type="button">Convert</button>
+      <button class="btn btn-secondary" id="lc-reset" type="button">Reset</button>
+    </div>
+    <div class="result-box" id="lc-result" role="status" aria-live="polite">
+      <div class="result-label">Result</div>
+      <div class="result-main" id="lc-main">—</div>
+      <div class="result-detail" id="lc-detail"></div>
+    </div>
+  </section>
+
+  <div class="ad-placeholder ad-middle" role="complementary" aria-label="Advertisement"><span>Advertisement</span></div>
+
+  <article class="prose">
+    <h2>What Is a Length Converter?</h2>
+    <p>It converts a length value from one unit to another. Length conversion is common in cooking, construction, engineering, travel, sports, and science.</p>
+
+    <h2>How to Use It</h2>
+    <ol>
+      <li>Enter the value you want to convert.</li>
+      <li>Select the <strong>from</strong> unit.</li>
+      <li>Select the <strong>to</strong> unit.</li>
+      <li>Results update live.</li>
+    </ol>
+
+    <h2>Conversion Factors</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Unit</th><th>In meters</th></tr></thead>
+        <tbody>
+          <tr><td>1 millimeter (mm)</td><td>0.001 m</td></tr>
+          <tr><td>1 centimeter (cm)</td><td>0.01 m</td></tr>
+          <tr><td>1 meter (m)</td><td>1 m</td></tr>
+          <tr><td>1 kilometer (km)</td><td>1,000 m</td></tr>
+          <tr><td>1 inch (in)</td><td>0.0254 m</td></tr>
+          <tr><td>1 foot (ft)</td><td>0.3048 m</td></tr>
+          <tr><td>1 yard (yd)</td><td>0.9144 m</td></tr>
+          <tr><td>1 mile (mi)</td><td>1,609.344 m</td></tr>
+          <tr><td>1 nautical mile (nmi)</td><td>1,852 m</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>Example</h2>
+    <p>Convert 100 meters to feet:</p>
+    <p>100 m × (1 ft / 0.3048 m) = <strong>328.084 ft</strong></p>
+
+    <h2>Understanding Your Result</h2>
+    <p>The detail box shows the value in meters (the base unit) so you can verify the conversion. Rounding is applied to keep results readable while preserving precision.</p>
+
+    <h2>Common Mistakes</h2>
+    <ul>
+      <li>Confusing miles and nautical miles (a nautical mile is about 15% longer).</li>
+      <li>Rounding intermediate results too aggressively, accumulating errors.</li>
+      <li>Mixing metric and imperial in a single calculation without converting first.</li>
+    </ul>
+
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false">Are the conversion factors exact?</button>
+      <div class="faq-a"><p>Yes for imperial↔metric — 1 inch = 2.54 cm exactly, since 1959. Metric prefixes are exact by definition.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false">What's a nautical mile?</button>
+      <div class="faq-a"><p>A unit used in navigation, equal to one minute of latitude. Defined as exactly 1,852 meters.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false">Why is the US on imperial units?</button>
+      <div class="faq-a"><p>Historical and cultural reasons. The US officially adopted the metric system in 1975, but customary units remain in everyday use.</p></div>
+    </div>
+
+    <h2>Related Calculators</h2>
+    <div class="grid grid-3" data-related-tools="length-converter"></div>
+  </article>
+
+  <div class="ad-placeholder ad-bottom" role="complementary" aria-label="Advertisement"><span>Advertisement</span></div>
+</div></main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="logo" href="/" style="color:#fff;margin-bottom:12px;"><span class="logo-mark">CV</span><span data-site-name style="color:#fff">CalcVerse</span></a>
+        <p data-site-desc></p>
+      </div>
+      <div><h4>Company</h4><a href="/about.html">About Us</a><a href="/contact.html">Contact Us</a><a href="/blog/">Blog</a><a href="/sitemap.html">Sitemap</a></div>
+      <div><h4>Categories</h4><a href="/categories/financial/">Financial</a><a href="/categories/math/">Math</a><a href="/categories/health/">Health</a><a href="/categories/date-time/">Date &amp; Time</a><a href="/categories/conversion/">Converters</a><a href="/categories/engineering/">Engineering</a></div>
+      <div><h4>Legal</h4><a href="/privacy-policy.html">Privacy Policy</a><a href="/terms-of-service.html">Terms of Service</a><a href="/disclaimer.html">Disclaimer</a><a href="/cookie-policy.html">Cookie Policy</a></div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span data-year></span> <span data-site-name>CalcVerse</span>. All rights reserved.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/js/config.js"></script>
+<script src="/assets/js/tools-data.js"></script>
+<script src="/assets/js/main.js"></script>
+<script src="/assets/js/calculators/length-converter.js"></script>
+</body>
+</html>
