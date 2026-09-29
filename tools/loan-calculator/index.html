@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Loan Calculator — Monthly Payment &amp; Amortization</title>
+<meta name="description" content="Free loan calculator: compute monthly payments, total interest, and view a full amortization schedule for any loan." />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://calcverse.example.com/tools/loan-calculator/" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Loan Calculator — Monthly Payment &amp; Amortization" />
+<meta property="og:description" content="Compute monthly payments, total interest, and amortization." />
+<meta property="og:url" content="https://calcverse.example.com/tools/loan-calculator/" />
+<link rel="stylesheet" href="/assets/css/style.css" />
+<link rel="stylesheet" href="/assets/css/ads.css" />
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"BreadcrumbList",
+  "itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://calcverse.example.com/"},
+    {"@type":"ListItem","position":2,"name":"Financial Calculators","item":"https://calcverse.example.com/categories/financial/"},
+    {"@type":"ListItem","position":3,"name":"Loan Calculator","item":"https://calcverse.example.com/tools/loan-calculator/"}
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="logo" href="/"><span class="logo-mark" aria-hidden="true">CV</span><span data-site-name>CalcVerse</span></a>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="nav" aria-label="Primary">
+      <a href="/">Home</a><a href="/tools/">Tools</a>
+      <a href="/categories/financial/">Financial</a><a href="/categories/math/">Math</a>
+      <a href="/categories/health/">Health</a><a href="/categories/date-time/">Date &amp; Time</a>
+      <a href="/categories/conversion/">Converters</a><a href="/categories/engineering/">Engineering</a>
+      <a href="/blog/">Blog</a><a href="/about.html">About</a><a href="/contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="/">Home</a></li>
+        <li><a href="/categories/financial/">Financial Calculators</a></li>
+        <li><span aria-current="page">Loan Calculator</span></li>
+      </ol>
+    </nav>
+
+    <h1>Loan Calculator</h1>
+    <p style="max-width:720px;">Estimate monthly payments, total interest, and view a detailed amortization schedule. Enter the loan amount, annual interest rate, and term in years. All calculations run locally in your browser.</p>
+
+    <!-- ADSENSE PLACEMENT: replace this placeholder after approval -->
+    <div class="ad-placeholder ad-top" role="complementary" aria-label="Advertisement"><span>Advertisement</span></div>
+
+    <section class="calc-card" aria-labelledby="calc-h">
+      <h2 id="calc-h" class="mt-0">Calculate Your Loan</h2>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="loan-amount">Loan amount</label>
+          <div class="input-group">
+            <input class="form-control" id="loan-amount" type="number" min="0" step="100" placeholder="e.g. 25000" />
+            <span class="unit">$</span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="loan-rate">Annual interest rate</label>
+          <div class="input-group">
+            <input class="form-control" id="loan-rate" type="number" min="0" step="0.01" placeholder="e.g. 6.5" />
+            <span class="unit">%</span>
+          </div>
+          <span class="hint">Use 0 for interest-free loans.</span>
+        </div>
+        <div class="form-group">
+          <label for="loan-years">Term (years)</label>
+          <div class="input-group">
+            <input class="form-control" id="loan-years" type="number" min="0" step="1" placeholder="e.g. 5" />
+            <span class="unit">yrs</span>
+          </div>
+        </div>
+      </div>
+      <div class="form-actions">
+        <button class="btn" id="loan-calc" type="button">Calculate</button>
+        <button class="btn btn-secondary" id="loan-reset" type="button">Reset</button>
+      </div>
+
+      <div class="result-box" id="loan-result" role="status" aria-live="polite">
+        <div class="result-label">Monthly payment</div>
+        <div class="result-main" id="loan-main">—</div>
+        <div class="result-detail" id="loan-detail"></div>
+      </div>
+
+      <h3>Amortization Schedule</h3>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>#</th><th>Payment</th><th>Principal</th><th>Interest</th><th>Balance</th></tr>
+          </thead>
+          <tbody id="amort-body"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ADSENSE PLACEMENT: replace this placeholder after approval -->
+    <div class="ad-placeholder ad-middle" role="complementary" aria-label="Advertisement"><span>Advertisement</span></div>
+
+    <article class="prose">
+      <h2>What Is a Loan Calculator?</h2>
+      <p>A loan calculator determines the fixed monthly payment needed to fully repay a loan over a given term at a given interest rate. It also shows how much of that payment goes to interest vs principal, and the total cost of borrowing.</p>
+
+      <h2>How to Use the Loan Calculator</h2>
+      <ol>
+        <li>Enter the <strong>loan amount</strong> (principal).</li>
+        <li>Enter the <strong>annual interest rate</strong> as a percentage.</li>
+        <li>Enter the <strong>term in years</strong>.</li>
+        <li>Click <strong>Calculate</strong>. Your monthly payment, total paid, and total interest appear instantly, along with the amortization table.</li>
+      </ol>
+
+      <h2>Loan Payment Formula</h2>
+      <pre><code>M = P × [ r(1+r)^n ] ÷ [ (1+r)^n − 1 ]</code></pre>
+      <ul>
+        <li><strong>M</strong> = monthly payment</li>
+        <li><strong>P</strong> = principal (loan amount)</li>
+        <li><strong>r</strong> = monthly interest rate (annual rate ÷ 12 ÷ 100)</li>
+        <li><strong>n</strong> = total number of payments (years × 12)</li>
+      </ul>
+
+      <h2>How the Calculation Works</h2>
+      <p>Each payment is fixed, but its composition shifts over time. Early payments are mostly interest; later payments are mostly principal. The formula above solves for the payment that makes the remaining balance exactly zero at the end of the term. Interest for each period is computed as <code>balance × r</code>, and the principal portion is <code>M − interest</code>.</p>
+
+      <h2>Example Calculation</h2>
+      <p>A $25,000 loan at 6.5% over 5 years:</p>
+      <ul>
+        <li>r = 0.065 / 12 = 0.005417</li>
+        <li>n = 60</li>
+        <li>M = 25000 × [0.005417 × (1.005417)^60] ÷ [(1.005417)^60 − 1]</li>
+        <li>M ≈ <strong>$489.13/month</strong></li>
+        <li>Total paid ≈ $29,347.80 — interest ≈ $4,347.80</li>
+      </ul>
+
+      <h2>Understanding Your Result</h2>
+      <p>The monthly payment is the amount due each month. The amortization table shows how the balance drops over time. Notice how early rows have large interest and small principal — that's the nature of amortized loans. Making extra principal payments can dramatically reduce total interest.</p>
+
+      <h2>Common Mistakes</h2>
+      <ul>
+        <li>Using the annual rate in the monthly formula. Always divide by 12.</li>
+        <li>Forgetting about fees, insurance, or taxes that some lenders include in "monthly payment".</li>
+        <li>Confusing APR with the nominal interest rate — APR includes fees.</li>
+        <li>Assuming a fixed rate when the loan has a variable rate.</li>
+      </ul>
+
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">What formula do you use?</button>
+        <div class="faq-a"><p>Standard amortized loan formula: M = P × [ r(1+r)^n ] ÷ [ (1+r)^n − 1 ], where r is the monthly rate and n is the number of months.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">How do extra payments affect the loan?</button>
+        <div class="faq-a"><p>Extra principal payments reduce the balance faster, which reduces interest and can shorten the term. Use our Mortgage Payoff Calculator to model this.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Does this calculator include taxes or insurance?</button>
+        <div class="faq-a"><p>No — this calculator focuses on principal and interest only. Add taxes, insurance, and fees separately for a full monthly cost.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">What's the difference between interest rate and APR?</button>
+        <div class="faq-a"><p>The interest rate is the cost of borrowing the principal. APR includes the interest rate plus lender fees, giving a more complete cost picture.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Can I use this for any type of loan?</button>
+        <div class="faq-a"><p>Yes — auto, personal, student, business, and mortgage loans all use the same amortization math. Just enter the appropriate amount, rate, and term.</p></div>
+      </div>
+
+      <h2>Related Calculators</h2>
+      <div class="grid grid-3" data-related-tools="loan-calculator"></div>
+
+      <h2>Related Articles</h2>
+      <ul>
+        <li><a href="/blog/how-to-use-a-loan-calculator.html">How to Use a Loan Calculator</a></li>
+        <li><a href="/blog/how-loan-amortization-works.html">How Loan Amortization Works</a></li>
+      </ul>
+
+      <div class="callout warn">
+        <strong>Financial disclaimer:</strong> Results are estimates based on the inputs you provide. Actual rates, fees, taxes, and lender terms may differ. Always verify important financial decisions with a qualified professional.
+      </div>
+    </article>
+
+    <!-- ADSENSE PLACEMENT: replace this placeholder after approval -->
+    <div class="ad-placeholder ad-bottom" role="complementary" aria-label="Advertisement"><span>Advertisement</span></div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="logo" href="/" style="color:#fff;margin-bottom:12px;"><span class="logo-mark" aria-hidden="true">CV</span><span data-site-name style="color:#fff;">CalcVerse</span></a>
+        <p data-site-desc></p>
+      </div>
+      <div><h4>Company</h4><a href="/about.html">About Us</a><a href="/contact.html">Contact Us</a><a href="/blog/">Blog</a><a href="/sitemap.html">Sitemap</a></div>
+      <div><h4>Categories</h4><a href="/categories/financial/">Financial</a><a href="/categories/math/">Math</a><a href="/categories/health/">Health</a><a href="/categories/date-time/">Date &amp; Time</a><a href="/categories/conversion/">Converters</a><a href="/categories/engineering/">Engineering</a></div>
+      <div><h4>Legal</h4><a href="/privacy-policy.html">Privacy Policy</a><a href="/terms-of-service.html">Terms of Service</a><a href="/disclaimer.html">Disclaimer</a><a href="/cookie-policy.html">Cookie Policy</a></div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span data-year></span> <span data-site-name>CalcVerse</span>. All rights reserved.</span>
+      <span>Made for people who need quick, accurate answers.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/js/config.js"></script>
+<script src="/assets/js/tools-data.js"></script>
+<script src="/assets/js/main.js"></script>
+<script src="/assets/js/calculators/loan.js"></script>
+</body>
+</html>
