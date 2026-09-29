@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Standard Deviation Calculator — Population &amp; Sample</title>
+<meta name="description" content="Free standard deviation calculator: compute population and sample standard deviation, variance, mean, and count." />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://calcverse.example.com/tools/standard-deviation-calculator/" />
+<link rel="stylesheet" href="/assets/css/style.css" />
+<link rel="stylesheet" href="/assets/css/ads.css" />
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header"><div class="container header-inner">
+  <a class="logo" href="/"><span class="logo-mark">CV</span><span data-site-name>CalcVerse</span></a>
+  <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false"><span></span><span></span><span></span></button>
+  <nav class="nav" aria-label="Primary">
+    <a href="/">Home</a><a href="/tools/">Tools</a>
+    <a href="/categories/financial/">Financial</a><a href="/categories/math/">Math</a>
+    <a href="/categories/health/">Health</a><a href="/categories/date-time/">Date &amp; Time</a>
+    <a href="/categories/conversion/">Converters</a><a href="/categories/engineering/">Engineering</a>
+    <a href="/blog/">Blog</a><a href="/about.html">About</a><a href="/contact.html">Contact</a>
+  </nav>
+</div></header>
+
+<main id="main"><div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <ol><li><a href="/">Home</a></li><li><a href="/categories/math/">Math Calculators</a></li><li><span aria-current="page">Standard Deviation Calculator</span></li></ol>
+  </nav>
+
+  <h1>Standard Deviation Calculator</h1>
+  <p style="max-width:720px;">Enter your numbers separated by commas or spaces. Choose population or sample. Get standard deviation, variance, mean, and count.</p>
+
+  <div class="ad-placeholder ad-top" role="complementary" aria-label="Advertisement"><span>Advertisement</span></div>
+
+  <section class="calc-card">
+    <h2 class="mt-0">Calculate Standard Deviation</h2>
+    <div class="form-group">
+      <label for="sd-input">Data set</label>
+      <textarea class="form-control" id="sd-input" rows="4" placeholder="e.g. 4, 8, 6, 5, 3"></textarea>
+      <span class="hint">Separate values with commas, spaces, or new lines.</span>
+    </div>
+    <div class="form-group" style="max-width:280px;">
+      <label for="sd-type">Type</label>
+      <select class="form-control" id="sd-type">
+        <option value="sample" selected>Sample (n − 1)</option>
+        <option value="population">Population (n)</option>
+      </select>
+    </div>
+    <div class="form-actions">
+      <button class="btn" id="sd-calc" type="button">Calculate</button>
+      <button class="btn btn-secondary" id="sd-reset" type="button">Reset</button>
+    </div>
+    <div class="result-box" id="sd-result" role="status" aria-live="polite">
+      <div class="result-label">Standard deviation</div>
+      <div class="result-main" id="sd-main">—</div>
+      <div class="result-detail" id="sd-detail"></div>
+    </div>
+  </section>
+
+  <div class="ad-placeholder ad-middle" role="complementary" aria-label="Advertisement"><span>Advertisement</span></div>
+
+  <article class="prose">
+    <h2>What Is Standard Deviation?</h2>
+    <p>It measures how spread out a set of numbers is. A low standard deviation means the values cluster tightly around the mean; a high one means they spread wide.</p>
+
+    <h2>How to Use It</h2>
+    <ol>
+      <li>Paste your data set (comma, space, or line-separated).</li>
+      <li>Choose sample (n−1) or population (n).</li>
+      <li>Results appear live.</li>
+    </ol>
+
+    <h2>Formulas</h2>
+    <p><strong>Population standard deviation (σ):</strong></p>
+    <pre><code>σ = √( Σ(xᵢ − μ)² / N )</code></pre>
+    <p><strong>Sample standard deviation (s):</strong></p>
+    <pre><code>s = √( Σ(xᵢ − x̄)² / (N − 1) )</code></pre>
+
+    <h2>Worked Example</h2>
+    <p>Data: [4, 8, 6, 5, 3]</p>
+    <ul>
+      <li>Mean = 26/5 = 5.2</li>
+      <li>Squared deviations: 1.44, 7.84, 0.64, 0.04, 4.84 → sum = 14.80</li>
+      <li>Population variance = 14.80/5 = 2.96 → σ = 1.72</li>
+      <li>Sample variance = 14.80/4 = 3.70 → s = 1.92</li>
+    </ul>
+
+    <h2>Understanding Your Result</h2>
+    <p>For a normal distribution, roughly 68% of values lie within ±1σ of the mean, 95% within ±2σ, and 99.7% within ±3σ.</p>
+
+    <h2>Common Mistakes</h2>
+    <ul>
+      <li>Using sample when you have the full population (or vice versa).</li>
+      <li>Forgetting that outliers inflate σ dramatically.</li>
+      <li>Confusing standard deviation with variance (σ² vs σ).</li>
+      <li>Assuming data is normal without checking.</li>
+    </ul>
+
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false">When should I use sample vs population?</button>
+      <div class="faq-a"><p>If your data is the complete population, use population. If it's a sample from a larger group (most real cases), use sample.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false">Can standard deviation be negative?</button>
+      <div class="faq-a"><p>No — it's a square root, always ≥ 0. Zero means all values are identical.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false">What's the difference between variance and standard deviation?</button>
+      <div class="faq-a"><p>Variance is σ² (no square root). Standard deviation is in the same units as the data, so it's more interpretable.</p></div>
+    </div>
+
+    <h2>Related Calculators</h2>
+    <div class="grid grid-3" data-related-tools="standard-deviation-calculator"></div>
+  </article>
+
+  <div class="ad-placeholder ad-bottom" role="complementary" aria-label="Advertisement"><span>Advertisement</span></div>
+</div></main>
+
+<footer class="site-footer"><div class="container">
+  <div class="footer-grid">
+    <div class="footer-brand"><a class="logo" href="/" style="color:#fff;margin-bottom:12px;"><span class="logo-mark">CV</span><span data-site-name style="color:#fff">CalcVerse</span></a><p data-site-desc></p></div>
+    <div><h4>Company</h4><a href="/about.html">About Us</a><a href="/contact.html">Contact Us</a><a href="/blog/">Blog</a><a href="/sitemap.html">Sitemap</a></div>
+    <div><h4>Categories</h4><a href="/categories/financial/">Financial</a><a href="/categories/math/">Math</a><a href="/categories/health/">Health</a><a href="/categories/date-time/">Date &amp; Time</a><a href="/categories/conversion/">Converters</a><a href="/categories/engineering/">Engineering</a></div>
+    <div><h4>Legal</h4><a href="/privacy-policy.html">Privacy Policy</a><a href="/terms-of-service.html">Terms of Service</a><a href="/disclaimer.html">Disclaimer</a><a href="/cookie-policy.html">Cookie Policy</a></div>
+  </div>
+  <div class="footer-bottom"><span>&copy; <span data-year></span> <span data-site-name>CalcVerse</span>. All rights reserved.</span></div>
+</div></footer>
+
+<script src="/assets/js/config.js"></script>
+<script src="/assets/js/tools-data.js"></script>
+<script src="/assets/js/main.js"></script>
+<script src="/assets/js/calculators/standard-deviation.js"></script>
+</body>
+</html>
