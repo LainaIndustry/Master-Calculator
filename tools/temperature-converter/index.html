@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Temperature Converter — Celsius, Fahrenheit, Kelvin</title>
+<meta name="description" content="Free temperature converter: convert between Celsius, Fahrenheit, and Kelvin instantly." />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://calcverse.example.com/tools/temperature-converter/" />
+<link rel="stylesheet" href="/assets/css/style.css" />
+<link rel="stylesheet" href="/assets/css/ads.css" />
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header"><div class="container header-inner">
+  <a class="logo" href="/"><span class="logo-mark">CV</span><span data-site-name>CalcVerse</span></a>
+  <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false"><span></span><span></span><span></span></button>
+  <nav class="nav" aria-label="Primary">
+    <a href="/">Home</a><a href="/tools/">Tools</a>
+    <a href="/categories/financial/">Financial</a><a href="/categories/math/">Math</a>
+    <a href="/categories/health/">Health</a><a href="/categories/date-time/">Date &amp; Time</a>
+    <a href="/categories/conversion/">Converters</a><a href="/categories/engineering/">Engineering</a>
+    <a href="/blog/">Blog</a><a href="/about.html">About</a><a href="/contact.html">Contact</a>
+  </nav>
+</div></header>
+
+<main id="main"><div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <ol><li><a href="/">Home</a></li><li><a href="/categories/conversion/">Converters</a></li><li><span aria-current="page">Temperature Converter</span></li></ol>
+  </nav>
+
+  <h1>Temperature Converter</h1>
+  <p style="max-width:720px;">Convert between Celsius, Fahrenheit, and Kelvin instantly. Handles negative temperatures and rejects values below absolute zero.</p>
+
+  <div class="ad-placeholder ad-top" role="complementary" aria-label="Advertisement"><span>Advertisement</span></div>
+
+  <section class="calc-card">
+    <h2 class="mt-0">Convert Temperature</h2>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="tc-input">Temperature</label>
+        <input class="form-control" id="tc-input" type="number" step="any" placeholder="e.g. 100" />
+      </div>
+      <div class="form-group">
+        <label for="tc-from">From</label>
+        <select class="form-control" id="tc-from">
+          <option value="C">Celsius (°C)</option>
+          <option value="F" selected>Fahrenheit (°F)</option>
+          <option value="K">Kelvin (K)</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="tc-to">To</label>
+        <select class="form-control" id="tc-to">
+          <option value="C" selected>Celsius (°C)</option>
+          <option value="F">Fahrenheit (°F)</option>
+          <option value="K">Kelvin (K)</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-actions">
+      <button class="btn" id="tc-calc" type="button">Convert</button>
+      <button class="btn btn-secondary" id="tc-reset" type="button">Reset</button>
+    </div>
+    <div class="result-box" id="tc-result" role="status" aria-live="polite">
+      <div class="result-label">Result</div>
+      <div class="result-main" id="tc-main">—</div>
+      <div class="result-detail" id="tc-detail"></div>
+    </div>
+  </section>
+
+  <div class="ad-placeholder ad-middle" role="complementary" aria-label="Advertisement"><span>Advertisement</span></div>
+
+  <article class="prose">
+    <h2>What Is a Temperature Converter?</h2>
+    <p>It converts a temperature from one scale to another. Unlike other unit conversions, temperature uses offset arithmetic — not just multiplication — because the scales have different zero points.</p>
+
+    <h2>How to Use It</h2>
+    <ol>
+      <li>Enter the temperature value.</li>
+      <li>Pick the source scale.</li>
+      <li>Pick the target scale.</li>
+      <li>Results update instantly, showing all three scales.</li>
+    </ol>
+
+    <h2>The Formulas</h2>
+    <pre><code>°F = (°C × 9/5) + 32
+°C = (°F − 32) × 5/9
+K  = °C + 273.15
+°C = K − 273.15</code></pre>
+
+    <h2>Reference Points</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Event</th><th>°C</th><th>°F</th><th>K</th></tr></thead>
+        <tbody>
+          <tr><td>Absolute zero</td><td>−273.15</td><td>−459.67</td><td>0</td></tr>
+          <tr><td>Water freezes</td><td>0</td><td>32</td><td>273.15</td></tr>
+          <tr><td>Room temperature</td><td>20</td><td>68</td><td>293.15</td></tr>
+          <tr><td>Body temperature</td><td>37</td><td>98.6</td><td>310.15</td></tr>
+          <tr><td>Water boils</td><td>100</td><td>212</td><td>373.15</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>Why the Offset?</h2>
+    <p>The Celsius and Fahrenheit scales set zero at different points. Celsius zeroes at water's freezing point; Fahrenheit zeroes at a historical low temperature. Kelvin zeroes at absolute zero — the theoretical point where all molecular motion stops.</p>
+
+    <h2>Common Mistakes</h2>
+    <ul>
+      <li>Using a simple multiplier instead of the offset formula.</li>
+      <li>Forgetting that °C and K use the same degree size but different zero points.</li>
+      <li>Confusing "40° below zero" (ambient temperature) with absolute zero.</li>
+    </ul>
+
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false">What is absolute zero?</button>
+      <div class="faq-a"><p>−273.15 °C = −459.67 °F = 0 K. No temperature can be lower — molecular motion is at its minimum.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false">Why is −40 the same in °C and °F?</button>
+      <div class="faq-a"><p>Because it's the unique temperature where the two scales intersect: −40 °C = −40 °F.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false">Is Kelvin written with a degree symbol?</button>
+      <div class="faq-a"><p>No. Kelvin uses just "K" — it's an absolute scale, not a degree-based one.</p></div>
+    </div>
+
+    <h2>Related Calculators</h2>
+    <div class="grid grid-3" data-related-tools="temperature-converter"></div>
+  </article>
+
+  <div class="ad-placeholder ad-bottom" role="complementary" aria-label="Advertisement"><span>Advertisement</span></div>
+</div></main>
+
+<footer class="site-footer"><div class="container">
+  <div class="footer-grid">
+    <div class="footer-brand"><a class="logo" href="/" style="color:#fff;margin-bottom:12px;"><span class="logo-mark">CV</span><span data-site-name style="color:#fff">CalcVerse</span></a><p data-site-desc></p></div>
+    <div><h4>Company</h4><a href="/about.html">About Us</a><a href="/contact.html">Contact Us</a><a href="/blog/">Blog</a><a href="/sitemap.html">Sitemap</a></div>
+    <div><h4>Categories</h4><a href="/categories/financial/">Financial</a><a href="/categories/math/">Math</a><a href="/categories/health/">Health</a><a href="/categories/date-time/">Date &amp; Time</a><a href="/categories/conversion/">Converters</a><a href="/categories/engineering/">Engineering</a></div>
+    <div><h4>Legal</h4><a href="/privacy-policy.html">Privacy Policy</a><a href="/terms-of-service.html">Terms of Service</a><a href="/disclaimer.html">Disclaimer</a><a href="/cookie-policy.html">Cookie Policy</a></div>
+  </div>
+  <div class="footer-bottom"><span>&copy; <span data-year></span> <span data-site-name>CalcVerse</span>. All rights reserved.</span></div>
+</div></footer>
+
+<script src="/assets/js/config.js"></script>
+<script src="/assets/js/tools-data.js"></script>
+<script src="/assets/js/main.js"></script>
+<script src="/assets/js/calculators/temperature.js"></script>
+</body>
+</html>
