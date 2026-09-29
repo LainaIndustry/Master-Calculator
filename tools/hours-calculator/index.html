@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Hours Calculator — Work Hours with Breaks</title>
+<meta name="description" content="Free hours calculator: compute hours worked between two times, deduct breaks, and estimate pay." />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://calcverse.example.com/tools/hours-calculator/" />
+<link rel="stylesheet" href="/assets/css/style.css" />
+<link rel="stylesheet" href="/assets/css/ads.css" />
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header"><div class="container header-inner">
+  <a class="logo" href="/"><span class="logo-mark">CV</span><span data-site-name>CalcVerse</span></a>
+  <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false"><span></span><span></span><span></span></button>
+  <nav class="nav" aria-label="Primary">
+    <a href="/">Home</a><a href="/tools/">Tools</a>
+    <a href="/categories/financial/">Financial</a><a href="/categories/math/">Math</a>
+    <a href="/categories/health/">Health</a><a href="/categories/date-time/">Date &amp; Time</a>
+    <a href="/categories/conversion/">Converters</a><a href="/categories/engineering/">Engineering</a>
+    <a href="/blog/">Blog</a><a href="/about.html">About</a><a href="/contact.html">Contact</a>
+  </nav>
+</div></header>
+
+<main id="main"><div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <ol><li><a href="/">Home</a></li><li><a href="/categories/date-time/">Date &amp; Time</a></li><li><span aria-current="page">Hours Calculator</span></li></ol>
+  </nav>
+
+  <h1>Hours Calculator</h1>
+  <p style="max-width:720px;">Compute hours worked between two times, subtract breaks, and (optionally) estimate pay based on an hourly rate.</p>
+
+  <div class="ad-placeholder ad-top" role="complementary" aria-label="Advertisement"><span>Advertisement</span></div>
+
+  <section class="calc-card">
+    <h2 class="mt-0">Calculate Hours Worked</h2>
+    <div class="form-row">
+      <div class="form-group"><label for="hr-start">Start time</label><input class="form-control" id="hr-start" type="time" /></div>
+      <div class="form-group"><label for="hr-end">End time</label><input class="form-control" id="hr-end" type="time" /></div>
+    </div>
+    <div class="form-row">
+      <div class="form-group"><label for="hr-break">Break (minutes)</label><input class="form-control" id="hr-break" type="number" min="0" step="5" placeholder="e.g. 30" /></div>
+      <div class="form-group"><label for="hr-rate">Hourly rate (optional)</label><div class="input-group"><input class="form-control" id="hr-rate" type="number" min="0" step="0.01" placeholder="e.g. 20" /><span class="unit">$/hr</span></div></div>
+    </div>
+    <div class="form-actions">
+      <button class="btn" id="hr-calc" type="button">Calculate</button>
+      <button class="btn btn-secondary" id="hr-reset" type="button">Reset</button>
+    </div>
+    <div class="result-box" id="hr-result"><div class="result-label">Total hours</div><div class="result-main" id="hr-main">—</div><div class="result-detail" id="hr-detail"></div></div>
+  </section>
+
+  <div class="ad-placeholder ad-middle" role="complementary" aria-label="Advertisement"><span>Advertisement</span></div>
+
+  <article class="prose">
+    <h2>What Is an Hours Calculator?</h2>
+    <p>It computes the duration between two times, with an optional break deduction. Common uses: timesheet entries, payroll, freelance billing, and shift planning.</p>
+
+    <h2>How to Use It</h2>
+    <ol>
+      <li>Enter the start time and end time.</li>
+      <li>Enter break minutes (unpaid time).</li>
+      <li>(Optional) Enter your hourly rate to see estimated pay.</li>
+      <li>Results appear instantly.</li>
+    </ol>
+
+    <h2>Handling Overnight Shifts</h2>
+    <p>If the end time is earlier than the start time, the calculator assumes the shift crosses midnight. E.g. 22:00 → 06:00 = 8 hours.</p>
+
+    <h2>Example</h2>
+    <p>9:00 AM to 5:30 PM with a 30-minute break: 8.5 hours − 0.5 break = <strong>8.0 hours</strong>. At $20/hour: $160.</p>
+
+    <h2>Common Mistakes</h2>
+    <ul>
+      <li>Forgetting to deduct unpaid breaks.</li>
+      <li>Confusing AM/PM and creating a 12-hour error.</li>
+      <li>Using decimal hours in timesheets when employers expect HH:MM (or vice versa). 8:15 = 8.25 hours.</li>
+      <li>Forgetting overtime rules — many jurisdictions require 1.5× pay after 40 hours/week.</li>
+    </ul>
+
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false">How do I convert minutes to decimal hours?</button>
+      <div class="faq-a"><p>Divide minutes by 60. 15 min = 0.25 hr; 30 min = 0.50 hr; 45 min = 0.75 hr.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false">Does this include overtime?</button>
+      <div class="faq-a"><p>No — this tool calculates raw hours. Overtime must be computed separately based on weekly totals.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false">What about multiple shifts in one day?</button>
+      <div class="faq-a"><p>Run the calculator once per shift and add the results manually.</p></div>
+    </div>
+
+    <h2>Related Calculators</h2>
+    <div class="grid grid-3" data-related-tools="hours-calculator"></div>
+  </article>
+
+  <div class="ad-placeholder ad-bottom" role="complementary" aria-label="Advertisement"><span>Advertisement</span></div>
+</div></main>
+
+<footer class="site-footer"><div class="container">
+  <div class="footer-grid">
+    <div class="footer-brand"><a class="logo" href="/" style="color:#fff;margin-bottom:12px;"><span class="logo-mark">CV</span><span data-site-name style="color:#fff">CalcVerse</span></a><p data-site-desc></p></div>
+    <div><h4>Company</h4><a href="/about.html">About Us</a><a href="/contact.html">Contact Us</a><a href="/blog/">Blog</a><a href="/sitemap.html">Sitemap</a></div>
+    <div><h4>Categories</h4><a href="/categories/financial/">Financial</a><a href="/categories/math/">Math</a><a href="/categories/health/">Health</a><a href="/categories/date-time/">Date &amp; Time</a><a href="/categories/conversion/">Converters</a><a href="/categories/engineering/">Engineering</a></div>
+    <div><h4>Legal</h4><a href="/privacy-policy.html">Privacy Policy</a><a href="/terms-of-service.html">Terms of Service</a><a href="/disclaimer.html">Disclaimer</a><a href="/cookie-policy.html">Cookie Policy</a></div>
+  </div>
+  <div class="footer-bottom"><span>&copy; <span data-year></span> <span data-site-name>CalcVerse</span>. All rights reserved.</span></div>
+</div></footer>
+
+<script src="/assets/js/config.js"></script>
+<script src="/assets/js/tools-data.js"></script>
+<script src="/assets/js/main.js"></script>
+<script src="/assets/js/calculators/hours.js"></script>
+</body>
+</html>
