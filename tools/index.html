@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>All Tools — CalcVerse</title>
+<meta name="description" content="Browse every calculator and tool on CalcVerse. Filter by category or search by name." />
+<link rel="canonical" href="https://calcverse.example.com/tools/" />
+<meta name="robots" content="index, follow" />
+<link rel="stylesheet" href="/assets/css/style.css" />
+<link rel="stylesheet" href="/assets/css/ads.css" />
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="logo" href="/"><span class="logo-mark">CV</span><span data-site-name>CalcVerse</span></a>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="nav" aria-label="Primary">
+      <a href="/">Home</a><a href="/tools/">Tools</a>
+      <a href="/categories/financial/">Financial</a><a href="/categories/math/">Math</a>
+      <a href="/categories/health/">Health</a><a href="/categories/date-time/">Date &amp; Time</a>
+      <a href="/categories/conversion/">Converters</a><a href="/categories/engineering/">Engineering</a>
+      <a href="/blog/">Blog</a><a href="/about.html">About</a><a href="/contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <ol><li><a href="/">Home</a></li><li><span aria-current="page">All Tools</span></li></ol>
+    </nav>
+
+    <h1>All Calculators &amp; Tools</h1>
+    <p>Browse our growing collection. Use the search box or filter by category.</p>
+
+    <div class="search-wrap" style="margin:0 0 28px;max-width:100%;">
+      <form class="search-box" role="search" autocomplete="off">
+        <label for="tools-search" class="sr-only">Search tools</label>
+        <input id="tools-search" type="search" placeholder="Search tools…" />
+        <button type="button" onclick="document.getElementById('tools-search').focus()">Search</button>
+      </form>
+    </div>
+
+    <div class="form-group" style="max-width:280px;margin-bottom:24px;">
+      <label for="cat-filter">Filter by category</label>
+      <select id="cat-filter" class="form-control">
+        <option value="">All categories</option>
+        <option>Financial</option>
+        <option>Math</option>
+        <option>Health</option>
+        <option>Date &amp; Time</option>
+        <option>Conversion</option>
+        <option>Engineering</option>
+        <option>Developer</option>
+      </select>
+    </div>
+
+    <div class="grid grid-4" id="all-tools-grid"></div>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const grid = document.getElementById("all-tools-grid");
+      const input = document.getElementById("tools-search");
+      const filter = document.getElementById("cat-filter");
+      const tools = window.TOOLS_DATA || [];
+
+      function render() {
+        const q = input.value.trim().toLowerCase();
+        const cat = filter.value;
+        const list = tools.filter(t =>
+          (!cat || t.category === cat) &&
+          (!q || t.name.toLowerCase().includes(q) || t.description.toLowerCase().includes(q))
+        );
+        grid.innerHTML = list.length ? list.map(t => `
+          <a class="card tool-card" href="/tools/${t.slug}/">
+            <h3>${window.escapeHtml(t.name)}</h3>
+            <p>${window.escapeHtml(t.description)}</p>
+          </a>`).join("")
+          : `<p>No tools match your search.</p>`;
+      }
+      input.addEventListener("input", render);
+      filter.addEventListener("change", render);
+      render();
+    });
+    </script>
+
+    <div class="ad-placeholder ad-bottom" role="complementary" aria-label="Advertisement"><span>Advertisement</span></div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><a class="logo" href="/" style="color:#fff"><span class="logo-mark">CV</span><span data-site-name style="color:#fff">CalcVerse</span></a><p data-site-desc></p></div>
+      <div><h4>Company</h4><a href="/about.html">About</a><a href="/contact.html">Contact</a><a href="/blog/">Blog</a></div>
+      <div><h4>Categories</h4><a href="/categories/financial/">Financial</a><a href="/categories/math/">Math</a><a href="/categories/health/">Health</a></div>
+      <div><h4>Legal</h4><a href="/privacy-policy.html">Privacy</a><a href="/terms-of-service.html">Terms</a><a href="/disclaimer.html">Disclaimer</a></div>
+    </div>
+    <div class="footer-bottom"><span>&copy; <span data-year></span> <span data-site-name>CalcVerse</span></span></div>
+  </div>
+</footer>
+
+<script src="/assets/js/config.js"></script>
+<script src="/assets/js/tools-data.js"></script>
+<script src="/assets/js/main.js"></script>
+</body>
+</html>
