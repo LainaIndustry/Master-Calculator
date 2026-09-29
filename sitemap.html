@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Sitemap — CalcVerse</title>
+<meta name="description" content="Complete list of pages and calculators on CalcVerse." />
+<link rel="canonical" href="https://calcverse.example.com/sitemap.html" />
+<link rel="stylesheet" href="/assets/css/style.css" />
+<link rel="stylesheet" href="/assets/css/ads.css" />
+</head>
+<body>
+<!-- header -->
+<main id="main"><div class="container">
+  <h1>Sitemap</h1>
+  <div class="prose">
+    <h2>Main Pages</h2>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/tools/">All Tools</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+      <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+      <li><a href="/terms-of-service.html">Terms of Service</a></li>
+      <li><a href="/disclaimer.html">Disclaimer</a></li>
+      <li><a href="/cookie-policy.html">Cookie Policy</a></li>
+    </ul>
+
+    <h2>Financial Calculators</h2>
+    <ul data-sitemap-cat="Financial"></ul>
+
+    <h2>Math Calculators</h2>
+    <ul data-sitemap-cat="Math"></ul>
+
+    <h2>Health Calculators</h2>
+    <ul data-sitemap-cat="Health"></ul>
+
+    <h2>Date &amp; Time</h2>
+    <ul data-sitemap-cat="Date & Time"></ul>
+
+    <h2>Conversion</h2>
+    <ul data-sitemap-cat="Conversion"></ul>
+
+    <h2>Engineering</h2>
+    <ul data-sitemap-cat="Engineering"></ul>
+
+    <h2>Developer Tools</h2>
+    <ul data-sitemap-cat="Developer"></ul>
+  </div>
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll("[data-sitemap-cat]").forEach(ul => {
+      const cat = ul.getAttribute("data-sitemap-cat");
+      const tools = (window.TOOLS_DATA || []).filter(t => t.category === cat);
+      ul.innerHTML = tools.map(t => `<li><a href="/tools/${t.slug}/">${window.escapeHtml(t.name)}</a></li>`).join("");
+    });
+  });
+  </script>
+</div></main>
+<!-- footer -->
+<script src="/assets/js/config.js"></script>
+<script src="/assets/js/tools-data.js"></script>
+<script src="/assets/js/main.js"></script>
+</body>
+</html>
