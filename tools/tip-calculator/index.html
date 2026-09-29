@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Tip Calculator — Restaurant Tip &amp; Split Bill</title>
+<meta name="description" content="Free tip calculator: compute restaurant tip, total, and per-person split. Handles tax so you tip on the right base." />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://calcverse.example.com/tools/tip-calculator/" />
+<link rel="stylesheet" href="/assets/css/style.css" />
+<link rel="stylesheet" href="/assets/css/ads.css" />
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header"><div class="container header-inner">
+  <a class="logo" href="/"><span class="logo-mark">CV</span><span data-site-name>CalcVerse</span></a>
+  <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false"><span></span><span></span><span></span></button>
+  <nav class="nav" aria-label="Primary">
+    <a href="/">Home</a><a href="/tools/">Tools</a>
+    <a href="/categories/financial/">Financial</a><a href="/categories/math/">Math</a>
+    <a href="/categories/health/">Health</a><a href="/categories/date-time/">Date &amp; Time</a>
+    <a href="/categories/conversion/">Converters</a><a href="/categories/engineering/">Engineering</a>
+    <a href="/blog/">Blog</a><a href="/about.html">About</a><a href="/contact.html">Contact</a>
+  </nav>
+</div></header>
+
+<main id="main"><div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <ol><li><a href="/">Home</a></li><li><a href="/categories/financial/">Financial Calculators</a></li><li><span aria-current="page">Tip Calculator</span></li></ol>
+  </nav>
+
+  <h1>Tip Calculator</h1>
+  <p style="max-width:720px;">Compute restaurant tips, total bill, and split per person. Optionally enter tax so you tip on the pre-tax subtotal.</p>
+
+  <div class="ad-placeholder ad-top" role="complementary" aria-label="Advertisement"><span>Advertisement</span></div>
+
+  <section class="calc-card">
+    <h2 class="mt-0">Calculate Your Tip</h2>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="tp-bill">Bill amount</label>
+        <div class="input-group"><input class="form-control" id="tp-bill" type="number" min="0" step="0.01" placeholder="e.g. 84.50" /><span class="unit">$</span></div>
+      </div>
+      <div class="form-group">
+        <label for="tp-pct">Tip percentage</label>
+        <div class="input-group"><input class="form-control" id="tp-pct" type="number" min="0" step="1" placeholder="e.g. 18" /><span class="unit">%</span></div>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="tp-tax">Tax (optional)</label>
+        <div class="input-group"><input class="form-control" id="tp-tax" type="number" min="0" step="0.01" placeholder="e.g. 8" /><span class="unit">%</span></div>
+        <span class="hint">If entered, tip is computed on the pre-tax subtotal.</span>
+      </div>
+      <div class="form-group">
+        <label for="tp-people">Split between</label>
+        <div class="input-group"><input class="form-control" id="tp-people" type="number" min="1" step="1" placeholder="e.g. 4" /><span class="unit">ppl</span></div>
+      </div>
+    </div>
+    <div class="form-actions">
+      <button class="btn" id="tp-calc" type="button">Calculate</button>
+      <button class="btn btn-secondary" id="tp-reset" type="button">Reset</button>
+    </div>
+    <div class="result-box" id="tp-result" role="status" aria-live="polite">
+      <div class="result-label">Total with tip</div>
+      <div class="result-main" id="tp-main">—</div>
+      <div class="result-detail" id="tp-detail"></div>
+    </div>
+  </section>
+
+  <div class="ad-placeholder ad-middle" role="complementary" aria-label="Advertisement"><span>Advertisement</span></div>
+
+  <article class="prose">
+    <h2>What Is a Tip Calculator?</h2>
+    <p>It computes the appropriate tip on a restaurant bill based on the percentage you choose, adds it to the bill, and (optionally) splits the total across multiple people.</p>
+
+    <h2>How to Use It</h2>
+    <ol>
+      <li>Enter the <strong>bill amount</strong> (pre-tip total as printed).</li>
+      <li>Choose a <strong>tip percentage</strong>.</li>
+      <li>(Optional) Enter the <strong>sales tax rate</strong> if you want to tip on the pre-tax subtotal.</li>
+      <li>(Optional) Enter <strong>number of people</strong> to split.</li>
+      <li>Results update live.</li>
+    </ol>
+
+    <h2>Formula</h2>
+    <pre><code>Subtotal = Bill − Tax
+Tip = Subtotal × (Tip% ÷ 100)
+Total = Bill + Tip
+Per Person = Total ÷ People</code></pre>
+
+    <h2>Worked Example</h2>
+    <p>$84.50 bill, 8% tax, 18% tip, split 4 ways:</p>
+    <ul>
+      <li>Tax = 84.50 × 0.08 = $6.76</li>
+      <li>Subtotal = $77.74</li>
+      <li>Tip = 77.74 × 0.18 = $13.99</li>
+      <li>Total = $98.49</li>
+      <li>Per person = <strong>$24.62</strong></li>
+    </ul>
+
+    <h2>Understanding Your Result</h2>
+    <p>The main result is the total you'll pay. The detail box shows the tip, tax, and per-person amount.</p>
+
+    <h2>Standard Tip Percentages</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Service</th><th>Typical tip</th></tr></thead>
+        <tbody>
+          <tr><td>Restaurant (US)</td><td>15–20%</td></tr>
+          <tr><td>Delivery</td><td>10–15%</td></tr>
+          <tr><td>Bartender</td><td>$1–2 per drink</td></tr>
+          <tr><td>Taxi/rideshare</td><td>10–15%</td></tr>
+          <tr><td>Hotel housekeeping</td><td>$2–5 per night</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Tipping customs vary by country. In much of Europe and Asia, tipping is optional or included.</p>
+
+    <h2>Common Mistakes</h2>
+    <ul>
+      <li>Tipping on the total after tax instead of the pre-tax subtotal.</li>
+      <li>Forgetting to add the tip when computing the per-person split.</li>
+      <li>Assuming tipping customs are universal — they're not.</li>
+    </ul>
+
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false">Should I tip on the pre-tax or post-tax amount?</button>
+      <div class="faq-a"><p>Pre-tax is considered correct etiquette. Post-tax is also common and slightly more generous.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false">Is 15% still standard?</button>
+      <div class="faq-a"><p>In the US, 18–20% has become more common for table service. 15% is now considered on the low end.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false">What about automatic gratuity?</button>
+      <div class="faq-a"><p>Many restaurants add 18% for parties of 6+. Check your bill before tipping extra.</p></div>
+    </div>
+
+    <h2>Related Calculators</h2>
+    <div class="grid grid-3" data-related-tools="tip-calculator"></div>
+  </article>
+
+  <div class="ad-placeholder ad-bottom" role="complementary" aria-label="Advertisement"><span>Advertisement</span></div>
+</div></main>
+
+<footer class="site-footer"><div class="container">
+  <div class="footer-grid">
+    <div class="footer-brand"><a class="logo" href="/" style="color:#fff;margin-bottom:12px;"><span class="logo-mark">CV</span><span data-site-name style="color:#fff">CalcVerse</span></a><p data-site-desc></p></div>
+    <div><h4>Company</h4><a href="/about.html">About Us</a><a href="/contact.html">Contact Us</a><a href="/blog/">Blog</a><a href="/sitemap.html">Sitemap</a></div>
+    <div><h4>Categories</h4><a href="/categories/financial/">Financial</a><a href="/categories/math/">Math</a><a href="/categories/health/">Health</a><a href="/categories/date-time/">Date &amp; Time</a><a href="/categories/conversion/">Converters</a><a href="/categories/engineering/">Engineering</a></div>
+    <div><h4>Legal</h4><a href="/privacy-policy.html">Privacy Policy</a><a href="/terms-of-service.html">Terms of Service</a><a href="/disclaimer.html">Disclaimer</a><a href="/cookie-policy.html">Cookie Policy</a></div>
+  </div>
+  <div class="footer-bottom"><span>&copy; <span data-year></span> <span data-site-name>CalcVerse</span>. All rights reserved.</span></div>
+</div></footer>
+
+<script src="/assets/js/config.js"></script>
+<script src="/assets/js/tools-data.js"></script>
+<script src="/assets/js/main.js"></script>
+<script src="/assets/js/calculators/tip.js"></script>
+</body>
+</html>
