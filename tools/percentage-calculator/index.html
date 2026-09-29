@@ -3,23 +3,36 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Percentage Calculator — 7 Modes for Every % Problem</title>
-<meta name="description" content="Free percentage calculator: X% of Y, X is what % of Y, % change, reverse %, compounded %, tips, and more." />
+<title>Percentage Calculator — Free Online Percent Tool</title>
+<meta name="description" content="Free percentage calculator: find X% of Y, what percent X is of Y, and percentage increase/decrease. Fast, accurate, and private." />
 <meta name="robots" content="index, follow" />
 <link rel="canonical" href="https://calcverse.example.com/tools/percentage-calculator/" />
 <meta property="og:type" content="article" />
-<meta property="og:title" content="Percentage Calculator — 7 Modes" />
-<meta property="og:description" content="Every common percentage calculation in one tool." />
+<meta property="og:title" content="Percentage Calculator — Free Online Percent Tool" />
+<meta property="og:description" content="Compute percentages, percentage change, and 'X is what % of Y' instantly." />
+<meta property="og:url" content="https://calcverse.example.com/tools/percentage-calculator/" />
+<meta name="twitter:card" content="summary_large_image" />
 <link rel="stylesheet" href="/assets/css/style.css" />
 <link rel="stylesheet" href="/assets/css/ads.css" />
 <script type="application/ld+json">
 {
-  "@context":"https://schema.org",
-  "@type":"BreadcrumbList",
-  "itemListElement":[
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
     {"@type":"ListItem","position":1,"name":"Home","item":"https://calcverse.example.com/"},
     {"@type":"ListItem","position":2,"name":"Math Calculators","item":"https://calcverse.example.com/categories/math/"},
     {"@type":"ListItem","position":3,"name":"Percentage Calculator","item":"https://calcverse.example.com/tools/percentage-calculator/"}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {"@type":"Question","name":"How do I calculate a percentage of a number?","acceptedAnswer":{"@type":"Answer","text":"Multiply the number by the percentage divided by 100. For example, 15% of 200 = (15/100) × 200 = 30."}},
+    {"@type":"Question","name":"What is the difference between percentage and percentage points?","acceptedAnswer":{"@type":"Answer","text":"Percentage points measure an absolute difference between two percentages (e.g., 5% to 7% is a 2 percentage point increase), while percent change is relative (2/5 = 40% increase)."}},
+    {"@type":"Question","name":"How do I calculate percentage increase?","acceptedAnswer":{"@type":"Answer","text":"Use ((new − old) / |old|) × 100. For example, from 40 to 50 is ((50−40)/40)×100 = 25% increase."}}
   ]
 }
 </script>
@@ -27,184 +40,236 @@
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
 
-<header class="site-header"><div class="container header-inner">
-  <a class="logo" href="/"><span class="logo-mark">CV</span><span data-site-name>CalcVerse</span></a>
-  <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false"><span></span><span></span><span></span></button>
-  <nav class="nav" aria-label="Primary">
-    <a href="/">Home</a><a href="/tools/">Tools</a>
-    <a href="/categories/financial/">Financial</a><a href="/categories/math/">Math</a>
-    <a href="/categories/health/">Health</a><a href="/categories/date-time/">Date &amp; Time</a>
-    <a href="/categories/conversion/">Converters</a><a href="/categories/engineering/">Engineering</a>
-    <a href="/blog/">Blog</a><a href="/about.html">About</a><a href="/contact.html">Contact</a>
-  </nav>
-</div></header>
-
-<main id="main"><div class="container">
-  <nav class="breadcrumb" aria-label="Breadcrumb">
-    <ol><li><a href="/">Home</a></li><li><a href="/categories/math/">Math Calculators</a></li><li><span aria-current="page">Percentage Calculator</span></li></ol>
-  </nav>
-
-  <h1>Percentage Calculator</h1>
-  <p style="max-width:720px;">Seven percentage modes in one page — from basic "X% of Y" to reverse percentages, compounding, and tips. Everything runs in your browser.</p>
-
-  <div class="ad-placeholder ad-top" role="complementary" aria-label="Advertisement"><span>Advertisement</span></div>
-
-  <!-- Mode 1 -->
-  <section class="calc-card">
-    <h2 class="mt-0">1. What is X% of Y?</h2>
-    <div class="form-row">
-      <div class="form-group"><label for="m1-percent">Percentage (%)</label><input class="form-control" id="m1-percent" type="number" step="any" placeholder="e.g. 15" /></div>
-      <div class="form-group"><label for="m1-value">Value (Y)</label><input class="form-control" id="m1-value" type="number" step="any" placeholder="e.g. 200" /></div>
-    </div>
-    <div class="form-actions">
-      <button class="btn" id="m1-calc" type="button">Calculate</button>
-      <button class="btn btn-secondary" id="m1-reset" type="button">Reset</button>
-    </div>
-    <div class="result-box" id="m1-result"><div class="result-label">Result</div><div class="result-main" id="m1-main">—</div><div class="result-detail" id="m1-detail"></div></div>
-  </section>
-
-  <!-- Mode 2 -->
-  <section class="calc-card">
-    <h2 class="mt-0">2. X is what percent of Y?</h2>
-    <div class="form-row">
-      <div class="form-group"><label for="m2-x">Value X</label><input class="form-control" id="m2-x" type="number" step="any" placeholder="e.g. 30" /></div>
-      <div class="form-group"><label for="m2-y">Value Y</label><input class="form-control" id="m2-y" type="number" step="any" placeholder="e.g. 150" /></div>
-    </div>
-    <div class="form-actions">
-      <button class="btn" id="m2-calc" type="button">Calculate</button>
-      <button class="btn btn-secondary" id="m2-reset" type="button">Reset</button>
-    </div>
-    <div class="result-box" id="m2-result"><div class="result-label">Result</div><div class="result-main" id="m2-main">—</div><div class="result-detail" id="m2-detail"></div></div>
-  </section>
-
-  <!-- Mode 3 -->
-  <section class="calc-card">
-    <h2 class="mt-0">3. Percentage change (old → new)</h2>
-    <div class="form-row">
-      <div class="form-group"><label for="m3-old">Old value</label><input class="form-control" id="m3-old" type="number" step="any" placeholder="e.g. 40" /></div>
-      <div class="form-group"><label for="m3-new">New value</label><input class="form-control" id="m3-new" type="number" step="any" placeholder="e.g. 50" /></div>
-    </div>
-    <div class="form-actions">
-      <button class="btn" id="m3-calc" type="button">Calculate</button>
-      <button class="btn btn-secondary" id="m3-reset" type="button">Reset</button>
-    </div>
-    <div class="result-box" id="m3-result"><div class="result-label">Result</div><div class="result-main" id="m3-main">—</div><div class="result-detail" id="m3-detail"></div></div>
-  </section>
-
-  <div class="ad-placeholder ad-middle" role="complementary" aria-label="Advertisement"><span>Advertisement</span></div>
-
-  <!-- Mode 4 -->
-  <section class="calc-card">
-    <h2 class="mt-0">4. Reverse percentage (find original)</h2>
-    <div class="form-row">
-      <div class="form-group"><label for="pc-rev-final">Final value</label><input class="form-control" id="pc-rev-final" type="number" step="any" placeholder="e.g. 60" /></div>
-      <div class="form-group"><label for="pc-rev-pct">Change (%)</label><input class="form-control" id="pc-rev-pct" type="number" step="any" placeholder="e.g. 25" /></div>
-      <div class="form-group">
-        <label for="pc-rev-dir">Direction</label>
-        <select class="form-control" id="pc-rev-dir">
-          <option value="increase">Increase</option>
-          <option value="decrease" selected>Decrease</option>
-        </select>
-      </div>
-    </div>
-    <div class="form-actions">
-      <button class="btn btn-secondary" type="button" data-pc-reset="rev">Reset</button>
-    </div>
-    <div class="result-box" id="pc-rev-result"><div class="result-label">Original value</div><div class="result-main" id="pc-rev-main">—</div><div class="result-detail" id="pc-rev-detail"></div></div>
-  </section>
-
-  <!-- Mode 5 -->
-  <section class="calc-card">
-    <h2 class="mt-0">5. What percent is X of Y?</h2>
-    <div class="form-row">
-      <div class="form-group"><label for="pc-wp-part">Part (X)</label><input class="form-control" id="pc-wp-part" type="number" step="any" placeholder="e.g. 25" /></div>
-      <div class="form-group"><label for="pc-wp-whole">Whole (Y)</label><input class="form-control" id="pc-wp-whole" type="number" step="any" placeholder="e.g. 250" /></div>
-    </div>
-    <div class="form-actions">
-      <button class="btn btn-secondary" type="button" data-pc-reset="wp">Reset</button>
-    </div>
-    <div class="result-box" id="pc-wp-result"><div class="result-label">Result</div><div class="result-main" id="pc-wp-main">—</div><div class="result-detail" id="pc-wp-detail"></div></div>
-  </section>
-
-  <!-- Mode 6 -->
-  <section class="calc-card">
-    <h2 class="mt-0">6. Compounded percentage over time</h2>
-    <div class="form-row">
-      <div class="form-group"><label for="pc-cp-start">Starting value</label><input class="form-control" id="pc-cp-start" type="number" step="any" placeholder="e.g. 1000" /></div>
-      <div class="form-group"><label for="pc-cp-pct">Change per period (%)</label><input class="form-control" id="pc-cp-pct" type="number" step="any" placeholder="e.g. 5" /></div>
-      <div class="form-group"><label for="pc-cp-periods">Periods</label><input class="form-control" id="pc-cp-periods" type="number" step="1" placeholder="e.g. 10" /></div>
-    </div>
-    <div class="form-actions">
-      <button class="btn btn-secondary" type="button" data-pc-reset="cp">Reset</button>
-    </div>
-    <div class="result-box" id="pc-cp-result"><div class="result-label">Final value</div><div class="result-main" id="pc-cp-main">—</div><div class="result-detail" id="pc-cp-detail"></div></div>
-  </section>
-
-  <!-- Mode 7 -->
-  <section class="calc-card">
-    <h2 class="mt-0">7. Quick tip calculator</h2>
-    <div class="form-row">
-      <div class="form-group"><label for="pc-tip-bill">Bill</label><input class="form-control" id="pc-tip-bill" type="number" step="0.01" placeholder="e.g. 84.50" /></div>
-      <div class="form-group"><label for="pc-tip-pct">Tip (%)</label><input class="form-control" id="pc-tip-pct" type="number" step="1" placeholder="e.g. 18" /></div>
-      <div class="form-group"><label for="pc-tip-people">Split</label><input class="form-control" id="pc-tip-people" type="number" step="1" placeholder="e.g. 4" /></div>
-    </div>
-    <div class="form-actions">
-      <button class="btn btn-secondary" type="button" data-pc-reset="tip">Reset</button>
-    </div>
-    <div class="result-box" id="pc-tip-result"><div class="result-label">Total with tip</div><div class="result-main" id="pc-tip-main">—</div><div class="result-detail" id="pc-tip-detail"></div></div>
-  </section>
-
-  <div class="ad-placeholder ad-middle" role="complementary" aria-label="Advertisement"><span>Advertisement</span></div>
-
-  <article class="prose">
-    <h2>What Is a Percentage Calculator?</h2>
-    <p>A percentage calculator converts between ratios, fractions, and the "parts per hundred" notation. This version offers seven distinct modes so any percentage scenario is one click away.</p>
-
-    <h2>How to Use It</h2>
-    <ol>
-      <li>Pick the mode that matches your question.</li>
-      <li>Enter your numbers.</li>
-      <li>Results update live.</li>
-    </ol>
-
-    <h2>Percentage Formulas</h2>
-    <ul>
-      <li><strong>X% of Y:</strong> (X ÷ 100) × Y</li>
-      <li><strong>X is what % of Y:</strong> (X ÷ Y) × 100</li>
-      <li><strong>% change:</strong> ((New − Old) ÷ |Old|) × 100</li>
-      <li><strong>Reverse %:</strong> Original = Final ÷ (1 ± Change/100)</li>
-      <li><strong>Compounded:</strong> Final = Start × (1 + pct/100)^periods</li>
-    </ul>
-
-    <h2>Common Mistakes</h2>
-    <ul>
-      <li>Using the new value as the denominator for percent change (always use the old).</li>
-      <li>Confusing percentage points with percent change.</li>
-      <li>Adding stacked percentages rather than multiplying the remaining fractions.</li>
-      <li>Dividing by zero — the calculator will warn you.</li>
-    </ul>
-
-    <h2>Related Calculators</h2>
-    <div class="grid grid-3" data-related-tools="percentage-calculator"></div>
-  </article>
-
-  <div class="ad-placeholder ad-bottom" role="complementary" aria-label="Advertisement"><span>Advertisement</span></div>
-</div></main>
-
-<footer class="site-footer"><div class="container">
-  <div class="footer-grid">
-    <div class="footer-brand"><a class="logo" href="/" style="color:#fff;margin-bottom:12px;"><span class="logo-mark">CV</span><span data-site-name style="color:#fff">CalcVerse</span></a><p data-site-desc></p></div>
-    <div><h4>Company</h4><a href="/about.html">About Us</a><a href="/contact.html">Contact Us</a><a href="/blog/">Blog</a><a href="/sitemap.html">Sitemap</a></div>
-    <div><h4>Categories</h4><a href="/categories/financial/">Financial</a><a href="/categories/math/">Math</a><a href="/categories/health/">Health</a><a href="/categories/date-time/">Date &amp; Time</a><a href="/categories/conversion/">Converters</a><a href="/categories/engineering/">Engineering</a></div>
-    <div><h4>Legal</h4><a href="/privacy-policy.html">Privacy Policy</a><a href="/terms-of-service.html">Terms of Service</a><a href="/disclaimer.html">Disclaimer</a><a href="/cookie-policy.html">Cookie Policy</a></div>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="logo" href="/"><span class="logo-mark" aria-hidden="true">CV</span><span data-site-name>CalcVerse</span></a>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="nav" aria-label="Primary">
+      <a href="/">Home</a><a href="/tools/">Tools</a>
+      <a href="/categories/financial/">Financial</a>
+      <a href="/categories/math/">Math</a>
+      <a href="/categories/health/">Health</a>
+      <a href="/categories/date-time/">Date &amp; Time</a>
+      <a href="/categories/conversion/">Converters</a>
+      <a href="/categories/engineering/">Engineering</a>
+      <a href="/blog/">Blog</a><a href="/about.html">About</a><a href="/contact.html">Contact</a>
+    </nav>
   </div>
-  <div class="footer-bottom"><span>&copy; <span data-year></span> <span data-site-name>CalcVerse</span>. All rights reserved.</span></div>
-</div></footer>
+</header>
+
+<main id="main">
+  <div class="container">
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="/">Home</a></li>
+        <li><a href="/categories/math/">Math Calculators</a></li>
+        <li><span aria-current="page">Percentage Calculator</span></li>
+      </ol>
+    </nav>
+
+    <h1>Percentage Calculator</h1>
+    <p style="max-width:720px;">Compute percentages quickly and accurately. Use this calculator to find what a percentage of a value is, what percentage one number is of another, or the percentage increase/decrease between two numbers. Everything runs in your browser — no signup required.</p>
+
+    <!-- AD: TOP -->
+    <!-- ADSENSE PLACEMENT: replace this placeholder after approval -->
+    <div class="ad-placeholder ad-top" role="complementary" aria-label="Advertisement"><span>Advertisement</span></div>
+
+    <!-- ===== CALCULATOR CARD ===== -->
+    <section class="calc-card" aria-labelledby="calc-h">
+      <h2 id="calc-h">Calculate Percentages</h2>
+
+      <!-- Mode 1 -->
+      <div style="border:1px solid var(--border);border-radius:12px;padding:20px;margin-bottom:18px;">
+        <h3 class="mt-0">1. What is X% of Y?</h3>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="m1-percent">Percentage (%)</label>
+            <input class="form-control" id="m1-percent" type="number" inputmode="decimal" placeholder="e.g. 15" step="any" />
+          </div>
+          <div class="form-group">
+            <label for="m1-value">Value (Y)</label>
+            <input class="form-control" id="m1-value" type="number" inputmode="decimal" placeholder="e.g. 200" step="any" />
+          </div>
+        </div>
+        <div class="form-actions">
+          <button class="btn" id="m1-calc" type="button">Calculate</button>
+          <button class="btn btn-secondary" id="m1-reset" type="button">Reset</button>
+        </div>
+        <div class="result-box" id="m1-result" role="status" aria-live="polite">
+          <div class="result-label">Result</div>
+          <div class="result-main" id="m1-main">—</div>
+          <div class="result-detail" id="m1-detail"></div>
+        </div>
+      </div>
+
+      <!-- Mode 2 -->
+      <div style="border:1px solid var(--border);border-radius:12px;padding:20px;margin-bottom:18px;">
+        <h3 class="mt-0">2. X is what percent of Y?</h3>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="m2-x">Value X</label>
+            <input class="form-control" id="m2-x" type="number" inputmode="decimal" placeholder="e.g. 30" step="any" />
+          </div>
+          <div class="form-group">
+            <label for="m2-y">Value Y</label>
+            <input class="form-control" id="m2-y" type="number" inputmode="decimal" placeholder="e.g. 150" step="any" />
+          </div>
+        </div>
+        <div class="form-actions">
+          <button class="btn" id="m2-calc" type="button">Calculate</button>
+          <button class="btn btn-secondary" id="m2-reset" type="button">Reset</button>
+        </div>
+        <div class="result-box" id="m2-result" role="status" aria-live="polite">
+          <div class="result-label">Result</div>
+          <div class="result-main" id="m2-main">—</div>
+          <div class="result-detail" id="m2-detail"></div>
+        </div>
+      </div>
+
+      <!-- Mode 3 -->
+      <div style="border:1px solid var(--border);border-radius:12px;padding:20px;">
+        <h3 class="mt-0">3. Percentage change (old → new)</h3>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="m3-old">Old value</label>
+            <input class="form-control" id="m3-old" type="number" inputmode="decimal" placeholder="e.g. 40" step="any" />
+          </div>
+          <div class="form-group">
+            <label for="m3-new">New value</label>
+            <input class="form-control" id="m3-new" type="number" inputmode="decimal" placeholder="e.g. 50" step="any" />
+          </div>
+        </div>
+        <div class="form-actions">
+          <button class="btn" id="m3-calc" type="button">Calculate</button>
+          <button class="btn btn-secondary" id="m3-reset" type="button">Reset</button>
+        </div>
+        <div class="result-box" id="m3-result" role="status" aria-live="polite">
+          <div class="result-label">Result</div>
+          <div class="result-main" id="m3-main">—</div>
+          <div class="result-detail" id="m3-detail"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- AD: MIDDLE -->
+    <!-- ADSENSE PLACEMENT: replace this placeholder after approval -->
+    <div class="ad-placeholder ad-middle" role="complementary" aria-label="Advertisement"><span>Advertisement</span></div>
+
+    <!-- ===== CONTENT ===== -->
+    <article class="prose">
+      <h2>What Is a Percentage Calculator?</h2>
+      <p>A percentage calculator is a tool that converts between ratios, fractions, and the "parts per hundred" notation. It answers everyday questions like:</p>
+      <ul>
+        <li>What is 15% of 200?</li>
+        <li>30 is what percent of 150?</li>
+        <li>What is the percentage increase from 40 to 50?</li>
+      </ul>
+
+      <h2>How to Use the Percentage Calculator</h2>
+      <ol>
+        <li><strong>Choose the right mode.</strong> "X% of Y" for parts of a whole; "X is what % of Y" for ratios; "old → new" for change.</li>
+        <li><strong>Enter your numbers</strong> in the fields. Decimals are allowed.</li>
+        <li><strong>Click Calculate</strong> (or simply type — results update live).</li>
+        <li><strong>Read the result and formula</strong> shown in the result box.</li>
+        <li>Use <strong>Reset</strong> to clear the fields and start over.</li>
+      </ol>
+
+      <h2>Percentage Formula</h2>
+      <p>The core formula is:</p>
+      <pre><code>Percentage value = (Part ÷ Whole) × 100</code></pre>
+      <p>For "X% of Y":</p>
+      <pre><code>Result = (X ÷ 100) × Y</code></pre>
+      <p>For percentage change:</p>
+      <pre><code>% change = ((New − Old) ÷ |Old|) × 100</code></pre>
+
+      <h2>How the Calculation Works</h2>
+      <p>A percentage is just a fraction with denominator 100. When you say "15%", you mean "15 per 100" = 0.15. Multiplying a value by 0.15 returns the portion. To reverse the process — e.g., "30 is what percent of 150?" — divide the part by the whole and multiply by 100 to convert the fraction back to a percentage.</p>
+
+      <h2>Example Calculation</h2>
+      <p><strong>Problem:</strong> A shirt costs $40 and is now on sale for $50 after a price increase. What is the percentage change?</p>
+      <p>Old = 40, New = 50. Change = (50 − 40) ÷ |40| × 100 = 10 ÷ 40 × 100 = <strong>25% increase</strong>.</p>
+      <p><strong>Problem 2:</strong> What is 18% of 250?</p>
+      <p>18 ÷ 100 × 250 = 0.18 × 250 = <strong>45</strong>.</p>
+
+      <h2>Understanding Your Result</h2>
+      <p>The result is a number in the units of the input (for "X% of Y"), a percentage (for "X is what % of Y"), or a signed percentage (for change). Positive change means an increase, negative means a decrease. If the denominator is 0, the result is undefined — the calculator will tell you.</p>
+
+      <h2>Common Mistakes</h2>
+      <ul>
+        <li>Confusing <em>percentage points</em> with <em>percent change</em>. A change from 4% to 6% is 2 percentage points but a 50% increase.</li>
+        <li>Using the new value as the denominator in a change formula. Always use the original (old) value.</li>
+        <li>Forgetting to divide by 100. "15%" is 0.15, not 15.</li>
+        <li>Dividing by zero. This produces an undefined result — always check your denominator.</li>
+      </ul>
+
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">How do I calculate a percentage of a number?</button>
+        <div class="faq-a"><p>Multiply the number by the percentage and divide by 100. Example: 15% of 200 = (15 × 200) ÷ 100 = 30.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">How do I find what percentage one number is of another?</button>
+        <div class="faq-a"><p>Divide the first number by the second and multiply by 100. Example: 30 of 150 = (30 ÷ 150) × 100 = 20%.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">What's the difference between percentage and percentage points?</button>
+        <div class="faq-a"><p>Percentage points measure the arithmetic difference between two percentages (5% to 7% = +2 points). Percent change is relative: (7 − 5) ÷ 5 × 100 = 40%.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">How do I reverse a percentage?</button>
+        <div class="faq-a"><p>If a value has been increased by P%, divide by (1 + P/100). If it was decreased by P%, divide by (1 − P/100).</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Can percentages be negative?</button>
+        <div class="faq-a"><p>Yes. Negative percentages represent a decrease or a value below zero. A −10% change means a 10% decrease.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Why does my calculator show "undefined"?</button>
+        <div class="faq-a"><p>You likely entered zero as the denominator or the old value. Division by zero is mathematically undefined.</p></div>
+      </div>
+
+      <h2>Related Calculators</h2>
+      <div class="grid grid-3" data-related-tools="percentage-calculator"></div>
+
+      <h2>Related Articles</h2>
+      <ul>
+        <li><a href="/blog/how-to-calculate-percentage.html">How to Calculate Percentages</a></li>
+        <li><a href="/blog/percentage-increase-vs-decrease.html">Percentage Increase vs Decrease</a></li>
+      </ul>
+
+      <div class="callout">
+        <strong>Note:</strong> This calculator provides informational results. For financial, tax, or legal decisions, always verify with a qualified professional.
+      </div>
+    </article>
+
+    <!-- AD: BOTTOM -->
+    <!-- ADSENSE PLACEMENT: replace this placeholder after approval -->
+    <div class="ad-placeholder ad-bottom" role="complementary" aria-label="Advertisement"><span>Advertisement</span></div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="logo" href="/" style="color:#fff;margin-bottom:12px;"><span class="logo-mark" aria-hidden="true">CV</span><span data-site-name style="color:#fff;">CalcVerse</span></a>
+        <p data-site-desc></p>
+      </div>
+      <div><h4>Company</h4><a href="/about.html">About Us</a><a href="/contact.html">Contact Us</a><a href="/blog/">Blog</a><a href="/sitemap.html">Sitemap</a></div>
+      <div><h4>Categories</h4><a href="/categories/financial/">Financial</a><a href="/categories/math/">Math</a><a href="/categories/health/">Health</a><a href="/categories/date-time/">Date &amp; Time</a><a href="/categories/conversion/">Converters</a><a href="/categories/engineering/">Engineering</a></div>
+      <div><h4>Legal</h4><a href="/privacy-policy.html">Privacy Policy</a><a href="/terms-of-service.html">Terms of Service</a><a href="/disclaimer.html">Disclaimer</a><a href="/cookie-policy.html">Cookie Policy</a></div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span data-year></span> <span data-site-name>CalcVerse</span>. All rights reserved.</span>
+      <span>Made for people who need quick, accurate answers.</span>
+    </div>
+  </div>
+</footer>
 
 <script src="/assets/js/config.js"></script>
 <script src="/assets/js/tools-data.js"></script>
 <script src="/assets/js/main.js"></script>
 <script src="/assets/js/calculators/percentage.js"></script>
-<script src="/assets/js/calculators/percentage-calculator-advanced.js"></script>
 </body>
 </html>
