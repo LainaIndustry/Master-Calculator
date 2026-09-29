@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Age Calculator — Exact Age in Years, Months &amp; Days</title>
+<meta name="description" content="Free age calculator: find your exact age in years, months, days, plus totals in weeks, hours, and minutes. Includes countdown to next birthday." />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://calcverse.example.com/tools/age-calculator/" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Age Calculator — Exact Age in Years, Months &amp; Days" />
+<meta property="og:description" content="Find your exact age in years, months, days, weeks, and more." />
+<meta property="og:url" content="https://calcverse.example.com/tools/age-calculator/" />
+<link rel="stylesheet" href="/assets/css/style.css" />
+<link rel="stylesheet" href="/assets/css/ads.css" />
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"BreadcrumbList",
+  "itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://calcverse.example.com/"},
+    {"@type":"ListItem","position":2,"name":"Date & Time Calculators","item":"https://calcverse.example.com/categories/date-time/"},
+    {"@type":"ListItem","position":3,"name":"Age Calculator","item":"https://calcverse.example.com/tools/age-calculator/"}
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="logo" href="/"><span class="logo-mark" aria-hidden="true">CV</span><span data-site-name>CalcVerse</span></a>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="nav" aria-label="Primary">
+      <a href="/">Home</a><a href="/tools/">Tools</a>
+      <a href="/categories/financial/">Financial</a><a href="/categories/math/">Math</a>
+      <a href="/categories/health/">Health</a><a href="/categories/date-time/">Date &amp; Time</a>
+      <a href="/categories/conversion/">Converters</a><a href="/categories/engineering/">Engineering</a>
+      <a href="/blog/">Blog</a><a href="/about.html">About</a><a href="/contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="/">Home</a></li>
+        <li><a href="/categories/date-time/">Date &amp; Time</a></li>
+        <li><span aria-current="page">Age Calculator</span></li>
+      </ol>
+    </nav>
+
+    <h1>Age Calculator</h1>
+    <p style="max-width:720px;">Find your exact age in years, months, and days — plus totals in weeks, hours, and minutes. You can also compute the age on a future or past date (useful for records, exams, or anniversaries).</p>
+
+    <!-- ADSENSE PLACEMENT: replace this placeholder after approval -->
+    <div class="ad-placeholder ad-top" role="complementary" aria-label="Advertisement"><span>Advertisement</span></div>
+
+    <section class="calc-card" aria-labelledby="calc-h">
+      <h2 id="calc-h" class="mt-0">Calculate Your Age</h2>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="age-dob">Date of birth</label>
+          <input class="form-control" id="age-dob" type="date" />
+        </div>
+        <div class="form-group">
+          <label for="age-asof">Age as of</label>
+          <input class="form-control" id="age-asof" type="date" />
+          <span class="hint">Defaults to today. Change it to compute age on another date.</span>
+        </div>
+      </div>
+      <div class="form-actions">
+        <button class="btn" id="age-calc" type="button">Calculate</button>
+        <button class="btn btn-secondary" id="age-reset" type="button">Reset</button>
+      </div>
+
+      <div class="result-box" id="age-result" role="status" aria-live="polite">
+        <div class="result-label">Your exact age</div>
+        <div class="result-main" id="age-main">—</div>
+        <div class="result-detail" id="age-detail"></div>
+      </div>
+    </section>
+
+    <!-- ADSENSE PLACEMENT: replace this placeholder after approval -->
+    <div class="ad-placeholder ad-middle" role="complementary" aria-label="Advertisement"><span>Advertisement</span></div>
+
+    <article class="prose">
+      <h2>What Does an Age Calculator Do?</h2>
+      <p>An age calculator determines the exact time elapsed between two dates — usually your date of birth and today. It breaks the difference down into years, months, and days, which is more useful than simply reporting "years old" because it accounts for partial years and leap days.</p>
+
+      <h2>How to Use This Calculator</h2>
+      <ol>
+        <li>Enter your <strong>date of birth</strong>.</li>
+        <li>Leave <strong>as of</strong> as today, or enter a different date.</li>
+        <li>Click <strong>Calculate</strong>. Your exact age and totals appear instantly.</li>
+      </ol>
+
+      <h2>How Age Is Calculated</h2>
+      <p>The most common method is the "YMD" (Years, Months, Days) approach. The algorithm:</p>
+      <ol>
+        <li>Subtract the birth year from the target year.</li>
+        <li>Subtract the birth month from the target month; if negative, subtract 1 from the year count and add 12.</li>
+        <li>Subtract the birth day from the target day; if negative, borrow days from the previous month (using its actual length).</li>
+      </ol>
+      <p>This avoids the errors of just dividing days by 365.25, which doesn't account for varying month lengths.</p>
+
+      <h2>Example</h2>
+      <p>If you were born on <strong>15 March 1990</strong> and today is <strong>20 September 2025</strong>:</p>
+      <ul>
+        <li>Years: 2025 − 1990 = 35</li>
+        <li>Months: 9 − 3 = 6</li>
+        <li>Days: 20 − 15 = 5</li>
+        <li>Result: <strong>35 years, 6 months, 5 days</strong></li>
+      </ul>
+
+      <h2>Understanding Your Result</h2>
+      <p>You'll see your age in YMD form plus cumulative totals: total months, total weeks, total days, total hours, and total minutes. The "next birthday" line tells you how many days remain until your next birthday from the reference date.</p>
+
+      <h2>Common Mistakes</h2>
+      <ul>
+        <li>Dividing total days by 365 and rounding — this ignores leap years.</li>
+        <li>Forgetting time zone when comparing exact instants (usually irrelevant for age).</li>
+        <li>Assuming month length is always 30 days — it isn't.</li>
+      </ul>
+
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">How is age calculated for legal purposes?</button>
+        <div class="faq-a"><p>Legally, age typically increments at the start of the birthday (not at the end). This calculator follows that convention.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">What if I was born on February 29?</button>
+        <div class="faq-a"><p>In non-leap years, most jurisdictions treat February 28 or March 1 as the birthday. This calculator counts the years correctly regardless.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Why is "years × 12" not equal to total months?</button>
+        <div class="faq-a"><p>Because "years × 12" assumes full years. If you're 35 years and 6 months old, total months = 426. If you compute 35 × 12 = 420, that's missing the 6 extra months.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Can I use this for pets?</button>
+        <div class="faq-a"><p>Yes — but "pet years" is a folk concept. Real aging depends on species and size. This calculator reports accurate calendar age.</p></div>
+      </div>
+
+      <h2>Related Calculators</h2>
+      <div class="grid grid-3" data-related-tools="age-calculator"></div>
+
+      <h2>Related Articles</h2>
+      <ul>
+        <li><a href="/blog/how-to-calculate-age.html">How to Calculate Age</a></li>
+        <li><a href="/blog/how-date-difference-is-calculated.html">How Date Difference Is Calculated</a></li>
+      </ul>
+    </article>
+
+    <!-- ADSENSE PLACEMENT: replace this placeholder after approval -->
+    <div class="ad-placeholder ad-bottom" role="complementary" aria-label="Advertisement"><span>Advertisement</span></div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="logo" href="/" style="color:#fff;margin-bottom:12px;"><span class="logo-mark" aria-hidden="true">CV</span><span data-site-name style="color:#fff;">CalcVerse</span></a>
+        <p data-site-desc></p>
+      </div>
+      <div><h4>Company</h4><a href="/about.html">About Us</a><a href="/contact.html">Contact Us</a><a href="/blog/">Blog</a><a href="/sitemap.html">Sitemap</a></div>
+      <div><h4>Categories</h4><a href="/categories/financial/">Financial</a><a href="/categories/math/">Math</a><a href="/categories/health/">Health</a><a href="/categories/date-time/">Date &amp; Time</a><a href="/categories/conversion/">Converters</a><a href="/categories/engineering/">Engineering</a></div>
+      <div><h4>Legal</h4><a href="/privacy-policy.html">Privacy Policy</a><a href="/terms-of-service.html">Terms of Service</a><a href="/disclaimer.html">Disclaimer</a><a href="/cookie-policy.html">Cookie Policy</a></div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span data-year></span> <span data-site-name>CalcVerse</span>. All rights reserved.</span>
+      <span>Made for people who need quick, accurate answers.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/js/config.js"></script>
+<script src="/assets/js/tools-data.js"></script>
+<script src="/assets/js/main.js"></script>
+<script src="/assets/js/calculators/age.js"></script>
+</body>
+</html>
