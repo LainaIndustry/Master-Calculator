@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Compound Interest Calculator — With Contributions</title>
+<meta name="description" content="Free compound interest calculator with optional monthly contributions. See how your savings grow over time with a year-by-year table." />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://calcverse.example.com/tools/compound-interest-calculator/" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Compound Interest Calculator — With Contributions" />
+<meta property="og:description" content="See how savings grow with compound interest and monthly contributions." />
+<meta property="og:url" content="https://calcverse.example.com/tools/compound-interest-calculator/" />
+<link rel="stylesheet" href="/assets/css/style.css" />
+<link rel="stylesheet" href="/assets/css/ads.css" />
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"BreadcrumbList",
+  "itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://calcverse.example.com/"},
+    {"@type":"ListItem","position":2,"name":"Financial Calculators","item":"https://calcverse.example.com/categories/financial/"},
+    {"@type":"ListItem","position":3,"name":"Compound Interest Calculator","item":"https://calcverse.example.com/tools/compound-interest-calculator/"}
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="logo" href="/"><span class="logo-mark" aria-hidden="true">CV</span><span data-site-name>CalcVerse</span></a>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="nav" aria-label="Primary">
+      <a href="/">Home</a><a href="/tools/">Tools</a>
+      <a href="/categories/financial/">Financial</a><a href="/categories/math/">Math</a>
+      <a href="/categories/health/">Health</a><a href="/categories/date-time/">Date &amp; Time</a>
+      <a href="/categories/conversion/">Converters</a><a href="/categories/engineering/">Engineering</a>
+      <a href="/blog/">Blog</a><a href="/about.html">About</a><a href="/contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="/">Home</a></li>
+        <li><a href="/categories/financial/">Financial Calculators</a></li>
+        <li><span aria-current="page">Compound Interest Calculator</span></li>
+      </ol>
+    </nav>
+
+    <h1>Compound Interest Calculator</h1>
+    <p style="max-width:720px;">See how a lump sum — with or without monthly contributions — grows over time thanks to compound interest. Choose any compounding frequency and see a year-by-year breakdown.</p>
+
+    <!-- ADSENSE PLACEMENT: replace this placeholder after approval -->
+    <div class="ad-placeholder ad-top" role="complementary" aria-label="Advertisement"><span>Advertisement</span></div>
+
+    <section class="calc-card" aria-labelledby="calc-h">
+      <h2 id="calc-h" class="mt-0">Calculate Compound Interest</h2>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="ci-principal">Initial principal</label>
+          <div class="input-group">
+            <input class="form-control" id="ci-principal" type="number" min="0" step="100" placeholder="e.g. 10000" />
+            <span class="unit">$</span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="ci-rate">Annual interest rate</label>
+          <div class="input-group">
+            <input class="form-control" id="ci-rate" type="number" min="0" step="0.01" placeholder="e.g. 7" />
+            <span class="unit">%</span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="ci-years">Years</label>
+          <div class="input-group">
+            <input class="form-control" id="ci-years" type="number" min="0" step="1" placeholder="e.g. 20" />
+            <span class="unit">yrs</span>
+          </div>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="ci-compound">Compounding frequency</label>
+          <select class="form-control" id="ci-compound">
+            <option value="1">Annually (1×/yr)</option>
+            <option value="2">Semi-annually (2×/yr)</option>
+            <option value="4">Quarterly (4×/yr)</option>
+            <option value="12" selected>Monthly (12×/yr)</option>
+            <option value="365">Daily (365×/yr)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="ci-contribution">Monthly contribution (optional)</label>
+          <div class="input-group">
+            <input class="form-control" id="ci-contribution" type="number" min="0" step="10" placeholder="e.g. 200" />
+            <span class="unit">$</span>
+          </div>
+        </div>
+      </div>
+      <div class="form-actions">
+        <button class="btn" id="ci-calc" type="button">Calculate</button>
+        <button class="btn btn-secondary" id="ci-reset" type="button">Reset</button>
+      </div>
+
+      <div class="result-box" id="ci-result" role="status" aria-live="polite">
+        <div class="result-label">Future value</div>
+        <div class="result-main" id="ci-main">—</div>
+        <div class="result-detail" id="ci-detail"></div>
+      </div>
+
+      <h3>Year-by-Year Growth</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Year</th><th>Contributed</th><th>Interest</th><th>Total</th></tr></thead>
+          <tbody id="ci-table-body"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ADSENSE PLACEMENT: replace this placeholder after approval -->
+    <div class="ad-placeholder ad-middle" role="complementary" aria-label="Advertisement"><span>Advertisement</span></div>
+
+    <article class="prose">
+      <h2>What Is Compound Interest?</h2>
+      <p>Compound interest is interest earned on both your original principal <em>and</em> on interest that has already accumulated. It's the reason a modest savings account can grow substantially over decades — and also why credit card debt spirals quickly.</p>
+
+      <h2>How to Use This Calculator</h2>
+      <ol>
+        <li>Enter your <strong>initial principal</strong>.</li>
+        <li>Enter an <strong>annual interest rate</strong> (as a percentage).</li>
+        <li>Enter the number of <strong>years</strong>.</li>
+        <li>Choose the <strong>compounding frequency</strong>.</li>
+        <li>(Optional) Add a <strong>monthly contribution</strong> to model regular deposits.</li>
+        <li>Click <strong>Calculate</strong>.</li>
+      </ol>
+
+      <h2>Compound Interest Formula</h2>
+      <p>For a lump sum with no additional contributions:</p>
+      <pre><code>A = P × (1 + r/n)^(n×t)</code></pre>
+      <ul>
+        <li><strong>A</strong> = final amount</li>
+        <li><strong>P</strong> = principal</li>
+        <li><strong>r</strong> = annual rate (decimal)</li>
+        <li><strong>n</strong> = compounding periods per year</li>
+        <li><strong>t</strong> = years</li>
+      </ul>
+      <p>For monthly contributions (future value of an annuity):</p>
+      <pre><code>FV_contrib = PMT × [ (1 + i)^m − 1 ] ÷ i</code></pre>
+      <p>Where <strong>i</strong> is the monthly rate and <strong>m</strong> is the number of months.</p>
+
+      <h2>How the Calculation Works</h2>
+      <p>For each compounding period, interest is added to the balance, and the next period's interest is computed on the larger balance. More frequent compounding means slightly higher effective returns — the difference between monthly and daily compounding is small, but over decades it adds up.</p>
+
+      <h2>Example Calculation</h2>
+      <p>$10,000 at 7% for 20 years, compounded monthly:</p>
+      <ul>
+        <li>A = 10000 × (1 + 0.07/12)^(12×20)</li>
+        <li>A = 10000 × (1.005833)^240</li>
+        <li>A ≈ <strong>$40,387</strong> — a 4× increase from interest alone.</li>
+      </ul>
+
+      <h2>Understanding Your Result</h2>
+      <p>The result is the <em>future value</em>. The detail box shows how much of that came from your own contributions versus how much was earned in interest. The table shows growth year by year so you can see compounding accelerate.</p>
+
+      <h2>Common Mistakes</h2>
+      <ul>
+        <li>Confusing APR with APY — APY already accounts for compounding.</li>
+        <li>Forgetting that inflation reduces real returns. A 7% return with 3% inflation is only ~4% real growth.</li>
+        <li>Assuming returns are guaranteed. Investments can lose value.</li>
+        <li>Ignoring taxes on interest earnings (especially in taxable accounts).</li>
+      </ul>
+
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">What's the difference between compound and simple interest?</button>
+        <div class="faq-a"><p>Simple interest is only earned on the principal. Compound interest is earned on principal plus previously accumulated interest — so it grows faster over time.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Does more frequent compounding mean more money?</button>
+        <div class="faq-a"><p>Yes, slightly. Daily compounding earns a bit more than monthly at the same nominal rate. The difference is small unless rates are very high.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">What's the "Rule of 72"?</button>
+        <div class="faq-a"><p>Divide 72 by your annual return to estimate doubling time. At 7%, money doubles in roughly 72 ÷ 7 ≈ 10.3 years.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Can compound interest work against me?</button>
+        <div class="faq-a"><p>Yes — for credit card debt and loans, compound interest works in the lender's favor. High-rate debt compounds rapidly, so pay it off quickly.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Is compounding continuous in this calculator?</button>
+        <div class="faq-a"><p>No — you choose a discrete frequency. For continuous compounding, use A = Pe^(rt), which is the mathematical limit.</p></div>
+      </div>
+
+      <h2>Related Calculators</h2>
+      <div class="grid grid-3" data-related-tools="compound-interest-calculator"></div>
+
+      <h2>Related Articles</h2>
+      <ul>
+        <li><a href="/blog/simple-interest-vs-compound-interest.html">Simple Interest vs Compound Interest</a></li>
+        <li><a href="/blog/compound-interest-explained.html">Compound Interest Explained</a></li>
+      </ul>
+
+      <div class="callout warn">
+        <strong>Financial disclaimer:</strong> Results are estimates. Actual returns depend on market conditions, fees, taxes, and inflation. Past performance does not guarantee future results.
+      </div>
+    </article>
+
+    <!-- ADSENSE PLACEMENT: replace this placeholder after approval -->
+    <div class="ad-placeholder ad-bottom" role="complementary" aria-label="Advertisement"><span>Advertisement</span></div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="logo" href="/" style="color:#fff;margin-bottom:12px;"><span class="logo-mark" aria-hidden="true">CV</span><span data-site-name style="color:#fff;">CalcVerse</span></a>
+        <p data-site-desc></p>
+      </div>
+      <div><h4>Company</h4><a href="/about.html">About Us</a><a href="/contact.html">Contact Us</a><a href="/blog/">Blog</a><a href="/sitemap.html">Sitemap</a></div>
+      <div><h4>Categories</h4><a href="/categories/financial/">Financial</a><a href="/categories/math/">Math</a><a href="/categories/health/">Health</a><a href="/categories/date-time/">Date &amp; Time</a><a href="/categories/conversion/">Converters</a><a href="/categories/engineering/">Engineering</a></div>
+      <div><h4>Legal</h4><a href="/privacy-policy.html">Privacy Policy</a><a href="/terms-of-service.html">Terms of Service</a><a href="/disclaimer.html">Disclaimer</a><a href="/cookie-policy.html">Cookie Policy</a></div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span data-year></span> <span data-site-name>CalcVerse</span>. All rights reserved.</span>
+      <span>Made for people who need quick, accurate answers.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/js/config.js"></script>
+<script src="/assets/js/tools-data.js"></script>
+<script src="/assets/js/main.js"></script>
+<script src="/assets/js/calculators/compound-interest.js"></script>
+</body>
+</html>
