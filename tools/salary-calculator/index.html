@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Salary Calculator — Hourly, Weekly, Monthly, Annual</title>
+<meta name="description" content="Free salary calculator: convert between hourly, daily, weekly, bi-weekly, monthly, and annual pay." />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://calcverse.example.com/tools/salary-calculator/" />
+<link rel="stylesheet" href="/assets/css/style.css" />
+<link rel="stylesheet" href="/assets/css/ads.css" />
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header"><div class="container header-inner">
+  <a class="logo" href="/"><span class="logo-mark">CV</span><span data-site-name>CalcVerse</span></a>
+  <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false"><span></span><span></span><span></span></button>
+  <nav class="nav" aria-label="Primary">
+    <a href="/">Home</a><a href="/tools/">Tools</a>
+    <a href="/categories/financial/">Financial</a><a href="/categories/math/">Math</a>
+    <a href="/categories/health/">Health</a><a href="/categories/date-time/">Date &amp; Time</a>
+    <a href="/categories/conversion/">Converters</a><a href="/categories/engineering/">Engineering</a>
+    <a href="/blog/">Blog</a><a href="/about.html">About</a><a href="/contact.html">Contact</a>
+  </nav>
+</div></header>
+
+<main id="main"><div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <ol><li><a href="/">Home</a></li><li><a href="/categories/financial/">Financial Calculators</a></li><li><span aria-current="page">Salary Calculator</span></li></ol>
+  </nav>
+
+  <h1>Salary Calculator</h1>
+  <p style="max-width:720px;">Convert between hourly, daily, weekly, bi-weekly, monthly, and annual pay. Adjust hours per week and weeks per year to match your schedule.</p>
+
+  <div class="ad-placeholder ad-top" role="complementary" aria-label="Advertisement"><span>Advertisement</span></div>
+
+  <section class="calc-card">
+    <h2 class="mt-0">Convert Your Pay</h2>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="sl-amount">Amount</label>
+        <div class="input-group"><input class="form-control" id="sl-amount" type="number" min="0" step="0.01" placeholder="e.g. 25" /><span class="unit">$</span></div>
+      </div>
+      <div class="form-group">
+        <label for="sl-from">Per</label>
+        <select class="form-control" id="sl-from">
+          <option value="hour">Hour</option>
+          <option value="day">Day</option>
+          <option value="week">Week</option>
+          <option value="biweek">Bi-week</option>
+          <option value="month">Month</option>
+          <option value="year" selected>Year</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="sl-hours">Hours per week</label>
+        <input class="form-control" id="sl-hours" type="number" min="1" step="1" value="40" />
+      </div>
+      <div class="form-group">
+        <label for="sl-weeks">Weeks per year</label>
+        <input class="form-control" id="sl-weeks" type="number" min="1" step="1" value="52" />
+      </div>
+    </div>
+    <div class="form-actions">
+      <button class="btn" id="sl-calc" type="button">Convert</button>
+      <button class="btn btn-secondary" id="sl-reset" type="button">Reset</button>
+    </div>
+    <div class="result-box" id="sl-result" role="status" aria-live="polite">
+      <div class="result-label">Annual pay</div>
+      <div class="result-main" id="sl-main">—</div>
+      <div class="result-detail" id="sl-detail"></div>
+    </div>
+  </section>
+
+  <div class="ad-placeholder ad-middle" role="complementary" aria-label="Advertisement"><span>Advertisement</span></div>
+
+  <article class="prose">
+    <h2>What Is a Salary Calculator?</h2>
+    <p>It converts pay between time periods — from hourly to annual, monthly to weekly, and so on. Useful for comparing job offers, freelancing rates, and budgeting.</p>
+
+    <h2>How to Use It</h2>
+    <ol>
+      <li>Enter the amount.</li>
+      <li>Choose the period ("per hour", "per year", etc.).</li>
+      <li>Adjust hours/week and weeks/year if needed.</li>
+      <li>All other periods update automatically.</li>
+    </ol>
+
+    <h2>Formulas</h2>
+    <pre><code>Annual   = Hourly × Hours/Week × Weeks/Year
+Monthly  = Annual ÷ 12
+Bi-weekly = Annual ÷ 26
+Weekly   = Annual ÷ Weeks/Year
+Daily    = Hourly × 8 (standard)</code></pre>
+
+    <h2>Worked Example</h2>
+    <p>$25/hour, 40 hours/week, 52 weeks/year:</p>
+    <ul>
+      <li>Daily: $200</li>
+      <li>Weekly: $1,000</li>
+      <li>Bi-weekly: $2,000</li>
+      <li>Monthly: $4,333.33</li>
+      <li>Annual: <strong>$52,000</strong></li>
+    </ul>
+
+    <h2>Understanding Your Result</h2>
+    <p>The result is your gross annual pay. Net (take-home) pay will be lower after taxes and deductions.</p>
+
+    <h2>Common Mistakes</h2>
+    <ul>
+      <li>Using 50 weeks/year for salaried employees (they're typically paid for 52).</li>
+      <li>Forgetting that salaried employees usually work more than 40 hours.</li>
+      <li>Confusing "bi-weekly" (every 2 weeks, 26/year) with "semi-monthly" (twice a month, 24/year).</li>
+      <li>Comparing gross salaries without considering cost-of-living differences.</li>
+    </ul>
+
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false">Bi-weekly vs semi-monthly — what's the difference?</button>
+      <div class="faq-a"><p>Bi-weekly = every 2 weeks = 26 paychecks/year. Semi-monthly = twice a month = 24 paychecks/year. Amounts differ.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false">Should I use 2,080 hours for a full-time year?</button>
+      <div class="faq-a"><p>Yes — 40 hours × 52 weeks = 2,080. That's the standard for annual salary conversions.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false">Is this gross or net pay?</button>
+      <div class="faq-a"><p>Gross. For net (take-home), use our Take-Home Paycheck Calculator after estimating tax withholding.</p></div>
+    </div>
+
+    <h2>Related Calculators</h2>
+    <div class="grid grid-3" data-related-tools="salary-calculator"></div>
+  </article>
+
+  <div class="ad-placeholder ad-bottom" role="complementary" aria-label="Advertisement"><span>Advertisement</span></div>
+</div></main>
+
+<footer class="site-footer"><div class="container">
+  <div class="footer-grid">
+    <div class="footer-brand"><a class="logo" href="/" style="color:#fff;margin-bottom:12px;"><span class="logo-mark">CV</span><span data-site-name style="color:#fff">CalcVerse</span></a><p data-site-desc></p></div>
+    <div><h4>Company</h4><a href="/about.html">About Us</a><a href="/contact.html">Contact Us</a><a href="/blog/">Blog</a><a href="/sitemap.html">Sitemap</a></div>
+    <div><h4>Categories</h4><a href="/categories/financial/">Financial</a><a href="/categories/math/">Math</a><a href="/categories/health/">Health</a><a href="/categories/date-time/">Date &amp; Time</a><a href="/categories/conversion/">Converters</a><a href="/categories/engineering/">Engineering</a></div>
+    <div><h4>Legal</h4><a href="/privacy-policy.html">Privacy Policy</a><a href="/terms-of-service.html">Terms of Service</a><a href="/disclaimer.html">Disclaimer</a><a href="/cookie-policy.html">Cookie Policy</a></div>
+  </div>
+  <div class="footer-bottom"><span>&copy; <span data-year></span> <span data-site-name>CalcVerse</span>. All rights reserved.</span></div>
+</div></footer>
+
+<script src="/assets/js/config.js"></script>
+<script src="/assets/js/tools-data.js"></script>
+<script src="/assets/js/main.js"></script>
+<script src="/assets/js/calculators/salary.js"></script>
+</body>
+</html>
