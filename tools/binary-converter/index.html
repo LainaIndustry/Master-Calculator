@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Binary Converter — Text ↔ Binary</title>
+<meta name="description" content="Free binary converter: convert text to 8-bit binary or decode binary back to text. UTF-8 safe." />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://calcverse.example.com/tools/binary-converter/" />
+<link rel="stylesheet" href="/assets/css/style.css" />
+<link rel="stylesheet" href="/assets/css/ads.css" />
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header"><div class="container header-inner">
+  <a class="logo" href="/"><span class="logo-mark">CV</span><span data-site-name>CalcVerse</span></a>
+  <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false"><span></span><span></span><span></span></button>
+  <nav class="nav" aria-label="Primary">
+    <a href="/">Home</a><a href="/tools/">Tools</a>
+    <a href="/categories/financial/">Financial</a><a href="/categories/math/">Math</a>
+    <a href="/categories/health/">Health</a><a href="/categories/date-time/">Date &amp; Time</a>
+    <a href="/categories/conversion/">Converters</a><a href="/categories/engineering/">Engineering</a>
+    <a href="/blog/">Blog</a><a href="/about.html">About</a><a href="/contact.html">Contact</a>
+  </nav>
+</div></header>
+
+<main id="main"><div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <ol><li><a href="/">Home</a></li><li><a href="/categories/developer/">Developer Tools</a></li><li><span aria-current="page">Binary Converter</span></li></ol>
+  </nav>
+
+  <h1>Binary Converter</h1>
+  <p style="max-width:720px;">Convert text to 8-bit binary bytes or decode binary strings back to text. UTF-8 compatible.</p>
+
+  <div class="ad-placeholder ad-top" role="complementary" aria-label="Advertisement"><span>Advertisement</span></div>
+
+  <section class="calc-card">
+    <h2 class="mt-0">Convert Text ↔ Binary</h2>
+    <div class="form-group">
+      <label for="bc-input">Input</label>
+      <textarea class="form-control" id="bc-input" rows="5" placeholder="Text or binary (e.g. '01001000 01101001')"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="bc-output">Output</label>
+      <textarea class="form-control" id="bc-output" rows="5" readonly></textarea>
+    </div>
+    <p id="bc-status" style="font-size:0.9rem;min-height:1.2em;"></p>
+    <div class="form-actions">
+      <button class="btn" id="bc-tobin" type="button">Text → Binary</button>
+      <button class="btn" id="bc-frombin" type="button">Binary → Text</button>
+      <button class="btn btn-secondary" id="bc-copy" type="button">Copy</button>
+      <button class="btn btn-secondary" id="bc-reset" type="button">Reset</button>
+    </div>
+  </section>
+
+  <div class="ad-placeholder ad-middle" role="complementary" aria-label="Advertisement"><span>Advertisement</span></div>
+
+  <article class="prose">
+    <h2>What Is Binary?</h2>
+    <p>Binary is base-2 — the language of computers. Every value is represented using only 0s and 1s. A single binary digit is a bit; 8 bits = 1 byte = one character in ASCII.</p>
+
+    <h2>How to Use It</h2>
+    <ol>
+      <li>Paste text or binary into the input.</li>
+      <li>Click <strong>Text → Binary</strong> or <strong>Binary → Text</strong>.</li>
+      <li>Copy the result.</li>
+    </ol>
+
+    <h2>Example</h2>
+    <p>"Hi" becomes: <code>01001000 01101001</code></p>
+    <ul>
+      <li>H = 0x48 = 01001000</li>
+      <li>i = 0x69 = 01101001</li>
+    </ul>
+
+    <h2>Binary vs Decimal vs Hex</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Decimal</th><th>Binary</th><th>Hex</th></tr></thead>
+        <tbody>
+          <tr><td>0</td><td>0000</td><td>0</td></tr>
+          <tr><td>5</td><td>0101</td><td>5</td></tr>
+          <tr><td>10</td><td>1010</td><td>A</td></tr>
+          <tr><td>15</td><td>1111</td><td>F</td></tr>
+          <tr><td>16</td><td>0001 0000</td><td>10</td></tr>
+          <tr><td>255</td><td>1111 1111</td><td>FF</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>Common Uses</h2>
+    <ul>
+      <li><strong>Understanding computer memory and CPU operations.</strong></li>
+      <li><strong>Debugging low-level code.</strong></li>
+      <li><strong>Learning bitwise operations (AND, OR, XOR, shifts).</strong></li>
+      <li><strong>Encoding data for embedded systems.</strong></li>
+    </ul>
+
+    <h2>Common Mistakes</h2>
+    <ul>
+      <li>Forgetting leading zeros — 00001010 is a valid 8-bit byte; 1010 alone means something else in this tool (it expects 8-bit groups).</li>
+      <li>Confusing ASCII with UTF-8 — non-ASCII characters use multiple bytes.</li>
+      <li>Assuming all binary strings are 8 bits — audio, images, and video use different bit depths.</li>
+    </ul>
+
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false">Why 8 bits per character?</button>
+      <div class="faq-a"><p>Because ASCII uses 7 bits per character and modern byte addressing groups them into 8-bit units. UTF-8 uses 1–4 bytes per character.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false">Can I convert just numbers (not text)?</button>
+      <div class="faq-a"><p>Yes — but this tool treats input as text. For pure integer conversions, use a scientific calculator or a binary-specific tool.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false">Is binary padding important?</button>
+      <div class="faq-a"><p>Yes. 1010 is not the same as 00001010 when bytes are expected. This tool enforces 8-bit groups.</p></div>
+    </div>
+
+    <h2>Related Tools</h2>
+    <div class="grid grid-3" data-related-tools="binary-converter"></div>
+  </article>
+
+  <div class="ad-placeholder ad-bottom" role="complementary" aria-label="Advertisement"><span>Advertisement</span></div>
+</div></main>
+
+<footer class="site-footer"><div class="container">
+  <div class="footer-grid">
+    <div class="footer-brand"><a class="logo" href="/" style="color:#fff;margin-bottom:12px;"><span class="logo-mark">CV</span><span data-site-name style="color:#fff">CalcVerse</span></a><p data-site-desc></p></div>
+    <div><h4>Company</h4><a href="/about.html">About Us</a><a href="/contact.html">Contact Us</a><a href="/blog/">Blog</a><a href="/sitemap.html">Sitemap</a></div>
+    <div><h4>Categories</h4><a href="/categories/financial/">Financial</a><a href="/categories/math/">Math</a><a href="/categories/health/">Health</a><a href="/categories/date-time/">Date &amp; Time</a><a href="/categories/conversion/">Converters</a><a href="/categories/engineering/">Engineering</a></div>
+    <div><h4>Legal</h4><a href="/privacy-policy.html">Privacy Policy</a><a href="/terms-of-service.html">Terms of Service</a><a href="/disclaimer.html">Disclaimer</a><a href="/cookie-policy.html">Cookie Policy</a></div>
+  </div>
+  <div class="footer-bottom"><span>&copy; <span data-year></span> <span data-site-name>CalcVerse</span>. All rights reserved.</span></div>
+</div></footer>
+
+<script src="/assets/js/config.js"></script>
+<script src="/assets/js/tools-data.js"></script>
+<script src="/assets/js/main.js"></script>
+<script src="/assets/js/calculators/binary-converter.js"></script>
+</body>
+</html>
