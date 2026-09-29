@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+Disallow: /assets/js/
+Disallow: /*.json$
+
+Sitemap: https://calcverse.example.com/sitemap.xml
