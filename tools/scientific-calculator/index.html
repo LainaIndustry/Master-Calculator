@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Scientific Calculator — Free Online Calculator</title>
+<meta name="description" content="Free scientific calculator with trig, logarithms, powers, roots, and constants. Runs in your browser." />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://calcverse.example.com/tools/scientific-calculator/" />
+<link rel="stylesheet" href="/assets/css/style.css" />
+<link rel="stylesheet" href="/assets/css/ads.css" />
+<style>
+.sci-calc { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; max-width: 480px; }
+.sci-calc button { padding: 14px 8px; border:1px solid var(--border-strong); background: var(--surface); border-radius: 8px; font-size: 1rem; font-weight: 600; color: var(--text); cursor: pointer; transition: all .15s; }
+.sci-calc button:hover { background: var(--surface-alt); }
+.sci-calc button.op { background: var(--primary-light); color: var(--primary-dark); }
+.sci-calc button.eq { background: var(--primary); color: #fff; grid-column: span 2; }
+.sci-calc button.fn { background: var(--surface-alt); font-size: 0.9rem; }
+#sci-display { width: 100%; padding: 16px; font-size: 1.5rem; font-family: var(--font-mono); border:1px solid var(--border-strong); border-radius: 8px; margin-bottom: 14px; text-align: right; background: var(--surface); }
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="logo" href="/"><span class="logo-mark">CV</span><span data-site-name>CalcVerse</span></a>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="nav" aria-label="Primary">
+      <a href="/">Home</a><a href="/tools/">Tools</a>
+      <a href="/categories/financial/">Financial</a><a href="/categories/math/">Math</a>
+      <a href="/categories/health/">Health</a><a href="/categories/date-time/">Date &amp; Time</a>
+      <a href="/categories/conversion/">Converters</a><a href="/categories/engineering/">Engineering</a>
+      <a href="/blog/">Blog</a><a href="/about.html">About</a><a href="/contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main"><div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <ol><li><a href="/">Home</a></li><li><a href="/categories/math/">Math Calculators</a></li><li><span aria-current="page">Scientific Calculator</span></li></ol>
+  </nav>
+
+  <h1>Scientific Calculator</h1>
+  <p style="max-width:720px;">A full-featured scientific calculator with trigonometric, logarithmic, and exponential functions. Supports keyboard input. All calculations run in your browser.</p>
+
+  <div class="ad-placeholder ad-top" role="complementary" aria-label="Advertisement"><span>Advertisement</span></div>
+
+  <section class="calc-card sci-calc-wrapper">
+    <h2 class="mt-0">Calculator</h2>
+    <input id="sci-display" readonly value="0" aria-label="Calculator display" />
+    <div class="sci-calc" role="group" aria-label="Scientific calculator keypad">
+      <button class="fn" data-sci-key="sin(">sin</button>
+      <button class="fn" data-sci-key="cos(">cos</button>
+      <button class="fn" data-sci-key="tan(">tan</button>
+      <button class="fn" data-sci-key="log(">log</button>
+      <button class="fn" data-sci-key="ln(">ln</button>
+
+      <button class="fn" data-sci-key="√(">√</button>
+      <button class="fn" data-sci-key="^">^</button>
+      <button class="fn" data-sci-key="π">π</button>
+      <button class="fn" data-sci-key="e">e</button>
+      <button class="op" data-sci-key="C">C</button>
+
+      <button data-sci-key="7">7</button>
+      <button data-sci-key="8">8</button>
+      <button data-sci-key="9">9</button>
+      <button class="op" data-sci-key="÷">÷</button>
+      <button class="op" data-sci-key="⌫">⌫</button>
+
+      <button data-sci-key="4">4</button>
+      <button data-sci-key="5">5</button>
+      <button data-sci-key="6">6</button>
+      <button class="op" data-sci-key="×">×</button>
+      <button class="op" data-sci-key="(">(</button>
+
+      <button data-sci-key="1">1</button>
+      <button data-sci-key="2">2</button>
+      <button data-sci-key="3">3</button>
+      <button class="op" data-sci-key="-">−</button>
+      <button class="op" data-sci-key=")">)</button>
+
+      <button data-sci-key="0">0</button>
+      <button data-sci-key=".">.</button>
+      <button class="eq" data-sci-key="=">=</button>
+      <button class="op" data-sci-key="+">+</button>
+    </div>
+  </section>
+
+  <div class="ad-placeholder ad-middle" role="complementary" aria-label="Advertisement"><span>Advertisement</span></div>
+
+  <article class="prose">
+    <h2>What Is a Scientific Calculator?</h2>
+    <p>A scientific calculator handles more than the four basic operations. It supports trigonometry (sin, cos, tan), logarithms (log, ln), powers, roots, and mathematical constants like π and e.</p>
+
+    <h2>How to Use It</h2>
+    <ol>
+      <li>Click the on-screen buttons, or type directly using your keyboard.</li>
+      <li>Use parentheses for grouping.</li>
+      <li>Press <strong>=</strong> (or Enter) to evaluate.</li>
+      <li>Use <strong>C</strong> to clear or <strong>⌫</strong> to delete the last character.</li>
+    </ol>
+
+    <h2>Supported Operations</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Button</th><th>Meaning</th><th>Example</th></tr></thead>
+        <tbody>
+          <tr><td>sin, cos, tan</td><td>Trig functions (radians)</td><td>sin(π/2) = 1</td></tr>
+          <tr><td>log</td><td>Logarithm base 10</td><td>log(1000) = 3</td></tr>
+          <tr><td>ln</td><td>Natural logarithm</td><td>ln(e) = 1</td></tr>
+          <tr><td>√</td><td>Square root</td><td>√(16) = 4</td></tr>
+          <tr><td>^</td><td>Exponentiation</td><td>2^10 = 1024</td></tr>
+          <tr><td>π, e</td><td>Constants</td><td>π ≈ 3.14159</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>Radian vs Degree Mode</h2>
+    <p>This calculator uses <strong>radians</strong> for trig functions (standard for scientific work). To convert degrees to radians, multiply by π/180. For example, sin(30°) = sin(π/6) ≈ 0.5.</p>
+
+    <h2>Example Calculations</h2>
+    <ul>
+      <li><code>2 + 3 × 4</code> = 14 (multiplication before addition)</li>
+      <li><code>(2 + 3) × 4</code> = 20 (parentheses change precedence)</li>
+      <li><code>√(16) + 2^3</code> = 4 + 8 = 12</li>
+      <li><code>log(1000) + ln(e)</code> = 3 + 1 = 4</li>
+    </ul>
+
+    <h2>Common Mistakes</h2>
+    <ul>
+      <li>Forgetting operator precedence — use parentheses when in doubt.</li>
+      <li>Mixing radians and degrees.</li>
+      <li>Dividing by zero (shows "Error").</li>
+      <li>Entering multiple decimal points in one number.</li>
+    </ul>
+
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false">Can I use my keyboard?</button>
+      <div class="faq-a"><p>Yes — numbers, operators, Enter, Backspace, and Escape are all supported when the calculator is focused.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false">How do I switch to degrees?</button>
+      <div class="faq-a"><p>This version uses radians. To work with degrees, convert: radians = degrees × π/180.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false">Why does it show "Error"?</button>
+      <div class="faq-a"><p>Typically from division by zero, unmatched parentheses, or invalid syntax. Press C to reset.</p></div>
+    </div>
+
+    <h2>Related Calculators</h2>
+    <div class="grid grid-3" data-related-tools="scientific-calculator"></div>
+  </article>
+
+  <div class="ad-placeholder ad-bottom" role="complementary" aria-label="Advertisement"><span>Advertisement</span></div>
+</div></main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="logo" href="/" style="color:#fff;margin-bottom:12px;"><span class="logo-mark">CV</span><span data-site-name style="color:#fff">CalcVerse</span></a>
+        <p data-site-desc></p>
+      </div>
+      <div><h4>Company</h4><a href="/about.html">About Us</a><a href="/contact.html">Contact Us</a><a href="/blog/">Blog</a><a href="/sitemap.html">Sitemap</a></div>
+      <div><h4>Categories</h4><a href="/categories/financial/">Financial</a><a href="/categories/math/">Math</a><a href="/categories/health/">Health</a><a href="/categories/date-time/">Date &amp; Time</a><a href="/categories/conversion/">Converters</a><a href="/categories/engineering/">Engineering</a></div>
+      <div><h4>Legal</h4><a href="/privacy-policy.html">Privacy Policy</a><a href="/terms-of-service.html">Terms of Service</a><a href="/disclaimer.html">Disclaimer</a><a href="/cookie-policy.html">Cookie Policy</a></div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span data-year></span> <span data-site-name>CalcVerse</span>. All rights reserved.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/js/config.js"></script>
+<script src="/assets/js/tools-data.js"></script>
+<script src="/assets/js/main.js"></script>
+<script src="/assets/js/calculators/scientific.js"></script>
+</body>
+</html>
