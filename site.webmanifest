@@ -1,0 +1,17 @@
+{
+  "name": "CalcVerse",
+  "short_name": "CalcVerse",
+  "description": "Free online calculators and tools for finance, math, health, conversions, and engineering.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f8fafc",
+  "theme_color": "#2563eb",
+  "icons": [
+    {
+      "src": "/assets/images/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
