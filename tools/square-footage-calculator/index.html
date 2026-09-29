@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Square Footage Calculator — Area &amp; Cost</title>
+<meta name="description" content="Free square footage calculator: compute square feet, meters, and yards for any rectangular space, with optional cost estimation." />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://calcverse.example.com/tools/square-footage-calculator/" />
+<link rel="stylesheet" href="/assets/css/style.css" />
+<link rel="stylesheet" href="/assets/css/ads.css" />
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header"><div class="container header-inner">
+  <a class="logo" href="/"><span class="logo-mark">CV</span><span data-site-name>CalcVerse</span></a>
+  <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false"><span></span><span></span><span></span></button>
+  <nav class="nav" aria-label="Primary">
+    <a href="/">Home</a><a href="/tools/">Tools</a>
+    <a href="/categories/financial/">Financial</a><a href="/categories/math/">Math</a>
+    <a href="/categories/health/">Health</a><a href="/categories/date-time/">Date &amp; Time</a>
+    <a href="/categories/conversion/">Converters</a><a href="/categories/engineering/">Engineering</a>
+    <a href="/blog/">Blog</a><a href="/about.html">About</a><a href="/contact.html">Contact</a>
+  </nav>
+</div></header>
+
+<main id="main"><div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <ol><li><a href="/">Home</a></li><li><a href="/categories/engineering/">Engineering</a></li><li><span aria-current="page">Square Footage Calculator</span></li></ol>
+  </nav>
+
+  <h1>Square Footage Calculator</h1>
+  <p style="max-width:720px;">Compute the area of a rectangular space in square feet, meters, or yards. Optionally estimate material cost.</p>
+
+  <div class="ad-placeholder ad-top" role="complementary" aria-label="Advertisement"><span>Advertisement</span></div>
+
+  <section class="calc-card">
+    <h2 class="mt-0">Calculate Area</h2>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="sf-length">Length</label>
+        <input class="form-control" id="sf-length" type="number" min="0" step="any" placeholder="e.g. 12" />
+      </div>
+      <div class="form-group">
+        <label for="sf-width">Width</label>
+        <input class="form-control" id="sf-width" type="number" min="0" step="any" placeholder="e.g. 10" />
+      </div>
+      <div class="form-group">
+        <label for="sf-unit">Unit</label>
+        <select class="form-control" id="sf-unit">
+          <option value="ft">Feet (ft)</option>
+          <option value="in">Inches (in)</option>
+          <option value="yd">Yards (yd)</option>
+          <option value="m">Meters (m)</option>
+          <option value="cm">Centimeters (cm)</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="sf-price">Cost per square foot (optional)</label>
+        <div class="input-group"><input class="form-control" id="sf-price" type="number" min="0" step="0.01" placeholder="e.g. 4.50" /><span class="unit">$</span></div>
+      </div>
+    </div>
+    <div class="form-actions">
+      <button class="btn" id="sf-calc" type="button">Calculate</button>
+      <button class="btn btn-secondary" id="sf-reset" type="button">Reset</button>
+    </div>
+    <div class="result-box" id="sf-result" role="status" aria-live="polite">
+      <div class="result-label">Area</div>
+      <div class="result-main" id="sf-main">—</div>
+      <div class="result-detail" id="sf-detail"></div>
+    </div>
+  </section>
+
+  <div class="ad-placeholder ad-middle" role="complementary" aria-label="Advertisement"><span>Advertisement</span></div>
+
+  <article class="prose">
+    <h2>What Is Square Footage?</h2>
+    <p>Square footage is the area of a space measured in feet on each side. It's the standard unit for real estate, flooring, painting, landscaping, and roofing in the US.</p>
+
+    <h2>How to Use This Calculator</h2>
+    <ol>
+      <li>Enter the <strong>length</strong> and <strong>width</strong> in any supported unit.</li>
+      <li>(Optional) Enter a price per square foot to estimate material cost.</li>
+      <li>Results update as you type.</li>
+    </ol>
+
+    <h2>Formula</h2>
+    <pre><code>Area = Length × Width</code></pre>
+    <p>Convert units first if needed:</p>
+    <ul>
+      <li>1 ft = 12 in = 0.3048 m</li>
+      <li>1 yd = 3 ft = 0.9144 m</li>
+      <li>1 m² = 10.7639 ft²</li>
+    </ul>
+
+    <h2>Worked Example</h2>
+    <p>A room 12 ft × 10 ft:</p>
+    <ul>
+      <li>Area = 120 sq ft</li>
+      <li>In square meters: 120 × 0.092903 ≈ 11.15 m²</li>
+      <li>If flooring costs $4.50/sq ft: $540</li>
+    </ul>
+
+    <h2>Understanding Your Result</h2>
+    <p>The result is net area. Add 5–10% for waste (cuts, offcuts) when ordering materials. For odd-shaped rooms, split into rectangles and add each area.</p>
+
+    <h2>Common Mistakes</h2>
+    <ul>
+      <li>Mixing units — inches and feet in the same calculation.</li>
+      <li>Forgetting to add waste when ordering materials.</li>
+      <li>Using this for L-shaped rooms without splitting into rectangles.</li>
+      <li>Confusing linear feet (length) with square feet (area).</li>
+    </ul>
+
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false">What's the difference between linear and square feet?</button>
+      <div class="faq-a"><p>Linear feet measure length only. Square feet measure area (length × width).</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false">How do I compute an L-shaped room?</button>
+      <div class="faq-a"><p>Split it into two rectangles, compute each area, and add them.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false">How much waste should I add?</button>
+      <div class="faq-a"><p>5% for straight-lay flooring, 10% for diagonal, 10–15% for complex rooms or tiles with patterns.</p></div>
+    </div>
+
+    <h2>Related Calculators</h2>
+    <div class="grid grid-3" data-related-tools="square-footage-calculator"></div>
+  </article>
+
+  <div class="ad-placeholder ad-bottom" role="complementary" aria-label="Advertisement"><span>Advertisement</span></div>
+</div></main>
+
+<footer class="site-footer"><div class="container">
+  <div class="footer-grid">
+    <div class="footer-brand"><a class="logo" href="/" style="color:#fff;margin-bottom:12px;"><span class="logo-mark">CV</span><span data-site-name style="color:#fff">CalcVerse</span></a><p data-site-desc></p></div>
+    <div><h4>Company</h4><a href="/about.html">About Us</a><a href="/contact.html">Contact Us</a><a href="/blog/">Blog</a><a href="/sitemap.html">Sitemap</a></div>
+    <div><h4>Categories</h4><a href="/categories/financial/">Financial</a><a href="/categories/math/">Math</a><a href="/categories/health/">Health</a><a href="/categories/date-time/">Date &amp; Time</a><a href="/categories/conversion/">Converters</a><a href="/categories/engineering/">Engineering</a></div>
+    <div><h4>Legal</h4><a href="/privacy-policy.html">Privacy Policy</a><a href="/terms-of-service.html">Terms of Service</a><a href="/disclaimer.html">Disclaimer</a><a href="/cookie-policy.html">Cookie Policy</a></div>
+  </div>
+  <div class="footer-bottom"><span>&copy; <span data-year></span> <span data-site-name>CalcVerse</span>. All rights reserved.</span></div>
+</div></footer>
+
+<script src="/assets/js/config.js"></script>
+<script src="/assets/js/tools-data.js"></script>
+<script src="/assets/js/main.js"></script>
+<script src="/assets/js/calculators/square-footage.js"></script>
+</body>
+</html>
