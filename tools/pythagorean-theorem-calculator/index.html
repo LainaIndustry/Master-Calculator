@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Pythagorean Theorem Calculator — Solve Any Side</title>
+<meta name="description" content="Free Pythagorean theorem calculator: solve for any missing side of a right triangle with a² + b² = c²." />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://calcverse.example.com/tools/pythagorean-theorem-calculator/" />
+<link rel="stylesheet" href="/assets/css/style.css" />
+<link rel="stylesheet" href="/assets/css/ads.css" />
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header"><div class="container header-inner">
+  <a class="logo" href="/"><span class="logo-mark">CV</span><span data-site-name>CalcVerse</span></a>
+  <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false"><span></span><span></span><span></span></button>
+  <nav class="nav" aria-label="Primary">
+    <a href="/">Home</a><a href="/tools/">Tools</a>
+    <a href="/categories/financial/">Financial</a><a href="/categories/math/">Math</a>
+    <a href="/categories/health/">Health</a><a href="/categories/date-time/">Date &amp; Time</a>
+    <a href="/categories/conversion/">Converters</a><a href="/categories/engineering/">Engineering</a>
+    <a href="/blog/">Blog</a><a href="/about.html">About</a><a href="/contact.html">Contact</a>
+  </nav>
+</div></header>
+
+<main id="main"><div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <ol><li><a href="/">Home</a></li><li><a href="/categories/math/">Math Calculators</a></li><li><span aria-current="page">Pythagorean Theorem Calculator</span></li></ol>
+  </nav>
+
+  <h1>Pythagorean Theorem Calculator</h1>
+  <p style="max-width:720px;">Solve for any side of a right triangle. Enter the two known sides and leave the unknown blank.</p>
+
+  <div class="ad-placeholder ad-top" role="complementary" aria-label="Advertisement"><span>Advertisement</span></div>
+
+  <section class="calc-card">
+    <h2 class="mt-0">Solve the Triangle</h2>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="py-a">Leg a</label>
+        <input class="form-control" id="py-a" type="number" min="0" step="any" placeholder="e.g. 3" />
+      </div>
+      <div class="form-group">
+        <label for="py-b">Leg b</label>
+        <input class="form-control" id="py-b" type="number" min="0" step="any" placeholder="e.g. 4" />
+      </div>
+      <div class="form-group">
+        <label for="py-c">Hypotenuse c</label>
+        <input class="form-control" id="py-c" type="number" min="0" step="any" placeholder="e.g. 5" />
+      </div>
+    </div>
+    <div class="form-actions">
+      <button class="btn" id="py-calc" type="button">Calculate</button>
+      <button class="btn btn-secondary" id="py-reset" type="button">Reset</button>
+    </div>
+    <div class="result-box" id="py-result" role="status" aria-live="polite">
+      <div class="result-label">Result</div>
+      <div class="result-main" id="py-main">—</div>
+      <div class="result-detail" id="py-detail"></div>
+    </div>
+  </section>
+
+  <div class="ad-placeholder ad-middle" role="complementary" aria-label="Advertisement"><span>Advertisement</span></div>
+
+  <article class="prose">
+    <h2>What Is the Pythagorean Theorem?</h2>
+    <p>In any right triangle, the square of the hypotenuse (the side opposite the right angle) equals the sum of the squares of the other two sides:</p>
+    <pre><code>a² + b² = c²</code></pre>
+
+    <h2>How to Use It</h2>
+    <ol>
+      <li>Enter any <strong>two</strong> known sides.</li>
+      <li>Leave the unknown blank.</li>
+      <li>Results appear as you type.</li>
+    </ol>
+
+    <h2>The Three Rearrangements</h2>
+    <ul>
+      <li><strong>Find hypotenuse:</strong> c = √(a² + b²)</li>
+      <li><strong>Find leg a:</strong> a = √(c² − b²)</li>
+      <li><strong>Find leg b:</strong> b = √(c² − a²)</li>
+    </ul>
+
+    <h2>Worked Example</h2>
+    <p>Legs 3 and 4:</p>
+    <ul>
+      <li>c = √(3² + 4²) = √(9 + 16) = √25 = <strong>5</strong></li>
+      <li>Area = ½ × 3 × 4 = 6</li>
+      <li>Perimeter = 3 + 4 + 5 = 12</li>
+    </ul>
+    <p>This is the famous 3-4-5 triangle, one of many "Pythagorean triples" with integer sides.</p>
+
+    <h2>Common Pythagorean Triples</h2>
+    <ul>
+      <li>3, 4, 5</li>
+      <li>5, 12, 13</li>
+      <li>8, 15, 17</li>
+      <li>7, 24, 25</li>
+      <li>20, 21, 29</li>
+    </ul>
+    <p>Any multiple of a triple is also a triple (e.g. 6, 8, 10).</p>
+
+    <h2>Understanding Your Result</h2>
+    <p>The theorem only works for right triangles (one 90° angle). If your triangle doesn't have a right angle, use the Law of Cosines instead.</p>
+
+    <h2>Common Mistakes</h2>
+    <ul>
+      <li>Mixing up which side is the hypotenuse — it's always the longest and opposite the right angle.</li>
+      <li>Entering values where c ≤ a or c ≤ b (impossible for a right triangle).</li>
+      <li>Using this on non-right triangles.</li>
+      <li>Forgetting to take the square root at the end.</li>
+    </ul>
+
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false">What if I don't know which side is the hypotenuse?</button>
+      <div class="faq-a"><p>It's always the longest side, and always opposite the right angle.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false">Does this work for 3D distances?</button>
+      <div class="faq-a"><p>Yes — apply it twice. Distance in 3D = √(x² + y² + z²).</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false">What's the converse of the theorem?</button>
+      <div class="faq-a"><p>If a² + b² = c², then the triangle is a right triangle. Useful for verifying right angles in construction.</p></div>
+    </div>
+
+    <h2>Related Calculators</h2>
+    <div class="grid grid-3" data-related-tools="pythagorean-theorem-calculator"></div>
+  </article>
+
+  <div class="ad-placeholder ad-bottom" role="complementary" aria-label="Advertisement"><span>Advertisement</span></div>
+</div></main>
+
+<footer class="site-footer"><div class="container">
+  <div class="footer-grid">
+    <div class="footer-brand"><a class="logo" href="/" style="color:#fff;margin-bottom:12px;"><span class="logo-mark">CV</span><span data-site-name style="color:#fff">CalcVerse</span></a><p data-site-desc></p></div>
+    <div><h4>Company</h4><a href="/about.html">About Us</a><a href="/contact.html">Contact Us</a><a href="/blog/">Blog</a><a href="/sitemap.html">Sitemap</a></div>
+    <div><h4>Categories</h4><a href="/categories/financial/">Financial</a><a href="/categories/math/">Math</a><a href="/categories/health/">Health</a><a href="/categories/date-time/">Date &amp; Time</a><a href="/categories/conversion/">Converters</a><a href="/categories/engineering/">Engineering</a></div>
+    <div><h4>Legal</h4><a href="/privacy-policy.html">Privacy Policy</a><a href="/terms-of-service.html">Terms of Service</a><a href="/disclaimer.html">Disclaimer</a><a href="/cookie-policy.html">Cookie Policy</a></div>
+  </div>
+  <div class="footer-bottom"><span>&copy; <span data-year></span> <span data-site-name>CalcVerse</span>. All rights reserved.</span></div>
+</div></footer>
+
+<script src="/assets/js/config.js"></script>
+<script src="/assets/js/tools-data.js"></script>
+<script src="/assets/js/main.js"></script>
+<script src="/assets/js/calculators/pythagorean.js"></script>
+</body>
+</html>
