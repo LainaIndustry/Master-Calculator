@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Developer Tools — Password Generator, Encoders | CalcVerse</title>
+<meta name="description" content="Free developer tools: password generator, Base64, URL, binary, and hex encoders/decoders." />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://calcverse.example.com/categories/developer/" />
+<link rel="stylesheet" href="/assets/css/style.css" />
+<link rel="stylesheet" href="/assets/css/ads.css" />
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="logo" href="/"><span class="logo-mark" aria-hidden="true">CV</span><span data-site-name>CalcVerse</span></a>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="nav" aria-label="Primary">
+      <a href="/">Home</a><a href="/tools/">Tools</a>
+      <a href="/categories/financial/">Financial</a><a href="/categories/math/">Math</a>
+      <a href="/categories/health/">Health</a><a href="/categories/date-time/">Date &amp; Time</a>
+      <a href="/categories/conversion/">Converters</a><a href="/categories/engineering/">Engineering</a>
+      <a href="/blog/">Blog</a><a href="/about.html">About</a><a href="/contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main"><div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <ol><li><a href="/">Home</a></li><li><span aria-current="page">Developer Tools</span></li></ol>
+  </nav>
+
+  <h1>Developer Tools</h1>
+  <p style="max-width:720px;">Utility tools for developers: secure password generator, Base64, URL encoding, binary and hex converters. Everything runs locally — no data ever leaves your browser.</p>
+
+  <div class="ad-placeholder ad-top" role="complementary" aria-label="Advertisement"><span>Advertisement</span></div>
+
+  <section>
+    <h2>All Developer Tools</h2>
+    <div class="grid grid-3" data-tools-category="Developer"></div>
+  </section>
+
+  <div class="ad-placeholder ad-middle" role="complementary" aria-label="Advertisement"><span>Advertisement</span></div>
+
+  <section class="prose">
+    <h2>About Developer Tools</h2>
+    <p>These tools handle the small but frequent tasks that come up during development: generating a strong password, encoding a string for a URL, converting between numeric bases, or decoding a Base64 token.</p>
+
+    <h2>What You'll Find Here</h2>
+    <ul>
+      <li><strong>Password Generator:</strong> cryptographically secure passwords using the Web Crypto API.</li>
+      <li><strong>Base64 Encoder/Decoder:</strong> text ↔ Base64 with UTF-8 support.</li>
+      <li><strong>URL Encoder/Decoder:</strong> percent-encoding for query strings and paths.</li>
+      <li><strong>Binary Converter:</strong> text ↔ binary (8-bit UTF-8).</li>
+      <li><strong>Hex Converter:</strong> text ↔ hexadecimal.</li>
+    </ul>
+
+    <h2>Security</h2>
+    <p>All tools run entirely in your browser. No inputs, outputs, or generated passwords are transmitted to any server. This means:</p>
+    <ul>
+      <li>Nothing appears in server logs.</li>
+      <li>No third party can see what you encode or generate.</li>
+      <li>You can use these tools even offline after the page loads.</li>
+    </ul>
+
+    <h2>Cryptographic Randomness</h2>
+    <p>The password generator uses <code>crypto.getRandomValues()</code> — the browser's cryptographically secure pseudorandom number generator. This is the same primitive used by password managers and secure systems. We also apply rejection sampling to avoid modulo bias.</p>
+
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false">Are these tools safe to use at work?</button>
+      <div class="faq-a"><p>Yes — since nothing is transmitted, your data stays on your device. However, follow your employer's policies regarding password generation and encoding sensitive data.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false">Is Base64 encryption?</button>
+      <div class="faq-a"><p>No. Base64 is an encoding — it converts binary data to text but offers no security. Anyone can decode it.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false">Why does URL encoding matter?</button>
+      <div class="faq-a"><p>Certain characters (spaces, &amp;, ?, #) have special meaning in URLs. Encoding replaces them with %XX escape sequences so they can be safely passed as data.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false">Can I trust the generated password?</button>
+      <div class="faq-a"><p>Yes — it's cryptographically random. Store it in a password manager rather than writing it down.</p></div>
+    </div>
+  </section>
+
+  <div class="ad-placeholder ad-bottom" role="complementary" aria-label="Advertisement"><span>Advertisement</span></div>
+</div></main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="logo" href="/" style="color:#fff;margin-bottom:12px;"><span class="logo-mark" aria-hidden="true">CV</span><span data-site-name style="color:#fff;">CalcVerse</span></a>
+        <p data-site-desc></p>
+      </div>
+      <div><h4>Company</h4><a href="/about.html">About Us</a><a href="/contact.html">Contact Us</a><a href="/blog/">Blog</a><a href="/sitemap.html">Sitemap</a></div>
+      <div><h4>Categories</h4><a href="/categories/financial/">Financial</a><a href="/categories/math/">Math</a><a href="/categories/health/">Health</a><a href="/categories/date-time/">Date &amp; Time</a><a href="/categories/conversion/">Converters</a><a href="/categories/engineering/">Engineering</a></div>
+      <div><h4>Legal</h4><a href="/privacy-policy.html">Privacy Policy</a><a href="/terms-of-service.html">Terms of Service</a><a href="/disclaimer.html">Disclaimer</a><a href="/cookie-policy.html">Cookie Policy</a></div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span data-year></span> <span data-site-name>CalcVerse</span>. All rights reserved.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/js/config.js"></script>
+<script src="/assets/js/tools-data.js"></script>
+<script src="/assets/js/main.js"></script>
+</body>
+</html>
