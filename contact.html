@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Contact Us — CalcVerse</title>
+<meta name="description" content="Get in touch with the CalcVerse team. Report a bug, suggest a tool, or ask a question." />
+<link rel="canonical" href="https://calcverse.example.com/contact.html" />
+<link rel="stylesheet" href="/assets/css/style.css" />
+<link rel="stylesheet" href="/assets/css/ads.css" />
+</head>
+<body>
+<!-- header -->
+<main id="main">
+  <div class="container">
+    <h1>Contact Us</h1>
+    <p>Have a question, bug report, or tool suggestion? We'd love to hear from you.</p>
+
+    <div class="calc-card">
+      <p><strong>Email:</strong> <a data-contact-email href="#">support@calcverse.example.com</a></p>
+      <p style="color:var(--muted);font-size:0.9rem;">
+        Because this is a static website, this contact form is not connected to a backend.
+        To make it functional, connect it to a third-party form service such as Formspree,
+        Netlify Forms, or Web3Forms — or simply use the email address above.
+      </p>
+      <form onsubmit="event.preventDefault();alert('This form is a UI demo. Please email us instead.');">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="c-name">Your name</label>
+            <input class="form-control" id="c-name" type="text" required />
+          </div>
+          <div class="form-group">
+            <label for="c-email">Your email</label>
+            <input class="form-control" id="c-email" type="email" required />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="c-msg">Message</label>
+          <textarea class="form-control" id="c-msg" rows="6" required></textarea>
+        </div>
+        <div class="form-actions">
+          <button class="btn" type="submit">Send message</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</main>
+<!-- footer -->
+<script src="/assets/js/config.js"></script>
+<script src="/assets/js/tools-data.js"></script>
+<script src="/assets/js/main.js"></script>
+</body>
+</html>
