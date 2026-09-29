@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Random Number Generator — Secure &amp; Custom Range</title>
+<meta name="description" content="Free random number generator using cryptographically secure randomness. Set range, quantity, and uniqueness." />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://calcverse.example.com/tools/random-number-generator/" />
+<link rel="stylesheet" href="/assets/css/style.css" />
+<link rel="stylesheet" href="/assets/css/ads.css" />
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header"><div class="container header-inner">
+  <a class="logo" href="/"><span class="logo-mark">CV</span><span data-site-name>CalcVerse</span></a>
+  <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false"><span></span><span></span><span></span></button>
+  <nav class="nav" aria-label="Primary">
+    <a href="/">Home</a><a href="/tools/">Tools</a>
+    <a href="/categories/financial/">Financial</a><a href="/categories/math/">Math</a>
+    <a href="/categories/health/">Health</a><a href="/categories/date-time/">Date &amp; Time</a>
+    <a href="/categories/conversion/">Converters</a><a href="/categories/engineering/">Engineering</a>
+    <a href="/blog/">Blog</a><a href="/about.html">About</a><a href="/contact.html">Contact</a>
+  </nav>
+</div></header>
+
+<main id="main"><div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <ol><li><a href="/">Home</a></li><li><a href="/categories/math/">Math Calculators</a></li><li><span aria-current="page">Random Number Generator</span></li></ol>
+  </nav>
+
+  <h1>Random Number Generator</h1>
+  <p style="max-width:720px;">Generate random integers within any range. Uses your browser's cryptographically secure random number generator, not the predictable Math.random().</p>
+
+  <div class="ad-placeholder ad-top" role="complementary" aria-label="Advertisement"><span>Advertisement</span></div>
+
+  <section class="calc-card">
+    <h2 class="mt-0">Generate Random Numbers</h2>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="rn-min">Minimum</label>
+        <input class="form-control" id="rn-min" type="number" step="1" placeholder="1" value="1" />
+      </div>
+      <div class="form-group">
+        <label for="rn-max">Maximum</label>
+        <input class="form-control" id="rn-max" type="number" step="1" placeholder="100" value="100" />
+      </div>
+      <div class="form-group">
+        <label for="rn-count">Quantity</label>
+        <input class="form-control" id="rn-count" type="number" min="1" max="1000" step="1" value="1" />
+      </div>
+    </div>
+    <label style="display:flex;gap:8px;align-items:center;margin-bottom:14px;">
+      <input type="checkbox" id="rn-unique" /> Generate unique numbers only
+    </label>
+    <div class="form-actions">
+      <button class="btn" id="rn-generate" type="button">Generate</button>
+      <button class="btn btn-secondary" id="rn-copy" type="button">Copy</button>
+      <button class="btn btn-secondary" id="rn-reset" type="button">Reset</button>
+    </div>
+    <div class="result-box" id="rn-result" role="status" aria-live="polite">
+      <div class="result-label">Generated numbers</div>
+      <div class="result-main" id="rn-output" style="font-family:var(--font-mono);font-size:1.2rem;word-break:break-word;"></div>
+    </div>
+  </section>
+
+  <div class="ad-placeholder ad-middle" role="complementary" aria-label="Advertisement"><span>Advertisement</span></div>
+
+  <article class="prose">
+    <h2>What Is a Random Number Generator?</h2>
+    <p>It produces unpredictable integers within a range. Unlike pseudo-random algorithms seeded from the clock, this tool uses the Web Crypto API — the same primitive used in cryptography — for true unpredictability.</p>
+
+    <h2>How to Use It</h2>
+    <ol>
+      <li>Set the <strong>minimum</strong> and <strong>maximum</strong> values.</li>
+      <li>Choose how many numbers to generate (1–1000).</li>
+      <li>Optionally enable "unique" to avoid duplicates.</li>
+      <li>Click Generate.</li>
+    </ol>
+
+    <h2>What "Secure" Randomness Means</h2>
+    <p><code>Math.random()</code> is fine for games but predictable — given enough outputs, an attacker can infer future values. <code>crypto.getRandomValues()</code> is seeded from system entropy and cannot be predicted. This matters for passwords, cryptographic keys, and fair draws.</p>
+
+    <h2>Worked Example</h2>
+    <p>Range 1–100, quantity 5, unique checked → five distinct integers, e.g. <code>17, 84, 3, 62, 41</code>.</p>
+    <p>Range 1–6, quantity 100 → 100 die rolls.</p>
+
+    <h2>Understanding Your Result</h2>
+    <p>The numbers are comma-separated. Every value in your range has exactly the same probability — we use rejection sampling to avoid modulo bias.</p>
+
+    <h2>Common Mistakes</h2>
+    <ul>
+      <li>Requesting more unique numbers than the range allows.</li>
+      <li>Assuming "random" means "evenly spaced" — random values can cluster.</li>
+      <li>Using this for cryptographic keys directly without proper formatting.</li>
+    </ul>
+
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false">Are the numbers truly random?</button>
+      <div class="faq-a"><p>They're cryptographically random — practically indistinguishable from true randomness. For physical randomness (e.g. dice), you'd need hardware.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false">Is this safe for password generation?</button>
+      <div class="faq-a"><p>Yes for the randomness, but for passwords use our Password Generator which combines characters correctly.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false">Can I generate decimal numbers?</button>
+      <div class="faq-a"><p>This tool generates integers. For decimals, generate within a scaled range and divide by your scaling factor.</p></div>
+    </div>
+
+    <h2>Related Calculators</h2>
+    <div class="grid grid-3" data-related-tools="random-number-generator"></div>
+  </article>
+
+  <div class="ad-placeholder ad-bottom" role="complementary" aria-label="Advertisement"><span>Advertisement</span></div>
+</div></main>
+
+<footer class="site-footer"><div class="container">
+  <div class="footer-grid">
+    <div class="footer-brand"><a class="logo" href="/" style="color:#fff;margin-bottom:12px;"><span class="logo-mark">CV</span><span data-site-name style="color:#fff">CalcVerse</span></a><p data-site-desc></p></div>
+    <div><h4>Company</h4><a href="/about.html">About Us</a><a href="/contact.html">Contact Us</a><a href="/blog/">Blog</a><a href="/sitemap.html">Sitemap</a></div>
+    <div><h4>Categories</h4><a href="/categories/financial/">Financial</a><a href="/categories/math/">Math</a><a href="/categories/health/">Health</a><a href="/categories/date-time/">Date &amp; Time</a><a href="/categories/conversion/">Converters</a><a href="/categories/engineering/">Engineering</a></div>
+    <div><h4>Legal</h4><a href="/privacy-policy.html">Privacy Policy</a><a href="/terms-of-service.html">Terms of Service</a><a href="/disclaimer.html">Disclaimer</a><a href="/cookie-policy.html">Cookie Policy</a></div>
+  </div>
+  <div class="footer-bottom"><span>&copy; <span data-year></span> <span data-site-name>CalcVerse</span>. All rights reserved.</span></div>
+</div></footer>
+
+<script src="/assets/js/config.js"></script>
+<script src="/assets/js/tools-data.js"></script>
+<script src="/assets/js/main.js"></script>
+<script src="/assets/js/calculators/random-number.js"></script>
+</body>
+</html>
