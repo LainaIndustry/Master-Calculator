@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Percent Off Calculator — Sale Price &amp; Savings</title>
+<meta name="description" content="Free percent-off calculator: find the final sale price and how much you save on any discount." />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://calcverse.example.com/tools/percent-off-calculator/" />
+<link rel="stylesheet" href="/assets/css/style.css" />
+<link rel="stylesheet" href="/assets/css/ads.css" />
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="logo" href="/"><span class="logo-mark">CV</span><span data-site-name>CalcVerse</span></a>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="nav" aria-label="Primary">
+      <a href="/">Home</a><a href="/tools/">Tools</a>
+      <a href="/categories/financial/">Financial</a><a href="/categories/math/">Math</a>
+      <a href="/categories/health/">Health</a><a href="/categories/date-time/">Date &amp; Time</a>
+      <a href="/categories/conversion/">Converters</a><a href="/categories/engineering/">Engineering</a>
+      <a href="/blog/">Blog</a><a href="/about.html">About</a><a href="/contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main"><div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <ol><li><a href="/">Home</a></li><li><a href="/categories/financial/">Financial Calculators</a></li><li><span aria-current="page">Percent Off Calculator</span></li></ol>
+  </nav>
+
+  <h1>Percent Off Calculator</h1>
+  <p style="max-width:720px;">Calculate the final price after a discount — with optional sales tax. Instantly see how much you save.</p>
+
+  <div class="ad-placeholder ad-top" role="complementary" aria-label="Advertisement"><span>Advertisement</span></div>
+
+  <section class="calc-card">
+    <h2 class="mt-0">Calculate Sale Price</h2>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="po-price">Original price</label>
+        <div class="input-group">
+          <input class="form-control" id="po-price" type="number" min="0" step="0.01" placeholder="e.g. 79.99" />
+          <span class="unit">$</span>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="po-discount">Discount</label>
+        <div class="input-group">
+          <input class="form-control" id="po-discount" type="number" step="0.01" placeholder="e.g. 25" />
+          <span class="unit">%</span>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="po-tax">Sales tax (optional)</label>
+        <div class="input-group">
+          <input class="form-control" id="po-tax" type="number" min="0" step="0.01" placeholder="e.g. 8" />
+          <span class="unit">%</span>
+        </div>
+      </div>
+    </div>
+    <div class="form-actions">
+      <button class="btn" id="po-calc" type="button">Calculate</button>
+      <button class="btn btn-secondary" id="po-reset" type="button">Reset</button>
+    </div>
+    <div class="result-box" id="po-result" role="status" aria-live="polite">
+      <div class="result-label">Final price</div>
+      <div class="result-main" id="po-main">—</div>
+      <div class="result-detail" id="po-detail"></div>
+    </div>
+  </section>
+
+  <div class="ad-placeholder ad-middle" role="complementary" aria-label="Advertisement"><span>Advertisement</span></div>
+
+  <article class="prose">
+    <h2>What Is a Percent Off Calculator?</h2>
+    <p>It computes the final price after a percentage discount, plus any sales tax you want to include. Retailers quote discounts as percentages ("25% off"), but the actual savings in dollars depends on the original price.</p>
+
+    <h2>How to Use It</h2>
+    <ol>
+      <li>Enter the <strong>original price</strong>.</li>
+      <li>Enter the <strong>discount</strong> as a percentage.</li>
+      <li>Optionally add your local <strong>sales tax</strong>.</li>
+      <li>Results update instantly.</li>
+    </ol>
+
+    <h2>Formula</h2>
+    <pre><code>Savings = Original Price × (Discount ÷ 100)
+Subtotal = Original Price − Savings
+Tax = Subtotal × (Tax Rate ÷ 100)
+Final = Subtotal + Tax</code></pre>
+
+    <h2>Example</h2>
+    <p>A $79.99 item at 25% off with 8% tax:</p>
+    <ul>
+      <li>Savings = 79.99 × 0.25 = $20.00</li>
+      <li>Subtotal = $59.99</li>
+      <li>Tax = 59.99 × 0.08 = $4.80</li>
+      <li>Final = <strong>$64.79</strong></li>
+    </ul>
+
+    <h2>Understanding Your Result</h2>
+    <p>The detail box shows each step of the calculation so you can see exactly where the money goes. The main number is the final price you'll pay at checkout (assuming the tax rate matches).</p>
+
+    <h2>Common Mistakes</h2>
+    <ul>
+      <li>Applying the discount after tax — the discount applies to the pre-tax price.</li>
+      <li>Stacking discounts by adding percentages. "20% + 10%" off is not 30% off; it's 1 − (0.8 × 0.9) = 28% off.</li>
+      <li>Confusing "percent off" with "percent of." 25% off $80 = $60; 25% of $80 = $20.</li>
+    </ul>
+
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false">How do I stack multiple discounts?</button>
+      <div class="faq-a"><p>Multiply the remaining percentages. Two 20% discounts: multiply by 0.8 twice, so final = original × 0.64 = 36% off.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false">Does the discount apply before or after tax?</button>
+      <div class="faq-a"><p>Before tax, in almost all jurisdictions. You pay tax on the discounted amount.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false">What if the discount is more than 100%?</button>
+      <div class="faq-a"><p>A discount over 100% means the seller pays you — rare but valid for promotional credits. Our calculator handles it.</p></div>
+    </div>
+
+    <h2>Related Calculators</h2>
+    <div class="grid grid-3" data-related-tools="percent-off-calculator"></div>
+  </article>
+
+  <div class="ad-placeholder ad-bottom" role="complementary" aria-label="Advertisement"><span>Advertisement</span></div>
+</div></main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="logo" href="/" style="color:#fff;margin-bottom:12px;"><span class="logo-mark">CV</span><span data-site-name style="color:#fff">CalcVerse</span></a>
+        <p data-site-desc></p>
+      </div>
+      <div><h4>Company</h4><a href="/about.html">About Us</a><a href="/contact.html">Contact Us</a><a href="/blog/">Blog</a><a href="/sitemap.html">Sitemap</a></div>
+      <div><h4>Categories</h4><a href="/categories/financial/">Financial</a><a href="/categories/math/">Math</a><a href="/categories/health/">Health</a><a href="/categories/date-time/">Date &amp; Time</a><a href="/categories/conversion/">Converters</a><a href="/categories/engineering/">Engineering</a></div>
+      <div><h4>Legal</h4><a href="/privacy-policy.html">Privacy Policy</a><a href="/terms-of-service.html">Terms of Service</a><a href="/disclaimer.html">Disclaimer</a><a href="/cookie-policy.html">Cookie Policy</a></div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span data-year></span> <span data-site-name>CalcVerse</span>. All rights reserved.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/js/config.js"></script>
+<script src="/assets/js/tools-data.js"></script>
+<script src="/assets/js/main.js"></script>
+<script src="/assets/js/calculators/percentage-off.js"></script>
+</body>
+</html>
