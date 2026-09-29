@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Ohm's Law Calculator — V, I, R, P</title>
+<meta name="description" content="Free Ohm's Law calculator: enter any two of voltage, current, resistance, or power and get the other two." />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://calcverse.example.com/tools/ohms-law-calculator/" />
+<link rel="stylesheet" href="/assets/css/style.css" />
+<link rel="stylesheet" href="/assets/css/ads.css" />
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header"><div class="container header-inner">
+  <a class="logo" href="/"><span class="logo-mark">CV</span><span data-site-name>CalcVerse</span></a>
+  <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false"><span></span><span></span><span></span></button>
+  <nav class="nav" aria-label="Primary">
+    <a href="/">Home</a><a href="/tools/">Tools</a>
+    <a href="/categories/financial/">Financial</a><a href="/categories/math/">Math</a>
+    <a href="/categories/health/">Health</a><a href="/categories/date-time/">Date &amp; Time</a>
+    <a href="/categories/conversion/">Converters</a><a href="/categories/engineering/">Engineering</a>
+    <a href="/blog/">Blog</a><a href="/about.html">About</a><a href="/contact.html">Contact</a>
+  </nav>
+</div></header>
+
+<main id="main"><div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <ol><li><a href="/">Home</a></li><li><a href="/categories/engineering/">Engineering</a></li><li><span aria-current="page">Ohm's Law Calculator</span></li></ol>
+  </nav>
+
+  <h1>Ohm's Law Calculator</h1>
+  <p style="max-width:720px;">Enter any two of the four quantities — voltage, current, resistance, or power — and get the other two instantly.</p>
+
+  <div class="ad-placeholder ad-top" role="complementary" aria-label="Advertisement"><span>Advertisement</span></div>
+
+  <section class="calc-card">
+    <h2 class="mt-0">Solve Ohm's Law</h2>
+    <p style="color:var(--muted);font-size:0.9rem;">Leave the unknown fields blank. Enter at least two known values.</p>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="ol-v">Voltage (V)</label>
+        <div class="input-group"><input class="form-control" id="ol-v" type="number" step="any" placeholder="e.g. 12" /><span class="unit">V</span></div>
+      </div>
+      <div class="form-group">
+        <label for="ol-i">Current (I)</label>
+        <div class="input-group"><input class="form-control" id="ol-i" type="number" step="any" placeholder="e.g. 0.5" /><span class="unit">A</span></div>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="ol-r">Resistance (R)</label>
+        <div class="input-group"><input class="form-control" id="ol-r" type="number" step="any" placeholder="e.g. 24" /><span class="unit">Ω</span></div>
+      </div>
+      <div class="form-group">
+        <label for="ol-p">Power (P)</label>
+        <div class="input-group"><input class="form-control" id="ol-p" type="number" step="any" placeholder="e.g. 6" /><span class="unit">W</span></div>
+      </div>
+    </div>
+    <div class="form-actions">
+      <button class="btn" id="ol-calc" type="button">Calculate</button>
+      <button class="btn btn-secondary" id="ol-reset" type="button">Reset</button>
+    </div>
+    <div class="result-box" id="ol-result" role="status" aria-live="polite">
+      <div class="result-label">Results</div>
+      <div class="result-main" id="ol-main">—</div>
+      <div class="result-detail" id="ol-detail"></div>
+    </div>
+  </section>
+
+  <div class="ad-placeholder ad-middle" role="complementary" aria-label="Advertisement"><span>Advertisement</span></div>
+
+  <article class="prose">
+    <h2>What Is Ohm's Law?</h2>
+    <p>Ohm's law states that the current through a conductor is directly proportional to voltage and inversely proportional to resistance: <code>V = I × R</code>. Combined with the power formula, it lets you solve for any electrical quantity if you know two others.</p>
+
+    <h2>How to Use This Calculator</h2>
+    <ol>
+      <li>Enter any <strong>two</strong> of V, I, R, or P.</li>
+      <li>Leave the unknowns blank.</li>
+      <li>Results update as you type.</li>
+    </ol>
+
+    <h2>The Four Formulas</h2>
+    <ul>
+      <li><strong>V = I × R</strong></li>
+      <li><strong>I = V ÷ R</strong></li>
+      <li><strong>R = V ÷ I</strong></li>
+      <li><strong>P = V × I = I²R = V²/R</strong></li>
+    </ul>
+
+    <h2>Example</h2>
+    <p>A 12 V source driving a 24 Ω resistor:</p>
+    <ul>
+      <li>I = 12 / 24 = <strong>0.5 A</strong></li>
+      <li>P = 12 × 0.5 = <strong>6 W</strong></li>
+    </ul>
+
+    <h2>Understanding Your Result</h2>
+    <p>Every result is derived from exactly the two values you entered, using the standard formulas. Verify sign conventions and units (volts, amps, ohms, watts).</p>
+
+    <h2>Common Mistakes</h2>
+    <ul>
+      <li>Mixing units — milliamps (mA) with amps (A), or kilohms (kΩ) with ohms (Ω).</li>
+      <li>Using this for AC circuits. Ohm's law applies to DC; AC uses impedance (Z), not resistance.</li>
+      <li>Assuming linearity for non-ohmic devices like diodes and LEDs.</li>
+      <li>Forgetting the resistor's power rating. Always choose a resistor rated above the computed P.</li>
+    </ul>
+
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false">What's the difference between voltage and current?</button>
+      <div class="faq-a"><p>Voltage is electrical potential difference (pressure); current is the rate of charge flow. Voltage causes current; resistance opposes it.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false">Does Ohm's law work for AC?</button>
+      <div class="faq-a"><p>For pure resistive AC circuits, yes. For circuits with capacitors or inductors, use impedance (Z) instead of R.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false">What's the "power triangle"?</button>
+      <div class="faq-a"><p>A visual mnemonic showing that P = V × I. Combine with V = IR to derive the other two power formulas.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false">Why should resistor power rating exceed P?</button>
+      <div class="faq-a"><p>Because resistors dissipate heat. Exceeding the rating causes overheating, drift, or failure. Use a margin of at least 2× for reliability.</p></div>
+    </div>
+
+    <h2>Related Calculators</h2>
+    <div class="grid grid-3" data-related-tools="ohms-law-calculator"></div>
+  </article>
+
+  <div class="ad-placeholder ad-bottom" role="complementary" aria-label="Advertisement"><span>Advertisement</span></div>
+</div></main>
+
+<footer class="site-footer"><div class="container">
+  <div class="footer-grid">
+    <div class="footer-brand"><a class="logo" href="/" style="color:#fff;margin-bottom:12px;"><span class="logo-mark">CV</span><span data-site-name style="color:#fff">CalcVerse</span></a><p data-site-desc></p></div>
+    <div><h4>Company</h4><a href="/about.html">About Us</a><a href="/contact.html">Contact Us</a><a href="/blog/">Blog</a><a href="/sitemap.html">Sitemap</a></div>
+    <div><h4>Categories</h4><a href="/categories/financial/">Financial</a><a href="/categories/math/">Math</a><a href="/categories/health/">Health</a><a href="/categories/date-time/">Date &amp; Time</a><a href="/categories/conversion/">Converters</a><a href="/categories/engineering/">Engineering</a></div>
+    <div><h4>Legal</h4><a href="/privacy-policy.html">Privacy Policy</a><a href="/terms-of-service.html">Terms of Service</a><a href="/disclaimer.html">Disclaimer</a><a href="/cookie-policy.html">Cookie Policy</a></div>
+  </div>
+  <div class="footer-bottom"><span>&copy; <span data-year></span> <span data-site-name>CalcVerse</span>. All rights reserved.</span></div>
+</div></footer>
+
+<script src="/assets/js/config.js"></script>
+<script src="/assets/js/tools-data.js"></script>
+<script src="/assets/js/main.js"></script>
+<script src="/assets/js/calculators/ohms-law.js"></script>
+</body>
+</html>
