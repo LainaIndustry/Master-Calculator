@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Date Calculator — Add or Subtract Days, Months, Years</title>
+<meta name="description" content="Free date calculator: add or subtract days, weeks, months, or years from any date. See the resulting weekday." />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://calcverse.example.com/tools/date-calculator/" />
+<link rel="stylesheet" href="/assets/css/style.css" />
+<link rel="stylesheet" href="/assets/css/ads.css" />
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="logo" href="/"><span class="logo-mark">CV</span><span data-site-name>CalcVerse</span></a>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="nav" aria-label="Primary">
+      <a href="/">Home</a><a href="/tools/">Tools</a>
+      <a href="/categories/financial/">Financial</a><a href="/categories/math/">Math</a>
+      <a href="/categories/health/">Health</a><a href="/categories/date-time/">Date &amp; Time</a>
+      <a href="/categories/conversion/">Converters</a><a href="/categories/engineering/">Engineering</a>
+      <a href="/blog/">Blog</a><a href="/about.html">About</a><a href="/contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main"><div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <ol><li><a href="/">Home</a></li><li><a href="/categories/date-time/">Date &amp; Time</a></li><li><span aria-current="page">Date Calculator</span></li></ol>
+  </nav>
+
+  <h1>Date Calculator</h1>
+  <p style="max-width:720px;">Add or subtract days, weeks, months, or years from any date and see the resulting calendar date plus its weekday.</p>
+
+  <div class="ad-placeholder ad-top" role="complementary" aria-label="Advertisement"><span>Advertisement</span></div>
+
+  <section class="calc-card">
+    <h2 class="mt-0">Calculate a New Date</h2>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="dc-start">Starting date</label>
+        <input class="form-control" id="dc-start" type="date" />
+      </div>
+      <div class="form-group">
+        <label for="dc-op">Operation</label>
+        <select class="form-control" id="dc-op">
+          <option value="add">Add</option>
+          <option value="subtract">Subtract</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="dc-amount">Amount</label>
+        <input class="form-control" id="dc-amount" type="number" min="0" step="1" placeholder="e.g. 90" />
+      </div>
+      <div class="form-group">
+        <label for="dc-unit">Unit</label>
+        <select class="form-control" id="dc-unit">
+          <option value="days">Days</option>
+          <option value="weeks">Weeks</option>
+          <option value="months">Months</option>
+          <option value="years">Years</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-actions">
+      <button class="btn" id="dc-calc" type="button">Calculate</button>
+      <button class="btn btn-secondary" id="dc-reset" type="button">Reset</button>
+    </div>
+    <div class="result-box" id="dc-result" role="status" aria-live="polite">
+      <div class="result-label">Resulting date</div>
+      <div class="result-main" id="dc-main">—</div>
+      <div class="result-detail" id="dc-detail"></div>
+    </div>
+  </section>
+
+  <div class="ad-placeholder ad-middle" role="complementary" aria-label="Advertisement"><span>Advertisement</span></div>
+
+  <article class="prose">
+    <h2>What Does a Date Calculator Do?</h2>
+    <p>It performs calendar arithmetic — adding or subtracting a duration from a date and returning the resulting day, including its weekday. Common uses include scheduling, deadlines, loan terms, pregnancy due-date estimation (informal), and contract periods.</p>
+
+    <h2>How to Use It</h2>
+    <ol>
+      <li>Pick a <strong>starting date</strong> (today is prefilled).</li>
+      <li>Choose <strong>add</strong> or <strong>subtract</strong>.</li>
+      <li>Enter the <strong>amount</strong> and select the <strong>unit</strong>.</li>
+      <li>Results update immediately.</li>
+    </ol>
+
+    <h2>Formula</h2>
+    <p>Date arithmetic depends on the unit:</p>
+    <ul>
+      <li><strong>Days:</strong> add the number of days directly.</li>
+      <li><strong>Weeks:</strong> multiply weeks by 7, then add days.</li>
+      <li><strong>Months:</strong> increment/decrement the month field, clamping the day if it exceeds the target month's length.</li>
+      <li><strong>Years:</strong> increment/decrement the year (Feb 29 handling: clamps to Feb 28 in non-leap years).</li>
+    </ul>
+
+    <h2>Example</h2>
+    <p>Starting from 2025-03-15, add 90 days → <strong>2025-06-13</strong> (a Friday).</p>
+
+    <h2>Understanding Your Result</h2>
+    <p>The main result is the target date in long form. The detail box shows the change applied and total days difference, useful when mixing units (e.g. 1 month + 15 days).</p>
+
+    <h2>Common Mistakes</h2>
+    <ul>
+      <li>Assuming every month has 30 days.</li>
+      <li>Forgetting leap years (Feb 29 exists every 4 years, except centuries not divisible by 400).</li>
+      <li>Mixing up "add 1 month" with "add 30 days" — they're different.</li>
+    </ul>
+
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false">How do you handle Feb 29 + 1 year?</button>
+      <div class="faq-a"><p>The result clamps to Feb 28 in non-leap years. This matches most legal and business conventions.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false">Does the calculator account for leap years?</button>
+      <div class="faq-a"><p>Yes — day arithmetic uses the actual calendar, so leap days are included.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false">Can I add business days only?</button>
+      <div class="faq-a"><p>Not in this calculator. Use our Day Counter which can exclude weekends.</p></div>
+    </div>
+
+    <h2>Related Calculators</h2>
+    <div class="grid grid-3" data-related-tools="date-calculator"></div>
+  </article>
+
+  <div class="ad-placeholder ad-bottom" role="complementary" aria-label="Advertisement"><span>Advertisement</span></div>
+</div></main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="logo" href="/" style="color:#fff;margin-bottom:12px;"><span class="logo-mark">CV</span><span data-site-name style="color:#fff">CalcVerse</span></a>
+        <p data-site-desc></p>
+      </div>
+      <div><h4>Company</h4><a href="/about.html">About Us</a><a href="/contact.html">Contact Us</a><a href="/blog/">Blog</a><a href="/sitemap.html">Sitemap</a></div>
+      <div><h4>Categories</h4><a href="/categories/financial/">Financial</a><a href="/categories/math/">Math</a><a href="/categories/health/">Health</a><a href="/categories/date-time/">Date &amp; Time</a><a href="/categories/conversion/">Converters</a><a href="/categories/engineering/">Engineering</a></div>
+      <div><h4>Legal</h4><a href="/privacy-policy.html">Privacy Policy</a><a href="/terms-of-service.html">Terms of Service</a><a href="/disclaimer.html">Disclaimer</a><a href="/cookie-policy.html">Cookie Policy</a></div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span data-year></span> <span data-site-name>CalcVerse</span>. All rights reserved.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/js/config.js"></script>
+<script src="/assets/js/tools-data.js"></script>
+<script src="/assets/js/main.js"></script>
+<script src="/assets/js/calculators/date-calculator.js"></script>
+</body>
+</html>
