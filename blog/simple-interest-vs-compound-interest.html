@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Simple Interest vs Compound Interest — Explained</title>
+<meta name="description" content="Learn the difference between simple and compound interest with formulas, tables, and worked examples." />
+<link rel="canonical" href="https://calcverse.example.com/blog/simple-interest-vs-compound-interest.html" />
+<meta name="robots" content="index, follow" />
+<link rel="stylesheet" href="/assets/css/style.css" />
+<link rel="stylesheet" href="/assets/css/ads.css" />
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"BlogPosting",
+  "headline":"Simple Interest vs Compound Interest",
+  "datePublished":"2025-01-20",
+  "author":{"@type":"Organization","name":"CalcVerse"},
+  "publisher":{"@type":"Organization","name":"CalcVerse"}
+}
+</script>
+</head>
+<body>
+<!-- header -->
+<main id="main"><div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <ol>
+      <li><a href="/">Home</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><span aria-current="page">Simple vs Compound Interest</span></li>
+    </ol>
+  </nav>
+
+  <article class="prose" style="margin:0 auto;">
+    <h1>Simple Interest vs Compound Interest</h1>
+    <p><em>By CalcVerse Team · Published Jan 20, 2025 · 7 min read</em></p>
+
+    <p>Two interest models govern almost every financial product you'll encounter. They look similar on day one — but over time the difference becomes enormous. This guide explains both, with formulas and a side-by-side table.</p>
+
+    <h2>Simple Interest</h2>
+    <p>Simple interest is calculated only on the original principal. It doesn't grow on itself.</p>
+    <pre><code>Simple Interest = P × r × t</code></pre>
+    <ul>
+      <li>P = principal</li>
+      <li>r = annual rate (decimal)</li>
+      <li>t = time in years</li>
+    </ul>
+    <p><strong>Example:</strong> $1,000 at 5% for 3 years earns 1000 × 0.05 × 3 = $150. Total = $1,150.</p>
+
+    <h2>Compound Interest</h2>
+    <p>Compound interest is calculated on principal <em>plus any interest already earned</em>.</p>
+    <pre><code>A = P × (1 + r/n)^(n×t)</code></pre>
+    <ul>
+      <li>n = number of compounding periods per year</li>
+    </ul>
+    <p><strong>Example:</strong> $1,000 at 5% for 3 years compounded annually:</p>
+    <ul>
+      <li>Year 1: 1000 × 1.05 = 1050</li>
+      <li>Year 2: 1050 × 1.05 = 1102.50</li>
+      <li>Year 3: 1102.50 × 1.05 = <strong>1157.63</strong></li>
+    </ul>
+    <p>The compound version earns <strong>$7.63 more</strong> than simple interest over 3 years.</p>
+
+    <h2>Side-by-Side Comparison</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Year</th><th>Simple balance</th><th>Compound balance</th></tr></thead>
+        <tbody>
+          <tr><td>0</td><td>$1,000.00</td><td>$1,000.00</td></tr>
+          <tr><td>1</td><td>$1,050.00</td><td>$1,050.00</td></tr>
+          <tr><td>2</td><td>$1,100.00</td><td>$1,102.50</td></tr>
+          <tr><td>3</td><td>$1,150.00</td><td>$1,157.63</td></tr>
+          <tr><td>10</td><td>$1,500.00</td><td>$1,628.89</td></tr>
+          <tr><td>30</td><td>$2,500.00</td><td>$4,321.94</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>Why the Difference Grows</h2>
+    <p>Simple interest grows linearly — the same dollar amount each year. Compound interest grows exponentially because each year's interest joins the principal. Over 30 years, compound interest produces almost double the simple-interest total at the same rate.</p>
+
+    <h2>Real-World Applications</h2>
+    <ul>
+      <li><strong>Simple interest:</strong> some auto loans, short-term personal loans, and certain bonds.</li>
+      <li><strong>Compound interest:</strong> savings accounts, mortgages, credit cards, retirement accounts, most investments.</li>
+    </ul>
+
+    <h2>The Rule of 72</h2>
+    <p>Quick mental math for compound growth: divide 72 by the annual return to estimate doubling time. At 6%, money doubles in 72 ÷ 6 = 12 years.</p>
+
+    <h2>Try It Yourself</h2>
+    <p>Use our <a href="/tools/compound-interest-calculator/">Compound Interest Calculator</a> to see the effect over any timeframe, with optional monthly contributions.</p>
+
+    <h2>FAQ</h2>
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false">Which is better for savers?</button>
+      <div class="faq-a"><p>Compound interest — always. It grows your money faster.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false">Which is worse for borrowers?</button>
+      <div class="faq-a"><p>Compound interest. It makes debt grow faster, especially on credit cards.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false">What's continuous compounding?</button>
+      <div class="faq-a"><p>The mathematical limit as n approaches infinity: A = Pe^(rt). Used in theoretical finance.</p></div>
+    </div>
+
+    <h2>Related Calculators</h2>
+    <div class="grid grid-3" data-related-tools="compound-interest-calculator"></div>
+  </article>
+</div></main>
+<!-- footer -->
+<script src="/assets/js/config.js"></script>
+<script src="/assets/js/tools-data.js"></script>
+<script src="/assets/js/main.js"></script>
+</body>
+</html>
