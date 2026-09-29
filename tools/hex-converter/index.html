@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Hex Converter — Text ↔ Hexadecimal</title>
+<meta name="description" content="Free hex converter: convert text to hexadecimal bytes or hex back to text. UTF-8 safe." />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://calcverse.example.com/tools/hex-converter/" />
+<link rel="stylesheet" href="/assets/css/style.css" />
+<link rel="stylesheet" href="/assets/css/ads.css" />
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header"><div class="container header-inner">
+  <a class="logo" href="/"><span class="logo-mark">CV</span><span data-site-name>CalcVerse</span></a>
+  <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false"><span></span><span></span><span></span></button>
+  <nav class="nav" aria-label="Primary">
+    <a href="/">Home</a><a href="/tools/">Tools</a>
+    <a href="/categories/financial/">Financial</a><a href="/categories/math/">Math</a>
+    <a href="/categories/health/">Health</a><a href="/categories/date-time/">Date &amp; Time</a>
+    <a href="/categories/conversion/">Converters</a><a href="/categories/engineering/">Engineering</a>
+    <a href="/blog/">Blog</a><a href="/about.html">About</a><a href="/contact.html">Contact</a>
+  </nav>
+</div></header>
+
+<main id="main"><div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <ol><li><a href="/">Home</a></li><li><a href="/categories/developer/">Developer Tools</a></li><li><span aria-current="page">Hex Converter</span></li></ol>
+  </nav>
+
+  <h1>Hex Converter</h1>
+  <p style="max-width:720px;">Convert text to hexadecimal bytes, or decode hex strings back to text. UTF-8 safe. Runs entirely in your browser.</p>
+
+  <div class="ad-placeholder ad-top" role="complementary" aria-label="Advertisement"><span>Advertisement</span></div>
+
+  <section class="calc-card">
+    <h2 class="mt-0">Convert Text ↔ Hex</h2>
+    <div class="form-group">
+      <label for="hc-input">Input</label>
+      <textarea class="form-control" id="hc-input" rows="5" placeholder="Type text or paste hex bytes (e.g. '48 65 6c 6c 6f')"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="hc-output">Output</label>
+      <textarea class="form-control" id="hc-output" rows="5" readonly></textarea>
+    </div>
+    <p id="hc-status" style="font-size:0.9rem;min-height:1.2em;"></p>
+    <div class="form-actions">
+      <button class="btn" id="hc-tohex" type="button">Text → Hex</button>
+      <button class="btn" id="hc-fromhex" type="button">Hex → Text</button>
+      <button class="btn btn-secondary" id="hc-copy" type="button">Copy</button>
+      <button class="btn btn-secondary" id="hc-reset" type="button">Reset</button>
+    </div>
+  </section>
+
+  <div class="ad-placeholder ad-middle" role="complementary" aria-label="Advertisement"><span>Advertisement</span></div>
+
+  <article class="prose">
+    <h2>What Is Hexadecimal?</h2>
+    <p>Hexadecimal (base 16) uses 16 symbols: 0–9 and A–F. Each hex digit represents 4 bits, so two hex digits represent exactly 1 byte (8 bits). This makes hex convenient for representing binary data compactly.</p>
+
+    <h2>How to Use It</h2>
+    <ol>
+      <li>Paste text or hex bytes into the input.</li>
+      <li>Click <strong>Text → Hex</strong> or <strong>Hex → Text</strong>.</li>
+      <li>Copy the result.</li>
+    </ol>
+
+    <h2>Example</h2>
+    <p>The ASCII text <code>Hello</code> encodes to hex bytes: <code>48 65 6c 6c 6f</code>.</p>
+    <p>Each pair corresponds to one byte:
+    <br>H = 0x48
+    <br>e = 0x65
+    <br>l = 0x6c
+    <br>l = 0x6c
+    <br>o = 0x6f</p>
+
+    <h2>UTF-8 Encoding</h2>
+    <p>Non-ASCII characters become multiple bytes. For example, "é" is 2 bytes (<code>C3 A9</code>) and "😀" is 4 bytes (<code>F0 9F 98 80</code>). This tool uses UTF-8, matching modern web standards.</p>
+
+    <h2>Common Uses</h2>
+    <ul>
+      <li><strong>Debugging:</strong> Inspecting raw bytes in network traffic or files.</li>
+      <li><strong>Cryptography:</strong> Displaying keys, hashes, and ciphertext.</li>
+      <li><strong>Colors in web design:</strong> Hex color codes like #FF5733.</li>
+      <li><strong>Memory addresses:</strong> Pointers and offsets are shown in hex.</li>
+    </ul>
+
+    <h2>Common Mistakes</h2>
+    <ul>
+      <li>Forgetting that hex byte strings must have even length (each byte = 2 hex digits).</li>
+      <li>Confusing hex color codes (#RRGGBB) with arbitrary hex bytes.</li>
+      <li>Using ASCII assumptions for UTF-8 text — non-ASCII characters use multiple bytes.</li>
+    </ul>
+
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false">What does "0x" prefix mean?</button>
+      <div class="faq-a"><p>It's a common notation indicating a hexadecimal number (e.g. 0xFF = 255). This tool accepts hex with or without the 0x prefix per byte, but expects space or no separators.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false">Is hex the same as decimal?</button>
+      <div class="faq-a"><p>No. Hex uses 16 symbols; decimal uses 10. 0x10 = 16 decimal, not 10.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false">Can I use this for binary file inspection?</button>
+      <div class="faq-a"><p>Only text-based data. For binary files, use a hex editor (e.g. HxD) that handles raw bytes.</p></div>
+    </div>
+
+    <h2>Related Tools</h2>
+    <div class="grid grid-3" data-related-tools="hex-converter"></div>
+  </article>
+
+  <div class="ad-placeholder ad-bottom" role="complementary" aria-label="Advertisement"><span>Advertisement</span></div>
+</div></main>
+
+<footer class="site-footer"><div class="container">
+  <div class="footer-grid">
+    <div class="footer-brand"><a class="logo" href="/" style="color:#fff;margin-bottom:12px;"><span class="logo-mark">CV</span><span data-site-name style="color:#fff">CalcVerse</span></a><p data-site-desc></p></div>
+    <div><h4>Company</h4><a href="/about.html">About Us</a><a href="/contact.html">Contact Us</a><a href="/blog/">Blog</a><a href="/sitemap.html">Sitemap</a></div>
+    <div><h4>Categories</h4><a href="/categories/financial/">Financial</a><a href="/categories/math/">Math</a><a href="/categories/health/">Health</a><a href="/categories/date-time/">Date &amp; Time</a><a href="/categories/conversion/">Converters</a><a href="/categories/engineering/">Engineering</a></div>
+    <div><h4>Legal</h4><a href="/privacy-policy.html">Privacy Policy</a><a href="/terms-of-service.html">Terms of Service</a><a href="/disclaimer.html">Disclaimer</a><a href="/cookie-policy.html">Cookie Policy</a></div>
+  </div>
+  <div class="footer-bottom"><span>&copy; <span data-year></span> <span data-site-name>CalcVerse</span>. All rights reserved.</span></div>
+</div></footer>
+
+<script src="/assets/js/config.js"></script>
+<script src="/assets/js/tools-data.js"></script>
+<script src="/assets/js/main.js"></script>
+<script src="/assets/js/calculators/hex-converter.js"></script>
+</body>
+</html>
