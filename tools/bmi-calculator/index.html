@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>BMI Calculator — Body Mass Index with Categories</title>
+<meta name="description" content="Free BMI calculator: compute your Body Mass Index in metric or imperial units, see your category, and find your healthy weight range." />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://calcverse.example.com/tools/bmi-calculator/" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="BMI Calculator — Body Mass Index with Categories" />
+<meta property="og:description" content="Compute your BMI, see your category, and find your healthy weight range." />
+<meta property="og:url" content="https://calcverse.example.com/tools/bmi-calculator/" />
+<link rel="stylesheet" href="/assets/css/style.css" />
+<link rel="stylesheet" href="/assets/css/ads.css" />
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"BreadcrumbList",
+  "itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://calcverse.example.com/"},
+    {"@type":"ListItem","position":2,"name":"Health Calculators","item":"https://calcverse.example.com/categories/health/"},
+    {"@type":"ListItem","position":3,"name":"BMI Calculator","item":"https://calcverse.example.com/tools/bmi-calculator/"}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {"@type":"Question","name":"What is a healthy BMI?","acceptedAnswer":{"@type":"Answer","text":"A BMI between 18.5 and 24.9 is considered healthy for most adults."}},
+    {"@type":"Question","name":"Is BMI accurate for athletes?","acceptedAnswer":{"@type":"Answer","text":"No. BMI does not distinguish muscle from fat, so muscular athletes may be classified as overweight."}},
+    {"@type":"Question","name":"Does BMI differ for men and women?","acceptedAnswer":{"@type":"Answer","text":"The formula is the same, but body composition differs. BMI is only a screening tool."}}
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="logo" href="/"><span class="logo-mark" aria-hidden="true">CV</span><span data-site-name>CalcVerse</span></a>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="nav" aria-label="Primary">
+      <a href="/">Home</a><a href="/tools/">Tools</a>
+      <a href="/categories/financial/">Financial</a><a href="/categories/math/">Math</a>
+      <a href="/categories/health/">Health</a><a href="/categories/date-time/">Date &amp; Time</a>
+      <a href="/categories/conversion/">Converters</a><a href="/categories/engineering/">Engineering</a>
+      <a href="/blog/">Blog</a><a href="/about.html">About</a><a href="/contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="/">Home</a></li>
+        <li><a href="/categories/health/">Health Calculators</a></li>
+        <li><span aria-current="page">BMI Calculator</span></li>
+      </ol>
+    </nav>
+
+    <h1>BMI Calculator</h1>
+    <p style="max-width:720px;">Compute your Body Mass Index from metric or imperial measurements, see your weight category, and find the healthy weight range for your height. All calculations run locally — nothing is sent to a server.</p>
+
+    <!-- ADSENSE PLACEMENT: replace this placeholder after approval -->
+    <div class="ad-placeholder ad-top" role="complementary" aria-label="Advertisement"><span>Advertisement</span></div>
+
+    <section class="calc-card" aria-labelledby="calc-h">
+      <h2 id="calc-h" class="mt-0">Calculate Your BMI</h2>
+
+      <div class="form-group" style="max-width:220px;margin-bottom:18px;">
+        <label for="bmi-unit">Unit system</label>
+        <select class="form-control" id="bmi-unit">
+          <option value="metric">Metric (kg, cm)</option>
+          <option value="imperial">Imperial (lb, in)</option>
+        </select>
+      </div>
+
+      <div id="bmi-metric-fields">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="bmi-weight-kg">Weight</label>
+            <div class="input-group">
+              <input class="form-control" id="bmi-weight-kg" type="number" min="0" step="0.1" placeholder="e.g. 70" />
+              <span class="unit">kg</span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="bmi-height-cm">Height</label>
+            <div class="input-group">
+              <input class="form-control" id="bmi-height-cm" type="number" min="0" step="0.1" placeholder="e.g. 175" />
+              <span class="unit">cm</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="bmi-imperial-fields" style="display:none;">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="bmi-weight-lb">Weight</label>
+            <div class="input-group">
+              <input class="form-control" id="bmi-weight-lb" type="number" min="0" step="0.1" placeholder="e.g. 154" />
+              <span class="unit">lb</span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="bmi-height-in">Height</label>
+            <div class="input-group">
+              <input class="form-control" id="bmi-height-in" type="number" min="0" step="0.1" placeholder="e.g. 69" />
+              <span class="unit">in</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-actions">
+        <button class="btn" id="bmi-calc" type="button">Calculate</button>
+        <button class="btn btn-secondary" id="bmi-reset" type="button">Reset</button>
+      </div>
+
+      <div class="result-box" id="bmi-result" role="status" aria-live="polite">
+        <div class="result-label">Your BMI</div>
+        <div class="result-main" id="bmi-main">—</div>
+        <div class="result-detail" id="bmi-detail"></div>
+      </div>
+    </section>
+
+    <!-- ADSENSE PLACEMENT: replace this placeholder after approval -->
+    <div class="ad-placeholder ad-middle" role="complementary" aria-label="Advertisement"><span>Advertisement</span></div>
+
+    <article class="prose">
+      <h2>What Is BMI?</h2>
+      <p>Body Mass Index (BMI) is a simple numeric measure that compares your weight to your height. It was developed in the 19th century by Adolphe Quetelet and is widely used by doctors, insurers, and public health agencies as a quick screening tool.</p>
+      <p>BMI does not measure body fat directly. Instead, it estimates whether your weight is in a healthy range for your height. It is useful at the population level but has important limitations for individuals.</p>
+
+      <h2>How to Use the BMI Calculator</h2>
+      <ol>
+        <li>Choose <strong>metric</strong> or <strong>imperial</strong> units.</li>
+        <li>Enter your weight and height.</li>
+        <li>Click <strong>Calculate</strong> (or just type — results update live).</li>
+        <li>Read your BMI, category, and the healthy weight range for your height.</li>
+      </ol>
+
+      <h2>BMI Formula</h2>
+      <p>Metric:</p>
+      <pre><code>BMI = weight (kg) ÷ height (m)²</code></pre>
+      <p>Imperial:</p>
+      <pre><code>BMI = 703 × weight (lb) ÷ height (in)²</code></pre>
+
+      <h2>How the Calculation Works</h2>
+      <p>BMI is your weight divided by the square of your height. Because height is squared, taller people have a much larger denominator — meaning a 6 ft person and a 5 ft person can weigh very differently and still have the same BMI. This is why BMI is a normalized measure.</p>
+
+      <h2>BMI Categories (Adults)</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>BMI Range</th><th>Category</th></tr></thead>
+          <tbody>
+            <tr><td>Below 16.0</td><td>Severely underweight</td></tr>
+            <tr><td>16.0 – 18.4</td><td>Underweight</td></tr>
+            <tr><td>18.5 – 24.9</td><td>Normal weight</td></tr>
+            <tr><td>25.0 – 29.9</td><td>Overweight</td></tr>
+            <tr><td>30.0 – 34.9</td><td>Obese Class I</td></tr>
+            <tr><td>35.0 – 39.9</td><td>Obese Class II</td></tr>
+            <tr><td>40.0 and above</td><td>Obese Class III</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Example Calculation</h2>
+      <p>A person weighing 70 kg and 175 cm tall:</p>
+      <ul>
+        <li>Height in meters: 1.75 m</li>
+        <li>Height squared: 3.0625</li>
+        <li>BMI = 70 ÷ 3.0625 ≈ <strong>22.9</strong> (normal weight)</li>
+      </ul>
+
+      <h2>Understanding Your Result</h2>
+      <p>Your BMI number places you in a category. The "healthy weight range" shown is computed from the same formula rearranged: for a healthy BMI of 18.5–24.9, the healthy weight range is 18.5 × height² to 24.9 × height².</p>
+
+      <h2>Common Mistakes</h2>
+      <ul>
+        <li>Assuming BMI measures body fat — it doesn't.</li>
+        <li>Using BMI for children (they need age- and sex-specific percentile charts).</li>
+        <li>Applying adult BMI categories to athletes, pregnant women, or the elderly.</li>
+        <li>Treating a single BMI reading as a diagnosis.</li>
+      </ul>
+
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">What is a healthy BMI?</button>
+        <div class="faq-a"><p>Between 18.5 and 24.9 for most adults. However, BMI is only one indicator — waist circumference, body fat percentage, and fitness also matter.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Is BMI accurate for athletes?</button>
+        <div class="faq-a"><p>No. Muscle is denser than fat, so muscular people can have a high BMI while being very lean. Body fat percentage is a better metric for athletes.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Does BMI differ for men and women?</button>
+        <div class="faq-a"><p>The formula is the same. However, women naturally carry more body fat than men at the same BMI, so some researchers suggest different thresholds.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">What about children?</button>
+        <div class="faq-a"><p>Children and teens need BMI-for-age percentile charts because body composition changes rapidly during growth.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Is BMI used for people over 65?</button>
+        <div class="faq-a"><p>BMI is less reliable for older adults because muscle mass declines naturally. A slightly higher BMI may be protective in this group.</p></div>
+      </div>
+
+      <h2>Related Calculators</h2>
+      <div class="grid grid-3" data-related-tools="bmi-calculator"></div>
+
+      <h2>Related Articles</h2>
+      <ul>
+        <li><a href="/blog/how-to-calculate-bmi.html">How to Calculate BMI</a></li>
+        <li><a href="/blog/bmi-vs-bmr-vs-tdee.html">BMI vs BMR vs TDEE</a></li>
+      </ul>
+
+      <div class="callout warn">
+        <strong>Health disclaimer:</strong> This BMI calculator is for informational and educational purposes only. It is not a medical diagnosis. Consult a qualified healthcare provider before making health decisions.
+      </div>
+    </article>
+
+    <!-- ADSENSE PLACEMENT: replace this placeholder after approval -->
+    <div class="ad-placeholder ad-bottom" role="complementary" aria-label="Advertisement"><span>Advertisement</span></div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="logo" href="/" style="color:#fff;margin-bottom:12px;"><span class="logo-mark" aria-hidden="true">CV</span><span data-site-name style="color:#fff;">CalcVerse</span></a>
+        <p data-site-desc></p>
+      </div>
+      <div><h4>Company</h4><a href="/about.html">About Us</a><a href="/contact.html">Contact Us</a><a href="/blog/">Blog</a><a href="/sitemap.html">Sitemap</a></div>
+      <div><h4>Categories</h4><a href="/categories/financial/">Financial</a><a href="/categories/math/">Math</a><a href="/categories/health/">Health</a><a href="/categories/date-time/">Date &amp; Time</a><a href="/categories/conversion/">Converters</a><a href="/categories/engineering/">Engineering</a></div>
+      <div><h4>Legal</h4><a href="/privacy-policy.html">Privacy Policy</a><a href="/terms-of-service.html">Terms of Service</a><a href="/disclaimer.html">Disclaimer</a><a href="/cookie-policy.html">Cookie Policy</a></div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span data-year></span> <span data-site-name>CalcVerse</span>. All rights reserved.</span>
+      <span>Made for people who need quick, accurate answers.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/js/config.js"></script>
+<script src="/assets/js/tools-data.js"></script>
+<script src="/assets/js/main.js"></script>
+<script src="/assets/js/calculators/bmi.js"></script>
+</body>
+</html>
