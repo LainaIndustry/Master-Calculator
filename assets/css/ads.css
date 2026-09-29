@@ -1,0 +1,39 @@
+/* ============================================================
+   ADVERTISEMENT PLACEHOLDERS
+   Replace inner content with AdSense code after approval.
+   Do NOT insert publisher IDs yet.
+   ============================================================ */
+
+.ad-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: repeating-linear-gradient(
+    45deg,
+    #f8fafc,
+    #f8fafc 10px,
+    #f1f5f9 10px,
+    #f1f5f9 20px
+  );
+  border: 1px dashed var(--border-strong);
+  border-radius: var(--radius);
+  color: var(--muted);
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 600;
+  min-height: 90px;
+  margin: 24px 0;
+  overflow: hidden;
+}
+
+.ad-top { min-height: 90px; }
+.ad-middle { min-height: 250px; margin: 32px 0; }
+.ad-bottom { min-height: 90px; }
+.ad-sidebar { min-height: 600px; }
+.ad-inline { min-height: 250px; }
+
+@media (max-width: 768px) {
+  .ad-top, .ad-bottom { min-height: 60px; }
+  .ad-middle, .ad-inline { min-height: 250px; }
+}
