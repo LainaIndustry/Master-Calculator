@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Password Generator — Secure &amp; Random</title>
+<meta name="description" content="Generate strong, cryptographically secure passwords in your browser. Customize length, character sets, and copy with one click." />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://calcverse.example.com/tools/password-generator/" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Password Generator — Secure &amp; Random" />
+<meta property="og:description" content="Cryptographically secure passwords with custom rules." />
+<link rel="stylesheet" href="/assets/css/style.css" />
+<link rel="stylesheet" href="/assets/css/ads.css" />
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="logo" href="/"><span class="logo-mark" aria-hidden="true">CV</span><span data-site-name>CalcVerse</span></a>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="nav" aria-label="Primary">
+      <a href="/">Home</a><a href="/tools/">Tools</a>
+      <a href="/categories/financial/">Financial</a><a href="/categories/math/">Math</a>
+      <a href="/categories/health/">Health</a><a href="/categories/date-time/">Date &amp; Time</a>
+      <a href="/categories/conversion/">Converters</a><a href="/categories/engineering/">Engineering</a>
+      <a href="/blog/">Blog</a><a href="/about.html">About</a><a href="/contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="/">Home</a></li>
+        <li><a href="/categories/developer/">Developer Tools</a></li>
+        <li><span aria-current="page">Password Generator</span></li>
+      </ol>
+    </nav>
+
+    <h1>Password Generator</h1>
+    <p style="max-width:720px;">Generate strong, random passwords using your browser's cryptographic random number generator. Nothing is transmitted — passwords never leave your device.</p>
+
+    <!-- ADSENSE PLACEMENT: replace this placeholder after approval -->
+    <div class="ad-placeholder ad-top" role="complementary" aria-label="Advertisement"><span>Advertisement</span></div>
+
+    <section class="calc-card" aria-labelledby="calc-h">
+      <h2 id="calc-h" class="mt-0">Generate a Password</h2>
+
+      <div class="form-group">
+        <label for="pw-output">Generated password</label>
+        <div style="display:flex;gap:8px;">
+          <input class="form-control" id="pw-output" type="text" readonly style="font-family:var(--font-mono);" value="" />
+          <button class="btn btn-secondary" id="pw-copy" type="button" style="white-space:nowrap;">Copy</button>
+        </div>
+      </div>
+
+      <div class="form-group" style="max-width:300px;">
+        <label for="pw-length">Length: <span id="pw-length-label">16</span></label>
+        <input id="pw-length" type="range" min="4" max="128" value="16" style="width:100%;"
+               oninput="document.getElementById('pw-length-label').textContent=this.value" />
+      </div>
+
+      <fieldset style="border:1px solid var(--border);border-radius:8px;padding:14px 18px;margin-bottom:16px;">
+        <legend style="font-weight:600;padding:0 6px;">Character sets</legend>
+        <label style="display:inline-flex;align-items:center;gap:8px;margin-right:18px;">
+          <input type="checkbox" id="pw-lower" checked /> lowercase (a–z)
+        </label>
+        <label style="display:inline-flex;align-items:center;gap:8px;margin-right:18px;">
+          <input type="checkbox" id="pw-upper" checked /> uppercase (A–Z)
+        </label>
+        <label style="display:inline-flex;align-items:center;gap:8px;margin-right:18px;">
+          <input type="checkbox" id="pw-digits" checked /> digits (0–9)
+        </label>
+        <label style="display:inline-flex;align-items:center;gap:8px;">
+          <input type="checkbox" id="pw-symbols" /> symbols
+        </label>
+      </fieldset>
+
+      <div class="form-actions">
+        <button class="btn" id="pw-generate" type="button">Generate Password</button>
+      </div>
+
+      <p id="pw-entropy" style="color:var(--muted);font-size:0.9rem;margin-top:12px;">—</p>
+    </section>
+
+    <!-- ADSENSE PLACEMENT: replace this placeholder after approval -->
+    <div class="ad-placeholder ad-middle" role="complementary" aria-label="Advertisement"><span>Advertisement</span></div>
+
+    <article class="prose">
+      <h2>What Is a Password Generator?</h2>
+      <p>A password generator creates random strings of characters that are extremely difficult for attackers to guess. Unlike human-chosen passwords — which tend to follow predictable patterns — generated passwords have maximum entropy.</p>
+
+      <h2>How to Use This Tool</h2>
+      <ol>
+        <li>Choose a <strong>length</strong> — 16+ characters is recommended.</li>
+        <li>Select the character sets you want (uppercase, lowercase, digits, symbols).</li>
+        <li>Click <strong>Generate Password</strong>.</li>
+        <li>Click <strong>Copy</strong> and paste it into your password manager.</li>
+      </ol>
+
+      <h2>How It Works</h2>
+      <p>This tool uses the Web Crypto API's <code>crypto.getRandomValues()</code> — a cryptographically secure pseudorandom number generator. Unlike <code>Math.random()</code>, it produces unpredictable values suitable for security-critical use. We use rejection sampling to eliminate modulo bias, ensuring every character in the selected pool has exactly the same probability.</p>
+
+      <h2>Password Strength — Entropy</h2>
+      <p>Entropy measures how hard a password is to brute-force, expressed in bits. The formula is:</p>
+      <pre><code>Entropy (bits) = length × log₂(size of character pool)</code></pre>
+      <p>Rough guidelines:</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Entropy</th><th>Strength</th><th>Use case</th></tr></thead>
+          <tbody>
+            <tr><td>&lt; 40 bits</td><td>Weak</td><td>Not recommended</td></tr>
+            <tr><td>40–59 bits</td><td>Moderate</td><td>Low-risk accounts</td></tr>
+            <tr><td>60–79 bits</td><td>Strong</td><td>Most accounts</td></tr>
+            <tr><td>80–99 bits</td><td>Very strong</td><td>Banking, email</td></tr>
+            <tr><td>100+ bits</td><td>Excellent</td><td>Password manager master</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Example</h2>
+      <p>A 16-character password using lowercase + uppercase + digits (pool of 62 characters) gives:</p>
+      <p>16 × log₂(62) ≈ 16 × 5.95 ≈ <strong>95 bits</strong> of entropy — very strong.</p>
+
+      <h2>Common Mistakes</h2>
+      <ul>
+        <li>Reusing passwords across sites — one breach compromises all your accounts.</li>
+        <li>Choosing "memorable" patterns like <code>Password123!</code> — trivially cracked.</li>
+        <li>Storing passwords in plain text or in a browser without a master lock.</li>
+        <li>Sharing generated passwords over email or chat.</li>
+      </ul>
+
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Is this password generator secure?</button>
+        <div class="faq-a"><p>Yes. It uses <code>crypto.getRandomValues()</code> — the same cryptographic primitive used by password managers and secure systems. Nothing leaves your browser.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">How long should my password be?</button>
+        <div class="faq-a"><p>16+ characters for most accounts; 20+ for email, banking, and password managers. Length matters more than complexity.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Should I use symbols?</button>
+        <div class="faq-a"><p>Symbols increase entropy, but only if the site allows them. Some sites restrict symbols — in that case, add length instead.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">What's a password manager?</button>
+        <div class="faq-a"><p>A tool that stores unique passwords for each site, unlocked by one master password. Recommended by security experts over memorization.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Is this site saving my passwords?</button>
+        <div class="faq-a"><p>No. The generator runs entirely client-side. We never receive, log, or store generated passwords.</p></div>
+      </div>
+
+      <h2>Related Tools</h2>
+      <div class="grid grid-3" data-related-tools="password-generator"></div>
+    </article>
+
+    <!-- ADSENSE PLACEMENT: replace this placeholder after approval -->
+    <div class="ad-placeholder ad-bottom" role="complementary" aria-label="Advertisement"><span>Advertisement</span></div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="logo" href="/" style="color:#fff;margin-bottom:12px;"><span class="logo-mark" aria-hidden="true">CV</span><span data-site-name style="color:#fff;">CalcVerse</span></a>
+        <p data-site-desc></p>
+      </div>
+      <div><h4>Company</h4><a href="/about.html">About Us</a><a href="/contact.html">Contact Us</a><a href="/blog/">Blog</a><a href="/sitemap.html">Sitemap</a></div>
+      <div><h4>Categories</h4><a href="/categories/financial/">Financial</a><a href="/categories/math/">Math</a><a href="/categories/health/">Health</a><a href="/categories/date-time/">Date &amp; Time</a><a href="/categories/conversion/">Converters</a><a href="/categories/engineering/">Engineering</a></div>
+      <div><h4>Legal</h4><a href="/privacy-policy.html">Privacy Policy</a><a href="/terms-of-service.html">Terms of Service</a><a href="/disclaimer.html">Disclaimer</a><a href="/cookie-policy.html">Cookie Policy</a></div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span data-year></span> <span data-site-name>CalcVerse</span>. All rights reserved.</span>
+      <span>Made for people who need quick, accurate answers.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/js/config.js"></script>
+<script src="/assets/js/tools-data.js"></script>
+<script src="/assets/js/main.js"></script>
+<script src="/assets/js/calculators/password.js"></script>
+</body>
+</html>
